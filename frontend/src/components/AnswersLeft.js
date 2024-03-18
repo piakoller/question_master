@@ -67,7 +67,7 @@ const AnswerLeft = () => {
           <p>{llm.left}</p>
           {answers.length > 0 && questionIndex < answers.length ? (
             <>
-              {console.log(llm.left === 'gemini 1.0')}
+              {/* {console.log(llm.left === 'gemini 1.0')} */}
               {llm.left === 'gemini 1.0' ? (
                 <p>
                   {answers[questionIndex].answer

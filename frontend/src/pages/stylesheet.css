@@ -46,6 +46,9 @@
 .info-container label {
   margin-right: 20px; /* Optional: Add spacing between labels */
 }
+.progress {
+  float: right;
+}
 
 .grid {
   display: grid;

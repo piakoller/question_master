@@ -17,7 +17,8 @@ import Select from '@mui/material/Select';
 import './stylesheet.css';
 
 const Demographics = () => {
-    const { language, setLanguage, nextQuestion, userId, 
+    const { language, setLanguage, nextQuestion, 
+        userId,
         age, setAge,
         gender, setGender,
         education, setEducation,
@@ -80,7 +81,7 @@ const Demographics = () => {
 
     // Function to submit data to backend
     const submitDemographics = async () => {
-       console.log(userId)
+        console.log(userId)
 
         try {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/save-demographics/${userId}`, {
@@ -140,7 +141,7 @@ const Demographics = () => {
 
     return (
         <div className='page'>
-            <ProgressBar></ProgressBar>
+            {/* <ProgressBar></ProgressBar> */}
             <div className='headline'>
                 <h1>Personal Information</h1>
             </div>

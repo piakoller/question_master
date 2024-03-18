@@ -51,8 +51,8 @@ const AnswerRight = () => {
         <div>
           <p>{llm.right}</p>
           {answers.length > 0 && questionIndex < answers.length ? (
-              // <p dangerouslySetInnerHTML={{ __html: answers[questionIndex].answer.replace(/\n/g, '<br />') }} />
-              <ReactMarkdown>{answers[questionIndex].answer}</ReactMarkdown>
+            // <p dangerouslySetInnerHTML={{ __html: answers[questionIndex].answer.replace(/\n/g, '<br />') }} />
+            <ReactMarkdown>{answers[questionIndex].answer}</ReactMarkdown>
           ) : (
             <p>Loading...</p>
           )}

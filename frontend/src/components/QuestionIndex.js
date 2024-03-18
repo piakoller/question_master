@@ -16,6 +16,18 @@ export function useData() {
 
 export function QuestionIndex({ children }) {
 
+    // Helper function to get two random unique indices within a range
+    function getRandomUniqueIndices(range, numIndices) {
+        const indices = [];
+        while (indices.length < numIndices) {
+            const randomIndex = Math.floor(Math.random() * range);
+            if (!indices.includes(randomIndex)) {
+                indices.push(randomIndex);
+            }
+        }
+        return indices;
+    }
+
     const [userId, setUserId] = useState(null);
     const [language, setLanguage] = useState('');
     const [numQuestions, setNumQuestions] = useState(0);
@@ -31,12 +43,12 @@ export function QuestionIndex({ children }) {
 
     const llmName = ['gemini 1.0', 'GPT-3.5', 'GPT-4', 'Claude-3 sonnet', 'Claude-3 opus', 'Mistral Large', 'Mistral Medium'];
     // State variables for progress and study completion
-    const [progress, setProgress] = useState(0);
+    const [progress, setProgress] = useState(10);
     const [isStudyFinished, setIsStudyFinished] = useState(false);
     // Constants for question count and maximum questions
     const MAX_QUESTIONS = 10;
 
-    const [questionIndex, setQuestionIndex] = useState(0);
+    const [questionIndex, setQuestionIndex] = useState(getRandomUniqueIndices(numQuestions, 1));
     const [questionId, setQuestionId] = useState('');
     const [selectedAnswer, setSelectedAnswer] = useState("nothing selected");
     const [llm, setLLM] = useState("");
@@ -46,15 +58,15 @@ export function QuestionIndex({ children }) {
     });
 
     const handleProgressUpdate = () => {
-        if (progress < MAX_QUESTIONS * 10) { // Check if progress hasn't reached the maximum
-            setProgress(progress + 10);
-        } else {
+        setProgress(progress + 10);
+        const currentQuestion = (progress / MAX_QUESTIONS);
+        if (currentQuestion >= 9) {
             setIsStudyFinished(true);
         }
     };
     const resetStudyState = () => {
-        setProgress(0);
-        setQuestionIndex(0);
+        setProgress(10);
+        setQuestionIndex(getRandomUniqueIndices(numQuestions, 1));
         setIsStudyFinished(false);
         setSelectedAnswer("nothing selected");
         setLLM({});
@@ -82,7 +94,7 @@ export function QuestionIndex({ children }) {
             `LLMs set to:
             Left: ${llmLeft} (${leftPath}),
             Right: ${llmRight} (${rightPath})`
-          );
+        );
         // console.log("Selected answer:",);
     };
 
@@ -94,18 +106,6 @@ export function QuestionIndex({ children }) {
             callback(questionIndices); // Call the provided callback with the new index
         }
     };
-
-    // Helper function to get two random unique indices within a range
-    function getRandomUniqueIndices(range, numIndices) {
-        const indices = [];
-        while (indices.length < numIndices) {
-            const randomIndex = Math.floor(Math.random() * range);
-            if (!indices.includes(randomIndex)) {
-                indices.push(randomIndex);
-            }
-        }
-        return indices;
-    }
 
     // Function to choose API path based on LLM name
     function chooseLLMPath(llm) {
@@ -196,6 +196,7 @@ export function QuestionIndex({ children }) {
                 employer, setEmployer,
                 experience, setExperience,
                 theranosticExpertise, setTheranosticExpertise,
+                MAX_QUESTIONS,
                 progress,
                 handleProgressUpdate,
                 questionIndex,
