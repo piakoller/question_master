@@ -29,7 +29,7 @@ const Thanks = () => {
     // Function to submit data to backend
     const submitQuestion = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/api/new-question/${userId}`, {
+            const response = await fetch(`${process.env.BACKEND_URL}/api/new-question/${userId}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

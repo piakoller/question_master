@@ -14,7 +14,7 @@ const Home = () => {
 
     const startUserStudy = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/generate-user-id', {
+            const response = await fetch('${process.env.BACKEND_URL}/api/generate-user-id', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
             });

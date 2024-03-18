@@ -1,12 +1,13 @@
 import { createContext, useContext, useState } from 'react';
+import { config } from '../constants';
 
-const gemini_path = 'http://localhost:3000/api/get-gemini';
-const gpt_3_5_path = 'http://localhost:3000/api/get-gpt-3-5';
-const gpt_4_path = 'http://localhost:3000/api/get-gpt-4';
-const claude_3_sonnet_path = 'http://localhost:3000/api/get-claude-3-sonnet';
-const claude_3_opus_path = 'http://localhost:3000/api/get-claude-3-opus';
-const mistral_large_path = 'http://localhost:3000/api/get-mistral-large';
-const mistral_medium_path = 'http://localhost:3000/api/get-mistral-medium';
+const gemini_path = '`${process.env.BACKEND_URL}/api/get-gemini';
+const gpt_3_5_path = '`${process.env.BACKEND_URL}/api/get-gpt-3-5';
+const gpt_4_path = '`${process.env.BACKEND_URL}/api/get-gpt-4';
+const claude_3_sonnet_path = '`${process.env.BACKEND_URL}/api/get-claude-3-sonnet';
+const claude_3_opus_path = '`${process.env.BACKEND_URL}/api/get-claude-3-opus';
+const mistral_large_path = '`${process.env.BACKEND_URL}/api/get-mistral-large';
+const mistral_medium_path = '`${process.env.BACKEND_URL}/api/get-mistral-medium';
 
 const DataContext = createContext();
 
@@ -15,6 +16,8 @@ export function useData() {
 }
 
 export function QuestionIndex({ children }) {
+    const url = config.url.AUTH_URL;
+
     const [userId, setUserId] = useState(null);
     const [language, setLanguage] = useState('');
     const [numQuestions, setNumQuestions] = useState(0);
@@ -147,7 +150,7 @@ export function QuestionIndex({ children }) {
         console.log('selected Answer: ' + selectedAnswer);
 
         try {
-            const response = await fetch('http://localhost:3000/api/save-answer', {
+            const response = await fetch('`${process.env.BACKEND_URL}/api/save-answer', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' }, // Set headers if needed
                 body: JSON.stringify({ // Ensure data is properly formatted
