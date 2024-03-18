@@ -148,7 +148,7 @@ export function QuestionIndex({ children }) {
         console.log('selected Answer: ' + selectedAnswer);
 
         try {
-            const response = await fetch('`${process.env.BACKEND_URL}/api/save-answer', {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/save-answer`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' }, // Set headers if needed
                 body: JSON.stringify({ // Ensure data is properly formatted
