@@ -83,7 +83,7 @@ const Demographics = () => {
        console.log(userId)
 
         try {
-            const response = await fetch(`${process.env.BACKEND_URL}/api/save-demographics/${userId}`, {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/save-demographics/${userId}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

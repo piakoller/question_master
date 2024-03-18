@@ -12,7 +12,7 @@ const Question = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch(`${process.env.BACKEND_URL}/api/get-question`);
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/get-question`);
         if (!response.ok) {
           throw new Error('Failed to fetch questions.');
         }
