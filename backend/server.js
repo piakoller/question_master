@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 const { Model, UserLog, NewQuestion } = require('./database');
 
-mongoose.connect('mongodb://127.0.0.1:27017', {
+mongoose.connect('mongodb://127.0.0.1:27017/', {
   dbName: 'user-study-llm',
   // useUnifiedTopology: true,
 })
