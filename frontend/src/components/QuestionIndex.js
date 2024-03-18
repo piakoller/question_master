@@ -1,12 +1,12 @@
 import { createContext, useContext, useState } from 'react';
 
-const gemini_path = '${process.env.REACT_APP_BACKEND_URL}/api/get-gemini';
-const gpt_3_5_path = '${process.env.REACT_APP_BACKEND_URL}/api/get-gpt-3-5';
-const gpt_4_path = '${process.env.REACT_APP_BACKEND_URL}/api/get-gpt-4';
-const claude_3_sonnet_path = '${process.env.REACT_APP_BACKEND_URL}/api/get-claude-3-sonnet';
-const claude_3_opus_path = '${process.env.REACT_APP_BACKEND_URL}/api/get-claude-3-opus';
-const mistral_large_path = '${process.env.REACT_APP_BACKEND_URL}/api/get-mistral-large';
-const mistral_medium_path = '${process.env.REACT_APP_BACKEND_URL}/api/get-mistral-medium';
+const gemini_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-gemini`;
+const gpt_3_5_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-gpt-3-5`;
+const gpt_4_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-gpt-4`;
+const claude_3_sonnet_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-claude-3-sonnet`;
+const claude_3_opus_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-claude-3-opus`;
+const mistral_large_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-mistral-large`;
+const mistral_medium_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-mistral-medium`;
 
 const DataContext = createContext();
 

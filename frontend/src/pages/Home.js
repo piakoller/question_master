@@ -14,7 +14,7 @@ const Home = () => {
 
     const startUserStudy = async () => {
         try {
-            const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/api/generate-user-id', {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}api/generate-user-id`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
             });
