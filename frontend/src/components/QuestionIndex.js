@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from 'react';
-import { config } from '../constants';
 
 const gemini_path = '`${process.env.BACKEND_URL}/api/get-gemini';
 const gpt_3_5_path = '`${process.env.BACKEND_URL}/api/get-gpt-3-5';
