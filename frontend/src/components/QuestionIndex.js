@@ -15,7 +15,6 @@ export function useData() {
 }
 
 export function QuestionIndex({ children }) {
-    const url = config.url.AUTH_URL;
 
     const [userId, setUserId] = useState(null);
     const [language, setLanguage] = useState('');
