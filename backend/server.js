@@ -12,7 +12,7 @@ const fs = require('fs').promises; // Use promises for asynchronous operations
 const router = express.Router()
 
 const app = express();
-const port = 3000; // Use environment variable for port
+const port = process.env.PORT || 4000;
 
 // Enable CORS
 app.use(cors());
@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 const { Model, UserLog, NewQuestion } = require('./database');
 
-mongoose.connect('mongodb://localhost:27017', {
+mongoose.connect('mongodb://127.0.0.1:27017', {
   dbName: 'user-study-llm',
   // useUnifiedTopology: true,
 })
