@@ -11,12 +11,12 @@ const fs = require('fs').promises; // Use promises for asynchronous operations
 
 const router = express.Router()
 
-// const app = express();
+const app = express();
 const port = 3000; // Use environment variable for port
 
 // Enable CORS
-router.use(cors());
-router.use(bodyParser.json());
+app.use(cors());
+app.use(bodyParser.json());
 
 const { Model, UserLog, NewQuestion } = require('./database');
 
@@ -149,7 +149,7 @@ const saveUserLog = async (userId, questionId, selectedAnswer) => {
 
 
 // Route to generate and save a unique userId
-router.post('/api/generate-user-id', async (req, res) => {
+app.post('/api/generate-user-id', async (req, res) => {
   try {
     const userId = generateUserId();
 
@@ -178,7 +178,7 @@ router.post('/api/generate-user-id', async (req, res) => {
 });
 
 // Route to handle log data (replace with your specific logic)
-router.post('/api/log', async (req, res) => {
+app.post('/api/log', async (req, res) => {
   const { userId = generateUserId(), questionIndex, questionId, selectedAnswer } = req.body;
 
   try {
@@ -189,10 +189,10 @@ router.post('/api/log', async (req, res) => {
   }
 });
 
-router.post('/api/save-demographics/:userId', saveDemographics);
-router.post('/api/new-question/:userId', saveQuestion);
+app.post('/api/save-demographics/:userId', saveDemographics);
+app.post('/api/new-question/:userId', saveQuestion);
 
-router.get("/models", (req, res) => {
+app.get("/models", (req, res) => {
   Model.find()
     .then(models => {
       console.log("Fetched models:", models);
@@ -204,12 +204,13 @@ router.get("/models", (req, res) => {
     });
 });
 
-router.get("/api", (req, res) => {
+app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });
 });
 
 
-router.listen(port, () => {
+// app.listen(port, () => {
+app.listen(process.env.port || port, () => {
   console.log(`Server listening on port ${port}`);
 });
 
@@ -222,7 +223,7 @@ const handleCSVRequest = async (filePath, res, llm) => {
     if (llm) {
       responseData = parsedData.data.map(row => ({ answer: row.answer }));
     } else {
-      responseData = parsedData.data.map(row => ({ questionId: row.QuestionId, question: row.Question, language : row.language }));
+      responseData = parsedData.data.map(row => ({ questionId: row.QuestionId, question: row.Question, language: row.language }));
     }
 
     res.json(responseData);
@@ -233,42 +234,42 @@ const handleCSVRequest = async (filePath, res, llm) => {
 };
 
 
-router.get('/api/get-question', async (req, res) => {
+app.get('/api/get-question', async (req, res) => {
   await handleCSVRequest('../public/data/Evaluation-Questions.csv', res);
 });
 
 // Define routes for different LLMs
-router.get('/api/get-gpt-3-5', async (req, res) => {
+app.get('/api/get-gpt-3-5', async (req, res) => {
   await handleCSVRequest('../public/data/GPT-3_EvaluationQuestions.csv', res, true);
 });
 
-router.get('/api/get-gpt-4', async (req, res) => {
+app.get('/api/get-gpt-4', async (req, res) => {
   await handleCSVRequest('../public/data/GPT-4_EvaluationQuestions.csv', res, true);
 });
 
-router.get('/api/get-gemini', async (req, res) => {
+app.get('/api/get-gemini', async (req, res) => {
   await handleCSVRequest('../public/data/Gemini_EvaluationQuestions.csv', res, true);
 });
 
-router.get('/api/get-claude-3-sonnet', async (req, res) => {
+app.get('/api/get-claude-3-sonnet', async (req, res) => {
   await handleCSVRequest('../public/data/Claude-3-sonnet_EvaluationQuestions.csv', res, true);
 });
 
-router.get('/api/get-claude-3-opus', async (req, res) => {
+app.get('/api/get-claude-3-opus', async (req, res) => {
   await handleCSVRequest('../public/data/Claude-3-opus_EvaluationQuestions.csv', res, true);
 });
 
-router.get('/api/get-mistral-large', async (req, res) => {
+app.get('/api/get-mistral-large', async (req, res) => {
   await handleCSVRequest('../public/data/Mistral_large_EvaluationQuestions.csv', res, true);
 });
 
-router.get('/api/get-mistral-medium', async (req, res) => {
+app.get('/api/get-mistral-medium', async (req, res) => {
   await handleCSVRequest('../public/data/Mistral_medium_EvaluationQuestions.csv', res, true);
 });
 
 const kFactor = 32; // Adjust this value based on your desired volatility
 
-router.post('/api/save-answer', async (req, res) => {
+app.post('/api/save-answer', async (req, res) => {
   try {
     // Destructure selected and not selected answers directly from the request body
     const { userId, selectedAnswer, notSelectedAnswer, questionId } = req.body;
