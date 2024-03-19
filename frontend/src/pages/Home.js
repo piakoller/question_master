@@ -65,7 +65,7 @@ const Home = () => {
                 <label htmlFor="understand">I confirm that I have read and understood the information provided.</label>
             </div>
             {/* Disable button if not checked */}
-            <Link to="/demographics">
+            <Link to={`/demographics/${userId}`}>
                 <button className='button' disabled={!isChecked} onClick={startUserStudy}>
                     {userId ? 'Continue the User Study' : 'Start the User Study'}
                 </button>

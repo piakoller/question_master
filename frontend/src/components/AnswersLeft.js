@@ -66,22 +66,7 @@ const AnswerLeft = () => {
         <div>
           <p>{llm.left}</p>
           {answers.length > 0 && questionIndex < answers.length ? (
-            <>
-              {/* {console.log(llm.left === 'gemini 1.0')} */}
-              {llm.left === 'gemini 1.0' ? (
-                <p>
-                  {answers[questionIndex].answer
-                    .replace(/'/g, '"')
-                    .replace(/,/g, ', ')
-                    .replace(/\n/g, '<br/>')
-                    .replace(/^\s*\*([\s\S]*?)$/gm, '<ul><li>$1</li></ul>')
-                    .replace(/^\s*-(?!-)([\s\S]*?)$/gm, '<li>$1</li>')
-                  }
-                </p>
-              ) : (
-                <ReactMarkdown>{answers[questionIndex].answer}</ReactMarkdown>
-              )}
-            </>
+            <ReactMarkdown>{answers[questionIndex].answer}</ReactMarkdown>
           ) : (
             <p>Loading...</p>
           )}

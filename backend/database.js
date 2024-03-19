@@ -19,6 +19,7 @@ const userSchema = new mongoose.Schema({
       language: String,
       profession: String,
       employer: String,
+      experience: Number,
       // medicalExpertise: Number,
       theranosticExpertise: Number,
       // nuclearMedicineExpertise:Number,

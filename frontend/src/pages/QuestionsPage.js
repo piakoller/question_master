@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import './stylesheet.css'
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import { useData } from '../components/QuestionIndex';
 
@@ -12,9 +12,12 @@ import AnswerRight from "../components/AnswersRight";
 import ProgressBar from '../components/ProgressBar';
 
 const QuestionsPage = () => {
-    const { fetchLLM } = useData();
+    const { fetchLLM, setUserId } = useData();
+    const { userId } = useParams();
+
 
     useEffect(() => {
+        setUserId(userId);
         const fetchAnswers = async () => {
             fetchLLM();
         };
@@ -26,10 +29,9 @@ const QuestionsPage = () => {
     return (
         <div className='page'>
             <ProgressBar></ProgressBar>
-            <Link to="/demographics">
+            <Link to={`/demographics/${userId}`}>
                 <button className='button left'>Go Back</button>
             </Link>
-
             <div className='headline'>
                 <Question></Question>
 
@@ -48,6 +50,7 @@ const QuestionsPage = () => {
                         </div>
                 </div>
             </div>
+            {/* TODO: ADD NOTES FIELD */}
         </div>
     );
 };

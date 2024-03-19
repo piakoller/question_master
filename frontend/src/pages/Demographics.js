@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
-import React from 'react';
+import { Link, useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
-import ProgressBar from '../components/ProgressBar';
 import { useData } from '../components/QuestionIndex';
 
 import Box from '@mui/material/Box';
@@ -17,8 +16,9 @@ import Select from '@mui/material/Select';
 import './stylesheet.css';
 
 const Demographics = () => {
-    const { language, setLanguage, nextQuestion, 
-        userId,
+    // const { userId } = useParams();
+
+    const { setUserId, userId, language, setLanguage, nextQuestion,
         age, setAge,
         gender, setGender,
         education, setEducation,
@@ -27,7 +27,13 @@ const Demographics = () => {
         experience, setExperience,
         theranosticExpertise, setTheranosticExpertise, } = useData();
 
-
+    // useEffect(() => {
+    //     if (userId) {
+    //         setUserId(userId);
+    //     } else {
+    //         // Handle missing userId case, e.g., set a default value or display a message
+    //     }
+    // }, [userId]);
 
     const languages = [
         { value: 'german', label: 'German' },
@@ -81,8 +87,6 @@ const Demographics = () => {
 
     // Function to submit data to backend
     const submitDemographics = async () => {
-        console.log(userId)
-
         try {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/save-demographics/${userId}`, {
                 method: 'POST',
@@ -95,6 +99,7 @@ const Demographics = () => {
                     language,
                     profession,
                     employer,
+                    experience,
                     theranosticExpertise,
                 }),
             });
@@ -109,24 +114,6 @@ const Demographics = () => {
             console.error('Error submitting demographics:', error);
         }
     };
-
-
-    // useEffect(() => {
-    //     // Call submitDemographics when all fields are filled
-    //     // if (
-    //     //     language &&
-    //     //     age &&
-    //     //     gender &&
-    //     //     education &&
-    //     //     profession &&
-    //     //     employer &&
-    //     //     experience &&
-    //     //     theranosticExpertise !== 0
-    //     // ) {
-    //     submitDemographics();
-    //     console.log('Demographics submitted');
-    //     // }
-    // }, []);
 
     const handleSkip = () => {
         setAge(0);
@@ -145,7 +132,7 @@ const Demographics = () => {
             <div className='headline'>
                 <h1>Personal Information</h1>
             </div>
-            <Link to='/study'>
+            <Link to={`/study/${userId}`}>
                 <button className='button right blue' onClick={submitDemographics}>
                     Next
                 </button>

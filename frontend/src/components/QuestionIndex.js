@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 
 const gemini_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-gemini`;
 const gpt_3_5_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-gpt-3-5`;
@@ -73,6 +73,38 @@ export function QuestionIndex({ children }) {
         setLLMPath({ left: [], right: [] });
     };
 
+    useEffect(() => {
+        const fetchUserData = async () => {
+            if (userId) {
+                try {
+                    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/get-user-data?userId=${userId}`, {
+                        method: 'GET',
+                        headers: { 'Content-Type': 'application/json' },
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        setUserId(data.userId);
+                        setLanguage(data.demographics.language);
+                        setAge(data.demographics.age);
+                        setGender(data.demographics.gender);
+                        setEducation(data.demographics.education);
+                        setProfession(data.demographics.profession);
+                        setEmployer(data.demographics.employer);
+                        setExperience(data.demographics.experience);
+                        setTheranosticExpertise(data.demographics.theranosticExpertise);
+                    } else {
+                        console.error('Error fetching user data:', response.statusText);
+                    }
+                } catch (error) {
+                    console.error('Error sending request:', error);
+                }
+            }
+        };
+
+        fetchUserData();
+    }, [userId]);
+
     const fetchLLM = () => {
         // Randomly choose two distinct LLM indices (prevent duplicates)
         const llmIndices = getRandomUniqueIndices(llmName.length, 2);
@@ -81,7 +113,6 @@ export function QuestionIndex({ children }) {
         const llmRight = llmName[llmIndices[1]];
 
         setLLM({ left: llmLeft, right: llmRight });
-        // console.log(llm.left);
 
 
         // Set LLM paths based on chosen names
@@ -95,7 +126,6 @@ export function QuestionIndex({ children }) {
             Left: ${llmLeft} (${leftPath}),
             Right: ${llmRight} (${rightPath})`
         );
-        // console.log("Selected answer:",);
     };
 
     // set random questionIndex according to german, english or english and german question

@@ -82,7 +82,7 @@ const Thanks = () => {
             ) : (
                 <p>No additional questions added yet.</p>
             )}
-            <Link to='/study'>
+            <Link to={`/study/${userId}`}>
                 <button className='button blue' onClick={resetStudyState}>Restart User Study</button>
             </Link>
         </div>

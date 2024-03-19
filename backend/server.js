@@ -38,7 +38,7 @@ const generateUserId = () => uuidv4();
 // Save demographics data to the database
 const saveDemographics = async (req, res) => {
   try {
-    const { userId, language, age, gender, education, profession, employer, theranosticExpertise } = req.body;
+    const { userId, language, age, gender, education, profession, employer, experience, theranosticExpertise } = req.body;
 
     const user = await UserLog.findOne({ userId });
 
@@ -52,6 +52,7 @@ const saveDemographics = async (req, res) => {
         language,
         profession,
         employer,
+        experience,
         // medicalExpertise,
         theranosticExpertise,
         // nuclearMedicineExpertise,
@@ -61,7 +62,7 @@ const saveDemographics = async (req, res) => {
     } else {
       // Create a new user if not found
       const newUser = new UserLog({
-        userId: req.userId,
+        userId,
         demographics: {
           age,
           gender,
@@ -69,6 +70,7 @@ const saveDemographics = async (req, res) => {
           language,
           profession,
           employer,
+          experience,
           // medicalExpertise,
           theranosticExpertise,
           // nuclearMedicineExpertise,
@@ -101,7 +103,6 @@ const saveQuestion = async (req, res) => {
       newQuestion: newQuestion,
     };
     if (user) {
-      console.log('in user');
       // Update the user's newQuestion field in demographics
       user.newQuestions.push(newLog);
 
@@ -158,14 +159,16 @@ app.post('/api/generate-user-id', async (req, res) => {
     const newUser = new UserLog({
       userId,
       demographics: {
-        age: null,
-        gender: null,
-        education: null,
-        medicalExpertise: null,
-        theranosticExpertise: null, // Add this line
-        nuclearMedicineExpertise: null,
+        age: '',
+        gender: '',
+        education: '',
+        language: '',
+        profession: '',
+        employer: '',
+        experience: '',
+        theranosticExpertise: '',
+        llmBattle: [],
       },
-      llmBattle: [],
     });
 
     await newUser.save();
@@ -187,6 +190,23 @@ app.post('/api/log', async (req, res) => {
     res.json({ message: 'User log saved successfully' });
   } catch (error) {
     res.status(500).send('Error saving user log');
+  }
+});
+
+app.get('/api/get-user-data', async (req, res) => {
+  try {
+    const userId = req.query.userId;
+    const user = await UserLog.findOne({ userId: userId });
+
+    if (user) {
+      res.json(user);
+    } else {
+      console.error("User not found in database");
+      res.status(404).json({ message: "User not found" });
+    }
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
