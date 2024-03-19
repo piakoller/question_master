@@ -5,6 +5,7 @@ import './stylesheet.css'
 import { Link, useParams } from 'react-router-dom';
 
 import { useData } from '../components/QuestionIndex';
+import Footer from '../components/Footer';
 
 import Question from '../components/Question'
 import AnswerLeft from "../components/AnswersLeft";
@@ -51,6 +52,7 @@ const QuestionsPage = () => {
                 </div>
             </div>
             {/* TODO: ADD NOTES FIELD */}
+            <Footer />
         </div>
     );
 };

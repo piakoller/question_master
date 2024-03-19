@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 
 import { useData } from '../components/QuestionIndex';
+import Footer from '../components/Footer';
 
 import TextField from "@mui/material/TextField";
 import Grid from '@mui/material/Grid';
@@ -85,6 +86,7 @@ const Thanks = () => {
             <Link to={`/study/${userId}`}>
                 <button className='button blue' onClick={resetStudyState}>Restart User Study</button>
             </Link>
+            <Footer />
         </div>
     );
 };

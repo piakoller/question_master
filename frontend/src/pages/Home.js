@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { useData } from '../components/QuestionIndex';
+import Footer from '../components/Footer';
 
 import React, { useState } from "react";
 import './stylesheet.css'
@@ -70,6 +71,7 @@ const Home = () => {
                     {userId ? 'Continue the User Study' : 'Start the User Study'}
                 </button>
             </Link>
+            <Footer />
         </div>
     );
 };

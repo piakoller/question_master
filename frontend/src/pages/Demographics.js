@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import React, { useEffect } from 'react';
 
 import { useData } from '../components/QuestionIndex';
+import Footer from '../components/Footer';
 
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
@@ -301,6 +302,7 @@ const Demographics = () => {
                     skip
                 </button>
             </div>
+            <Footer />
         </div >
     );
 };
