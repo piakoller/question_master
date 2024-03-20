@@ -13,7 +13,7 @@ import AnswerRight from "../components/AnswersRight";
 import ProgressBar from '../components/ProgressBar';
 
 const QuestionsPage = () => {
-    const { fetchLLM, setUserId } = useData();
+    const { fetchLLM, setUserId, setNeitherSelected, nextQuestion } = useData();
     const { userId } = useParams();
 
 
@@ -26,6 +26,10 @@ const QuestionsPage = () => {
         fetchAnswers();
     }, []);
 
+    const handleClick = () => {
+        setNeitherSelected(true);
+        nextQuestion("null");
+    }
 
     return (
         <div className='page'>
@@ -36,19 +40,19 @@ const QuestionsPage = () => {
             <div className='headline'>
                 <Question></Question>
 
-                <p className='headline'>Choose the better fitting answer</p>
-                {/* <button className='button blue' onClick={nextQuestion}>I can't decide</button> */}
+                <p className='headline'>Choose the better fitting answer. <br /> If you can't decide or both answers are inccorect choose "Neither"</p>
+                <button className='button blue' onClick={() => { handleClick() }}>Neither</button>
             </div>
             <div className='question'>
                 <div className='grid'>
-                        {/* Answer from LLM A */}
-                        <div className="left-component">
-                            <AnswerLeft></AnswerLeft>
-                        </div>
-                        {/* Answer from LLM B */}
-                        <div className='right-component'>
-                            <AnswerRight></AnswerRight>
-                        </div>
+                    {/* Answer from LLM A */}
+                    <div className="left-component">
+                        <AnswerLeft></AnswerLeft>
+                    </div>
+                    {/* Answer from LLM B */}
+                    <div className='right-component'>
+                        <AnswerRight></AnswerRight>
+                    </div>
                 </div>
             </div>
             {/* TODO: ADD NOTES FIELD */}

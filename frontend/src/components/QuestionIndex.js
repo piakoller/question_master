@@ -56,6 +56,7 @@ export function QuestionIndex({ children }) {
         left: getRandomUniqueIndices(llmName.length, 2),
         right: getRandomUniqueIndices(llmName.length, 2),
     });
+    const [neitherSelected, setNeitherSelected] = useState(false);
 
     const handleProgressUpdate = () => {
         setProgress(progress + 10);
@@ -158,6 +159,7 @@ export function QuestionIndex({ children }) {
                 return undefined; // Handle unexpected LLM names
         }
     }
+
     const nextQuestion = (answer) => {
         // Increment the index to show the next question
         // setQuestionIndex((prevIndex) => prevIndex + 1);
@@ -172,20 +174,26 @@ export function QuestionIndex({ children }) {
         handleProgressUpdate();
     };
 
-
     const handleAnswerSelection = async (selectedAnswer) => {
-        const notSelectedAnswer = llm.left === selectedAnswer ? llm.right : llm.left;
-        console.log('selected Answer: ' + selectedAnswer);
+        let notSelectedAnswer;
+        const votes = [llm.left, llm.right];
 
+        if (selectedAnswer === 'null') {
+            notSelectedAnswer= 'null';
+        } else {
+            notSelectedAnswer = llm.left === selectedAnswer ? llm.right : llm.left;
+        }
         try {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/save-answer`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' }, // Set headers if needed
-                body: JSON.stringify({ // Ensure data is properly formatted
+                body: JSON.stringify({
                     userId,
                     selectedAnswer,
                     notSelectedAnswer,
                     questionId,
+                    // neitherSelected,
+                    votes,
                 }),
             });
 
@@ -202,11 +210,8 @@ export function QuestionIndex({ children }) {
         } finally {
             // Reset selectedAnswer after the request is sent
             setSelectedAnswer(null);
+            setNeitherSelected(false);
         }
-        // return new Promise((resolve) => {
-        //     // Resolve the promise after completing answer selection logic
-        //     resolve();
-        // });
     };
 
 
@@ -233,6 +238,8 @@ export function QuestionIndex({ children }) {
                 questionId,
                 setQuestionId,
                 nextQuestion,
+                neitherSelected,
+                setNeitherSelected,
                 selectedAnswer,
                 setSelectedAnswer,
                 fetchLLM,

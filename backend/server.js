@@ -51,9 +51,7 @@ const saveDemographics = async (req, res) => {
         profession,
         employer,
         experience,
-        // medicalExpertise,
         theranosticExpertise,
-        // nuclearMedicineExpertise,
       };
       await user.save();
       res.json({ message: 'User demographics updated successfully' });
@@ -69,9 +67,7 @@ const saveDemographics = async (req, res) => {
           profession,
           employer,
           experience,
-          // medicalExpertise,
           theranosticExpertise,
-          // nuclearMedicineExpertise,
         },
       });
       await newUser.save();
@@ -82,7 +78,6 @@ const saveDemographics = async (req, res) => {
     res.status(500).send('Error saving user demographics');
   }
 };
-
 
 // Save additional Questions to the database
 const saveQuestion = async (req, res) => {
@@ -117,7 +112,7 @@ const saveQuestion = async (req, res) => {
   }
 };
 
-const saveUserLog = async (userId, questionId, selectedAnswer, notSelectedAnswer) => {
+const saveUserLog = async (userId, questionId, selectedAnswer, notSelectedAnswer, neither, votes) => {
   try {
     // Find the user by their userId
     let user = await UserLog.findOne({ userId });
@@ -133,7 +128,9 @@ const saveUserLog = async (userId, questionId, selectedAnswer, notSelectedAnswer
     const newLog = {
       WIN: selectedAnswer,
       LOSS: notSelectedAnswer,
+      neither,
       questionId,
+      votes,
     };
 
     // Add the new log to the user's llmBattle array
@@ -292,49 +289,49 @@ const kFactor = 32; // Adjust this value based on your desired volatility
 app.post('/api/save-answer', async (req, res) => {
   try {
     // Destructure selected and not selected answers directly from the request body
-    const { userId, selectedAnswer, notSelectedAnswer, questionId } = req.body;
-
-    console.log(selectedAnswer);
-
+    const { userId, selectedAnswer, notSelectedAnswer, questionId, votes } = req.body;
     // Check if either answer is undefined
     if (!selectedAnswer || !notSelectedAnswer) {
       return res.status(400).send('Both selectedAnswer and notSelectedAnswer are required in the request body');
     }
+    if (selectedAnswer === 'null') {
+      await saveUserLog(userId, questionId, null, null, true, votes);
+    } else {
+      // Find the selected and not selected models from the database
+      const [selectedModel, notSelectedModel] = await Promise.all([
+        Model.findOne({ name: selectedAnswer }),
+        Model.findOne({ name: notSelectedAnswer }),
+      ]);
 
-    // Find the selected and not selected models from the database
-    const [selectedModel, notSelectedModel] = await Promise.all([
-      Model.findOne({ name: selectedAnswer }),
-      Model.findOne({ name: notSelectedAnswer }),
-    ]);
+      // Check if both models were found
+      if (!selectedModel || !notSelectedModel) {
+        return res.status(404).send('One or both models not found');
+      }
 
-    // Check if both models were found
-    if (!selectedModel || !notSelectedModel) {
-      return res.status(404).send('One or both models not found');
+      // Calculate expected scores based on current ELO ratings
+      const expectedSelectedScore = 1 / (1 + Math.pow(10, (notSelectedModel.eloScore - selectedModel.eloScore) / 400)); // ELO formula
+
+      // Update ELO scores for both models
+      const updatedSelectedElo = Math.round(selectedModel.eloScore + kFactor * (1 - expectedSelectedScore));
+      const updatedNotSelectedElo = Math.round(notSelectedModel.eloScore + kFactor * expectedSelectedScore);
+
+      // Update models in the database with wins/losses, votes, and ELO
+      await Promise.all([
+        Model.findOneAndUpdate(
+          { _id: selectedModel._id }, // Use _id for unique identification
+          { $inc: { wins: 1, votes: 1 }, eloScore: updatedSelectedElo } // Update wins, votes, and ELO
+        ),
+        Model.findOneAndUpdate(
+          { _id: notSelectedModel._id }, // Use _id for unique identification
+          { $inc: { losses: 1, votes: 1 }, eloScore: updatedNotSelectedElo } // Update losses, votes, and ELO
+        ),
+      ]);
+      // console.log('WIN: "' + selectedModel.name + '"; LOSS: "' + notSelectedModel.name + '";');
+      await saveUserLog(userId, questionId, selectedAnswer, notSelectedAnswer, false, votes);
     }
 
-    // Calculate expected scores based on current ELO ratings
-    const expectedSelectedScore = 1 / (1 + Math.pow(10, (notSelectedModel.eloScore - selectedModel.eloScore) / 400)); // ELO formula
-
-    // Update ELO scores for both models
-    const updatedSelectedElo = Math.round(selectedModel.eloScore + kFactor * (1 - expectedSelectedScore));
-    const updatedNotSelectedElo = Math.round(notSelectedModel.eloScore + kFactor * expectedSelectedScore);
-
-    // Update models in the database with wins/losses, votes, and ELO
-    await Promise.all([
-      Model.findOneAndUpdate(
-        { _id: selectedModel._id }, // Use _id for unique identification
-        { $inc: { wins: 1, votes: 1 }, eloScore: updatedSelectedElo } // Update wins, votes, and ELO
-      ),
-      Model.findOneAndUpdate(
-        { _id: notSelectedModel._id }, // Use _id for unique identification
-        { $inc: { losses: 1, votes: 1 }, eloScore: updatedNotSelectedElo } // Update losses, votes, and ELO
-      ),
-    ]);
-
     // Save the user log to the users collection
-    await saveUserLog(userId, questionId, selectedAnswer, notSelectedAnswer);
-
-    console.log('WIN: "' + selectedModel.name + '"; LOSS: "' + notSelectedModel.name + '";');
+    // await saveUserLog(userId, questionId, selectedAnswer, notSelectedAnswer, neitherSelected);
 
     res.status(200).send('Answers saved and ELO scores updated'); // Send success message with updated information
   } catch (error) {

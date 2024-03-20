@@ -27,7 +27,7 @@ const Question = () => {
         // setNumQuestions(data.length - 1);
 
         setQuestions(filteredQuestions);
-        setNumQuestions(filteredQuestions.length);
+        setNumQuestions(filteredQuestions.length-1);
 
         // console.log(data.language);
       } catch (error) {
