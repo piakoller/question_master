@@ -20,14 +20,12 @@ const userSchema = new mongoose.Schema({
       profession: String,
       employer: String,
       experience: Number,
-      // medicalExpertise: Number,
       theranosticExpertise: Number,
-      // nuclearMedicineExpertise:Number,
     },
     llmBattle: [
       {
-        selectedLlm: String,
-        // questionIndex: Number,
+        WIN: String,
+        LOSS: String,
         questionId: String,
       },
     ],

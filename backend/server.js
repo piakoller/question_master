@@ -9,8 +9,6 @@ const cors = require('cors');
 
 const fs = require('fs').promises; // Use promises for asynchronous operations
 
-const router = express.Router()
-
 const app = express();
 // const port = process.env.PORT || 3000;
 const port = 3000;
@@ -119,7 +117,7 @@ const saveQuestion = async (req, res) => {
   }
 };
 
-const saveUserLog = async (userId, questionId, selectedAnswer) => {
+const saveUserLog = async (userId, questionId, selectedAnswer, notSelectedAnswer) => {
   try {
     // Find the user by their userId
     let user = await UserLog.findOne({ userId });
@@ -133,7 +131,8 @@ const saveUserLog = async (userId, questionId, selectedAnswer) => {
 
     // Create a new log entry
     const newLog = {
-      selectedLlm: selectedAnswer,
+      WIN: selectedAnswer,
+      LOSS: notSelectedAnswer,
       questionId,
     };
 
@@ -181,17 +180,17 @@ app.post('/api/generate-user-id', async (req, res) => {
   }
 });
 
-// Route to handle log data (replace with your specific logic)
-app.post('/api/log', async (req, res) => {
-  const { userId = generateUserId(), questionIndex, questionId, selectedAnswer } = req.body;
+// // Route to handle log data (replace with your specific logic)
+// app.post('/api/log', async (req, res) => {
+//   const { userId = generateUserId(), questionIndex, questionId, selectedAnswer, notSelectedAnswer } = req.body;
 
-  try {
-    await saveUserLog(userId, questionIndex, questionId, selectedAnswer);
-    res.json({ message: 'User log saved successfully' });
-  } catch (error) {
-    res.status(500).send('Error saving user log');
-  }
-});
+//   try {
+//     await saveUserLog(userId, questionIndex, questionId, selectedAnswer, notSelectedAnswer);
+//     res.json({ message: 'User log saved successfully' });
+//   } catch (error) {
+//     res.status(500).send('Error saving user log');
+//   }
+// });
 
 app.get('/api/get-user-data', async (req, res) => {
   try {
@@ -333,7 +332,7 @@ app.post('/api/save-answer', async (req, res) => {
     ]);
 
     // Save the user log to the users collection
-    await saveUserLog(userId, questionId, selectedAnswer);
+    await saveUserLog(userId, questionId, selectedAnswer, notSelectedAnswer);
 
     console.log('WIN: "' + selectedModel.name + '"; LOSS: "' + notSelectedModel.name + '";');
 
