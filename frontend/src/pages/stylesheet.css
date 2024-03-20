@@ -7,6 +7,12 @@
   text-align: center;
   padding-bottom: 1%;
 }
+.title {
+  font-size: 4rem;
+}
+h2 {
+  text-align: left;
+}
 .text {
   text-align: justify;
   padding: 5%;
@@ -53,7 +59,6 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 30rem;
   grid-gap: 5% 5%;
 }
 
@@ -73,24 +78,18 @@
   outline: #202124;
   font: inherit;
   cursor: pointer;
-  background: none;
+  /* background: none; */
   padding: 5%;
   text-align: left !important;
-
-
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-
   padding: 5%;
-  height: 100%;
   text-align: justify;
   height: 25rem;
-
   align-items: center;
   background-clip: padding-box;
   border: 1px solid transparent;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  cursor: pointer;
   display: inline-flex;
   line-height: 1.25;
   margin: 0;
@@ -101,7 +100,8 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: baseline;
-  width: auto;
+  /* width: auto; */
+  width: 100%;
   height: auto;
 }
 
@@ -128,12 +128,11 @@
 
 .button {
   /* background-color: #f8f9fa; */
-  border: 1px solid #f8f9fa;
-  border-radius: 5px;
+  border: 1px solid #dadce0;
+  border-radius: 0.5rem;
   /* color: #3c4043; */
   cursor: pointer;
-  font-family: arial, sans-serif;
-  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;  font-size: 14px;
   height: 36px;
   line-height: 27px;
   min-width: 54px;
@@ -150,7 +149,7 @@
 .button:hover {
   border-color: #dadce0;
   box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px;
-  color: #202124;
+  color: #4285f4;
 }
 
 .button:focus {
@@ -158,10 +157,19 @@
   outline: none;
 }
 
-.impressum {
-  
+.table .MuiTableCell-root {
+  font-size: inherit;
+  font: inherit;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;}
+
+.tablehead .MuiTableCell-root {
+  font-weight: bold;
+  text-align: center;
+  background-color: #dadce0;
 }
+
 
 .footer {
   padding-top: 5%;
+  margin-top: auto;
 }

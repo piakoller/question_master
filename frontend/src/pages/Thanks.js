@@ -12,7 +12,6 @@ import ListItemText from "@mui/material/ListItemText";
 
 import './stylesheet.css';
 
-
 const Thanks = () => {
     const { userId, resetStudyState } = useData();
 
@@ -54,7 +53,7 @@ const Thanks = () => {
         <div className="page">
             <div className="headline">
                 <h1>Thank you for participating in this User Study!</h1>
-                <p>Are there any additional questions you think Health Care People might ask about ITM, theranostic or nudlear medicine?</p>
+                <p>Are there any additional questions you think Health Care People might ask about ITM, theranostic or nuclear medicine?</p>
             </div>
             <Grid container spacing={2}>
                 <Grid item xs={8}>
