@@ -168,10 +168,11 @@ export function QuestionIndex({ children }) {
         });
 
         fetchLLM(answer);
-        if (answer) {
+
+        if (answer !== 'demographics'){
             handleAnswerSelection(answer);
+            handleProgressUpdate();
         }
-        handleProgressUpdate();
     };
 
     const handleAnswerSelection = async (selectedAnswer) => {

@@ -19,7 +19,7 @@ import './stylesheet.css';
 const Demographics = () => {
     // const { userId } = useParams();
 
-    const { setUserId, userId, language, setLanguage, nextQuestion,
+    const { userId, language, setLanguage, nextQuestion,
         age, setAge,
         gender, setGender,
         education, setEducation,
@@ -27,14 +27,6 @@ const Demographics = () => {
         employer, setEmployer,
         experience, setExperience,
         theranosticExpertise, setTheranosticExpertise, } = useData();
-
-    // useEffect(() => {
-    //     if (userId) {
-    //         setUserId(userId);
-    //     } else {
-    //         // Handle missing userId case, e.g., set a default value or display a message
-    //     }
-    // }, [userId]);
 
     const languages = [
         { value: 'german', label: 'German' },
@@ -107,7 +99,7 @@ const Demographics = () => {
 
             if (response.ok) {
                 console.log('Demographics submitted successfully');
-                nextQuestion(); // Update progress after successful submission
+                nextQuestion('demographics'); // Update progress after successful submission
             } else {
                 console.error('Error submitting demographics:', await response.text());
             }

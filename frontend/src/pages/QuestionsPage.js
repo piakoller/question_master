@@ -5,6 +5,8 @@ import './stylesheet.css'
 import { Link, useParams } from 'react-router-dom';
 
 import { useData } from '../components/QuestionIndex';
+import { useNavigate } from 'react-router-dom';
+
 import Footer from '../components/Footer';
 
 import Question from '../components/Question'
@@ -13,9 +15,10 @@ import AnswerRight from "../components/AnswersRight";
 import ProgressBar from '../components/ProgressBar';
 
 const QuestionsPage = () => {
-    const { fetchLLM, setUserId, setNeitherSelected, nextQuestion } = useData();
+    const { fetchLLM, setUserId, setNeitherSelected, nextQuestion, isStudyFinished } = useData();
     const { userId } = useParams();
 
+    const navigate = useNavigate();
 
     useEffect(() => {
         setUserId(userId);
@@ -28,6 +31,10 @@ const QuestionsPage = () => {
 
     const handleClick = () => {
         setNeitherSelected(true);
+        if (isStudyFinished) {
+            navigate('/thank-you'); // Navigate to thank-you page if study is finished
+            return;
+        }
         nextQuestion("null");
     }
 
