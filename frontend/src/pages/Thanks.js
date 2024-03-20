@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 
 import { useData } from '../components/QuestionIndex';
+import Footer from '../components/Footer';
 
 import TextField from "@mui/material/TextField";
 import Grid from '@mui/material/Grid';
@@ -10,7 +11,6 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 
 import './stylesheet.css';
-
 
 const Thanks = () => {
     const { userId, resetStudyState } = useData();
@@ -53,7 +53,7 @@ const Thanks = () => {
         <div className="page">
             <div className="headline">
                 <h1>Thank you for participating in this User Study!</h1>
-                <p>Are there any additional questions you think Health Care People might ask about ITM, theranostic or nudlear medicine?</p>
+                <p>Are there any additional questions you think Health Care People might ask about ITM, theranostic or nuclear medicine?</p>
             </div>
             <Grid container spacing={2}>
                 <Grid item xs={8}>
@@ -82,9 +82,10 @@ const Thanks = () => {
             ) : (
                 <p>No additional questions added yet.</p>
             )}
-            <Link to='/study'>
+            <Link to={`/study/${userId}`}>
                 <button className='button blue' onClick={resetStudyState}>Restart User Study</button>
             </Link>
+            <Footer />
         </div>
     );
 };

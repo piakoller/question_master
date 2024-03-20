@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { useData } from '../components/QuestionIndex';
+import Footer from '../components/Footer';
 
 import React, { useState } from "react";
 import './stylesheet.css'
@@ -40,10 +41,11 @@ const Home = () => {
     return (
         <div className='page'>
             <div className='headline'>
+                <h1 className='title'>QUESTION MASTER</h1>
                 <h1>Help Us Improve Educational Content in Theranostic and Nuclear Medicine!</h1>
+                <p>This user study aims to improve educational materials related to theranostic nuclear medicine.</p>
             </div>
             <div className='text'>
-                <p>This user study aims to improve educational materials related to theranostic nuclear medicine.</p>
                 <h2>Why Your Input Matters:</h2>
                 <p>We are developing new resources to educate people about this exciting field.  Your participation will help us ensure the information is clear, accurate, and easy to understand.</p>
                 <h2>What to Expect:</h2>
@@ -65,11 +67,12 @@ const Home = () => {
                 <label htmlFor="understand">I confirm that I have read and understood the information provided.</label>
             </div>
             {/* Disable button if not checked */}
-            <Link to="/demographics">
+            <Link to={`/demographics/${userId}`}>
                 <button className='button' disabled={!isChecked} onClick={startUserStudy}>
                     {userId ? 'Continue the User Study' : 'Start the User Study'}
                 </button>
             </Link>
+            <Footer />
         </div>
     );
 };

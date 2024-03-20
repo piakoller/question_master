@@ -9,10 +9,9 @@ const cors = require('cors');
 
 const fs = require('fs').promises; // Use promises for asynchronous operations
 
-const router = express.Router()
-
 const app = express();
-const port = process.env.PORT || 4000;
+// const port = process.env.PORT || 3000;
+const port = 3000;
 
 // Enable CORS
 app.use(cors());
@@ -37,7 +36,7 @@ const generateUserId = () => uuidv4();
 // Save demographics data to the database
 const saveDemographics = async (req, res) => {
   try {
-    const { userId, language, age, gender, education, profession, employer, theranosticExpertise } = req.body;
+    const { userId, language, age, gender, education, profession, employer, experience, theranosticExpertise } = req.body;
 
     const user = await UserLog.findOne({ userId });
 
@@ -51,16 +50,15 @@ const saveDemographics = async (req, res) => {
         language,
         profession,
         employer,
-        // medicalExpertise,
+        experience,
         theranosticExpertise,
-        // nuclearMedicineExpertise,
       };
       await user.save();
       res.json({ message: 'User demographics updated successfully' });
     } else {
       // Create a new user if not found
       const newUser = new UserLog({
-        userId: req.userId,
+        userId,
         demographics: {
           age,
           gender,
@@ -68,9 +66,8 @@ const saveDemographics = async (req, res) => {
           language,
           profession,
           employer,
-          // medicalExpertise,
+          experience,
           theranosticExpertise,
-          // nuclearMedicineExpertise,
         },
       });
       await newUser.save();
@@ -81,7 +78,6 @@ const saveDemographics = async (req, res) => {
     res.status(500).send('Error saving user demographics');
   }
 };
-
 
 // Save additional Questions to the database
 const saveQuestion = async (req, res) => {
@@ -100,7 +96,6 @@ const saveQuestion = async (req, res) => {
       newQuestion: newQuestion,
     };
     if (user) {
-      console.log('in user');
       // Update the user's newQuestion field in demographics
       user.newQuestions.push(newLog);
 
@@ -117,7 +112,7 @@ const saveQuestion = async (req, res) => {
   }
 };
 
-const saveUserLog = async (userId, questionId, selectedAnswer) => {
+const saveUserLog = async (userId, questionId, selectedAnswer, notSelectedAnswer, neither, votes) => {
   try {
     // Find the user by their userId
     let user = await UserLog.findOne({ userId });
@@ -131,8 +126,11 @@ const saveUserLog = async (userId, questionId, selectedAnswer) => {
 
     // Create a new log entry
     const newLog = {
-      selectedLlm: selectedAnswer,
+      WIN: selectedAnswer,
+      LOSS: notSelectedAnswer,
+      neither,
       questionId,
+      votes,
     };
 
     // Add the new log to the user's llmBattle array
@@ -157,14 +155,16 @@ app.post('/api/generate-user-id', async (req, res) => {
     const newUser = new UserLog({
       userId,
       demographics: {
-        age: null,
-        gender: null,
-        education: null,
-        medicalExpertise: null,
-        theranosticExpertise: null, // Add this line
-        nuclearMedicineExpertise: null,
+        age: '',
+        gender: '',
+        education: '',
+        language: '',
+        profession: '',
+        employer: '',
+        experience: '',
+        theranosticExpertise: '',
+        llmBattle: [],
       },
-      llmBattle: [],
     });
 
     await newUser.save();
@@ -177,15 +177,32 @@ app.post('/api/generate-user-id', async (req, res) => {
   }
 });
 
-// Route to handle log data (replace with your specific logic)
-app.post('/api/log', async (req, res) => {
-  const { userId = generateUserId(), questionIndex, questionId, selectedAnswer } = req.body;
+// // Route to handle log data (replace with your specific logic)
+// app.post('/api/log', async (req, res) => {
+//   const { userId = generateUserId(), questionIndex, questionId, selectedAnswer, notSelectedAnswer } = req.body;
 
+//   try {
+//     await saveUserLog(userId, questionIndex, questionId, selectedAnswer, notSelectedAnswer);
+//     res.json({ message: 'User log saved successfully' });
+//   } catch (error) {
+//     res.status(500).send('Error saving user log');
+//   }
+// });
+
+app.get('/api/get-user-data', async (req, res) => {
   try {
-    await saveUserLog(userId, questionIndex, questionId, selectedAnswer);
-    res.json({ message: 'User log saved successfully' });
+    const userId = req.query.userId;
+    const user = await UserLog.findOne({ userId: userId });
+
+    if (user) {
+      res.json(user);
+    } else {
+      console.error("User not found in database");
+      res.status(404).json({ message: "User not found" });
+    }
   } catch (error) {
-    res.status(500).send('Error saving user log');
+    console.error("Error fetching user data:", error);
+    res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
@@ -272,49 +289,49 @@ const kFactor = 32; // Adjust this value based on your desired volatility
 app.post('/api/save-answer', async (req, res) => {
   try {
     // Destructure selected and not selected answers directly from the request body
-    const { userId, selectedAnswer, notSelectedAnswer, questionId } = req.body;
-
-    console.log(selectedAnswer);
-
+    const { userId, selectedAnswer, notSelectedAnswer, questionId, votes } = req.body;
     // Check if either answer is undefined
     if (!selectedAnswer || !notSelectedAnswer) {
       return res.status(400).send('Both selectedAnswer and notSelectedAnswer are required in the request body');
     }
+    if (selectedAnswer === 'null') {
+      await saveUserLog(userId, questionId, null, null, true, votes);
+    } else {
+      // Find the selected and not selected models from the database
+      const [selectedModel, notSelectedModel] = await Promise.all([
+        Model.findOne({ name: selectedAnswer }),
+        Model.findOne({ name: notSelectedAnswer }),
+      ]);
 
-    // Find the selected and not selected models from the database
-    const [selectedModel, notSelectedModel] = await Promise.all([
-      Model.findOne({ name: selectedAnswer }),
-      Model.findOne({ name: notSelectedAnswer }),
-    ]);
+      // Check if both models were found
+      if (!selectedModel || !notSelectedModel) {
+        return res.status(404).send('One or both models not found');
+      }
 
-    // Check if both models were found
-    if (!selectedModel || !notSelectedModel) {
-      return res.status(404).send('One or both models not found');
+      // Calculate expected scores based on current ELO ratings
+      const expectedSelectedScore = 1 / (1 + Math.pow(10, (notSelectedModel.eloScore - selectedModel.eloScore) / 400)); // ELO formula
+
+      // Update ELO scores for both models
+      const updatedSelectedElo = Math.round(selectedModel.eloScore + kFactor * (1 - expectedSelectedScore));
+      const updatedNotSelectedElo = Math.round(notSelectedModel.eloScore + kFactor * expectedSelectedScore);
+
+      // Update models in the database with wins/losses, votes, and ELO
+      await Promise.all([
+        Model.findOneAndUpdate(
+          { _id: selectedModel._id }, // Use _id for unique identification
+          { $inc: { wins: 1, votes: 1 }, eloScore: updatedSelectedElo } // Update wins, votes, and ELO
+        ),
+        Model.findOneAndUpdate(
+          { _id: notSelectedModel._id }, // Use _id for unique identification
+          { $inc: { losses: 1, votes: 1 }, eloScore: updatedNotSelectedElo } // Update losses, votes, and ELO
+        ),
+      ]);
+      // console.log('WIN: "' + selectedModel.name + '"; LOSS: "' + notSelectedModel.name + '";');
+      await saveUserLog(userId, questionId, selectedAnswer, notSelectedAnswer, false, votes);
     }
 
-    // Calculate expected scores based on current ELO ratings
-    const expectedSelectedScore = 1 / (1 + Math.pow(10, (notSelectedModel.eloScore - selectedModel.eloScore) / 400)); // ELO formula
-
-    // Update ELO scores for both models
-    const updatedSelectedElo = Math.round(selectedModel.eloScore + kFactor * (1 - expectedSelectedScore));
-    const updatedNotSelectedElo = Math.round(notSelectedModel.eloScore + kFactor * expectedSelectedScore);
-
-    // Update models in the database with wins/losses, votes, and ELO
-    await Promise.all([
-      Model.findOneAndUpdate(
-        { _id: selectedModel._id }, // Use _id for unique identification
-        { $inc: { wins: 1, votes: 1 }, eloScore: updatedSelectedElo } // Update wins, votes, and ELO
-      ),
-      Model.findOneAndUpdate(
-        { _id: notSelectedModel._id }, // Use _id for unique identification
-        { $inc: { losses: 1, votes: 1 }, eloScore: updatedNotSelectedElo } // Update losses, votes, and ELO
-      ),
-    ]);
-
     // Save the user log to the users collection
-    await saveUserLog(userId, questionId, selectedAnswer);
-
-    console.log('WIN: "' + selectedModel.name + '"; LOSS: "' + notSelectedModel.name + '";');
+    // await saveUserLog(userId, questionId, selectedAnswer, notSelectedAnswer, neitherSelected);
 
     res.status(200).send('Answers saved and ELO scores updated'); // Send success message with updated information
   } catch (error) {

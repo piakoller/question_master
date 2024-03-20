@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 
 const gemini_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-gemini`;
 const gpt_3_5_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-gpt-3-5`;
@@ -16,6 +16,18 @@ export function useData() {
 
 export function QuestionIndex({ children }) {
 
+    // Helper function to get two random unique indices within a range
+    function getRandomUniqueIndices(range, numIndices) {
+        const indices = [];
+        while (indices.length < numIndices) {
+            const randomIndex = Math.floor(Math.random() * range);
+            if (!indices.includes(randomIndex)) {
+                indices.push(randomIndex);
+            }
+        }
+        return indices;
+    }
+
     const [userId, setUserId] = useState(null);
     const [language, setLanguage] = useState('');
     const [numQuestions, setNumQuestions] = useState(0);
@@ -31,12 +43,12 @@ export function QuestionIndex({ children }) {
 
     const llmName = ['gemini 1.0', 'GPT-3.5', 'GPT-4', 'Claude-3 sonnet', 'Claude-3 opus', 'Mistral Large', 'Mistral Medium'];
     // State variables for progress and study completion
-    const [progress, setProgress] = useState(0);
+    const [progress, setProgress] = useState(10);
     const [isStudyFinished, setIsStudyFinished] = useState(false);
     // Constants for question count and maximum questions
     const MAX_QUESTIONS = 10;
 
-    const [questionIndex, setQuestionIndex] = useState(0);
+    const [questionIndex, setQuestionIndex] = useState(getRandomUniqueIndices(numQuestions, 1));
     const [questionId, setQuestionId] = useState('');
     const [selectedAnswer, setSelectedAnswer] = useState("nothing selected");
     const [llm, setLLM] = useState("");
@@ -44,22 +56,55 @@ export function QuestionIndex({ children }) {
         left: getRandomUniqueIndices(llmName.length, 2),
         right: getRandomUniqueIndices(llmName.length, 2),
     });
+    const [neitherSelected, setNeitherSelected] = useState(false);
 
     const handleProgressUpdate = () => {
-        if (progress < MAX_QUESTIONS * 10) { // Check if progress hasn't reached the maximum
-            setProgress(progress + 10);
-        } else {
+        setProgress(progress + 10);
+        const currentQuestion = (progress / MAX_QUESTIONS);
+        if (currentQuestion >= 9) {
             setIsStudyFinished(true);
         }
     };
     const resetStudyState = () => {
-        setProgress(0);
-        setQuestionIndex(0);
+        setProgress(10);
+        setQuestionIndex(getRandomUniqueIndices(numQuestions, 1));
         setIsStudyFinished(false);
         setSelectedAnswer("nothing selected");
         setLLM({});
         setLLMPath({ left: [], right: [] });
     };
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            if (userId) {
+                try {
+                    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/get-user-data?userId=${userId}`, {
+                        method: 'GET',
+                        headers: { 'Content-Type': 'application/json' },
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        setUserId(data.userId);
+                        setLanguage(data.demographics.language);
+                        setAge(data.demographics.age);
+                        setGender(data.demographics.gender);
+                        setEducation(data.demographics.education);
+                        setProfession(data.demographics.profession);
+                        setEmployer(data.demographics.employer);
+                        setExperience(data.demographics.experience);
+                        setTheranosticExpertise(data.demographics.theranosticExpertise);
+                    } else {
+                        console.error('Error fetching user data:', response.statusText);
+                    }
+                } catch (error) {
+                    console.error('Error sending request:', error);
+                }
+            }
+        };
+
+        fetchUserData();
+    }, [userId]);
 
     const fetchLLM = () => {
         // Randomly choose two distinct LLM indices (prevent duplicates)
@@ -69,7 +114,6 @@ export function QuestionIndex({ children }) {
         const llmRight = llmName[llmIndices[1]];
 
         setLLM({ left: llmLeft, right: llmRight });
-        // console.log(llm.left);
 
 
         // Set LLM paths based on chosen names
@@ -82,8 +126,7 @@ export function QuestionIndex({ children }) {
             `LLMs set to:
             Left: ${llmLeft} (${leftPath}),
             Right: ${llmRight} (${rightPath})`
-          );
-        // console.log("Selected answer:",);
+        );
     };
 
     // set random questionIndex according to german, english or english and german question
@@ -94,18 +137,6 @@ export function QuestionIndex({ children }) {
             callback(questionIndices); // Call the provided callback with the new index
         }
     };
-
-    // Helper function to get two random unique indices within a range
-    function getRandomUniqueIndices(range, numIndices) {
-        const indices = [];
-        while (indices.length < numIndices) {
-            const randomIndex = Math.floor(Math.random() * range);
-            if (!indices.includes(randomIndex)) {
-                indices.push(randomIndex);
-            }
-        }
-        return indices;
-    }
 
     // Function to choose API path based on LLM name
     function chooseLLMPath(llm) {
@@ -128,6 +159,7 @@ export function QuestionIndex({ children }) {
                 return undefined; // Handle unexpected LLM names
         }
     }
+
     const nextQuestion = (answer) => {
         // Increment the index to show the next question
         // setQuestionIndex((prevIndex) => prevIndex + 1);
@@ -142,20 +174,26 @@ export function QuestionIndex({ children }) {
         handleProgressUpdate();
     };
 
-
     const handleAnswerSelection = async (selectedAnswer) => {
-        const notSelectedAnswer = llm.left === selectedAnswer ? llm.right : llm.left;
-        console.log('selected Answer: ' + selectedAnswer);
+        let notSelectedAnswer;
+        const votes = [llm.left, llm.right];
 
+        if (selectedAnswer === 'null') {
+            notSelectedAnswer= 'null';
+        } else {
+            notSelectedAnswer = llm.left === selectedAnswer ? llm.right : llm.left;
+        }
         try {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/save-answer`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' }, // Set headers if needed
-                body: JSON.stringify({ // Ensure data is properly formatted
+                body: JSON.stringify({
                     userId,
                     selectedAnswer,
                     notSelectedAnswer,
                     questionId,
+                    // neitherSelected,
+                    votes,
                 }),
             });
 
@@ -172,11 +210,8 @@ export function QuestionIndex({ children }) {
         } finally {
             // Reset selectedAnswer after the request is sent
             setSelectedAnswer(null);
+            setNeitherSelected(false);
         }
-        // return new Promise((resolve) => {
-        //     // Resolve the promise after completing answer selection logic
-        //     resolve();
-        // });
     };
 
 
@@ -196,12 +231,15 @@ export function QuestionIndex({ children }) {
                 employer, setEmployer,
                 experience, setExperience,
                 theranosticExpertise, setTheranosticExpertise,
+                MAX_QUESTIONS,
                 progress,
                 handleProgressUpdate,
                 questionIndex,
                 questionId,
                 setQuestionId,
                 nextQuestion,
+                neitherSelected,
+                setNeitherSelected,
                 selectedAnswer,
                 setSelectedAnswer,
                 fetchLLM,

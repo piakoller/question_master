@@ -27,7 +27,7 @@ const Question = () => {
         // setNumQuestions(data.length - 1);
 
         setQuestions(filteredQuestions);
-        setNumQuestions(filteredQuestions.length);
+        setNumQuestions(filteredQuestions.length-1);
 
         // console.log(data.language);
       } catch (error) {
@@ -49,7 +49,7 @@ const Question = () => {
       {questions.length > 0 && questionIndex < questions.length ? (
         <>
           <h1>{questions[questionIndex].question}</h1>
-          {questions[questionIndex].questionId}
+          {/* {questions[questionIndex].questionId} */}
         </>
       ) : (
         <p>Loading...</p>
