@@ -4,15 +4,7 @@ import React, { useEffect } from 'react';
 import { useData } from '../components/QuestionIndex';
 import Footer from '../components/Footer';
 
-import Box from '@mui/material/Box';
-import Slider from '@mui/material/Slider';
-import TextField from '@mui/material/TextField';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import Grid from '@mui/material/Grid';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-
+import { Grid, FormControl, Select, MenuItem, TextField, Slider, Box, InputLabel } from '@mui/material';
 
 import './stylesheet.css';
 
@@ -121,22 +113,16 @@ const Demographics = () => {
 
     return (
         <div className='page'>
-            {/* <ProgressBar></ProgressBar> */}
             <div className='headline'>
                 <h1>Personal Information</h1>
             </div>
-            <Link to={`/study/${userId}`}>
-                <button className='button right blue' onClick={submitDemographics}>
-                    Next
-                </button>
-            </Link>
             <div className='text'>
                 <div className='info-container'>
-                    {/* Age */}
+                    {/* Age, Gender, Education, and Language */}
                     <Grid container spacing={2}>
-                        <Grid item xs={3}>
+                        <Grid item xs={12} sm={6} md={3}>
+                            {/* Age */}
                             <FormControl required sx={{ m: 1, minWidth: '100%' }}>
-
                                 <TextField
                                     label="Age"
                                     type="number"
@@ -145,8 +131,8 @@ const Demographics = () => {
                                 />
                             </FormControl>
                         </Grid>
-                        {/* Gender */}
-                        <Grid item xs={3}>
+                        <Grid item xs={12} sm={6} md={3}>
+                            {/* Gender */}
                             <FormControl required sx={{ m: 1, minWidth: '100%' }}>
                                 <InputLabel id="gender-label">Gender</InputLabel>
                                 <Select
@@ -161,12 +147,12 @@ const Demographics = () => {
                                             {option.label}
                                         </MenuItem>
                                     ))}
+                                    {/* Gender options */}
                                 </Select>
                             </FormControl>
                         </Grid>
-
-                        {/* Education */}
-                        <Grid item xs={3}>
+                        <Grid item xs={12} sm={6} md={3}>
+                            {/* Education */}
                             <FormControl required sx={{ m: 1, minWidth: '100%' }}>
                                 <InputLabel id="education-label">Education</InputLabel>
                                 <Select
@@ -181,11 +167,12 @@ const Demographics = () => {
                                             {option.label}
                                         </MenuItem>
                                     ))}
+                                    {/* Education options */}
                                 </Select>
                             </FormControl>
                         </Grid>
-                        {/* Language */}
-                        <Grid item xs={3}>
+                        <Grid item xs={12} sm={6} md={3}>
+                            {/* Language */}
                             <FormControl required sx={{ m: 1, minWidth: '100%' }}>
                                 <InputLabel id="language-label">Language of the Study</InputLabel>
                                 <Select
@@ -200,27 +187,17 @@ const Demographics = () => {
                                             {option.label}
                                         </MenuItem>
                                     ))}
+                                    {/* Language options */}
                                 </Select>
                             </FormControl>
                         </Grid>
                     </Grid>
                 </div>
-                {/* Description */}
-                <Grid container spacing={2}>
-                    <Grid item xs={4}>
-                        <p className='headline'>What is your <b>profession</b>?</p>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <p className='headline'>How many <b>years of experience</b> do you have in your profession?</p>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <p className='headline'>What is your current <b>employer</b>?</p>
-                    </Grid>
-                </Grid>
-                {/* Profession */}
-                <div className='profession-container'>
+                <div className='grid-field'>
                     <Grid container spacing={2}>
-                        <Grid item xs={4}>
+                        {/* Profession */}
+                        <Grid item xs={12} sm={6} md={4}>
+                            <p id="profession-label" className='headline'>What is your <b>profession</b>?</p>
                             <FormControl required sx={{ m: 1, minWidth: '100%' }}>
                                 <InputLabel id="profession-label">Profession</InputLabel>
                                 <Select
@@ -235,10 +212,13 @@ const Demographics = () => {
                                             {option.label}
                                         </MenuItem>
                                     ))}
+                                    {/* Profession options */}
                                 </Select>
                             </FormControl>
                         </Grid>
-                        <Grid item xs={4}>
+                        {/* Years of Experience */}
+                        <Grid item xs={12} sm={6} md={4}>
+                            <p className='headline'>How many <b>years of experience</b> do you have in your profession?</p>
                             <FormControl required sx={{ m: 1, minWidth: '100%' }}>
                                 <TextField
                                     label="Years of Experience"
@@ -248,7 +228,9 @@ const Demographics = () => {
                                 />
                             </FormControl>
                         </Grid>
-                        <Grid item xs={4}>
+                        {/* Employer */}
+                        <Grid item xs={12} sm={6} md={4}>
+                            <p className='headline'>What is your current <b>employer</b>?</p>
                             <FormControl required sx={{ m: 1, minWidth: '100%' }}>
                                 <InputLabel id="employer-label">Employer</InputLabel>
                                 <Select
@@ -263,17 +245,18 @@ const Demographics = () => {
                                             {option.label}
                                         </MenuItem>
                                     ))}
+                                    {/* Employer options */}
                                 </Select>
                             </FormControl>
                         </Grid>
                     </Grid>
                 </div>
                 <label>
-                    {/* Theranostics Expertise: */}
+                    {/* Theranostics Expertise */}
                     <div className='slider-container'>
-                        <Box sx={{ width: 500 }}>
+                        <Box sx={{ width: '100%' }}>
                             <p>On a scale of 1-10 what is your <b>expertise about theranostics</b>?</p>
-                            <Box sx={{ width: 500 }}>
+                            <Box sx={{ width: '100%' }}>
                                 <Slider
                                     aria-label="Temperature"
                                     defaultValue={5}
@@ -290,12 +273,15 @@ const Demographics = () => {
                         </Box>
                     </div>
                 </label>
-                <button onClick={handleSkip}>
-                    skip
-                </button>
+                <Link to={`/study/${userId}`}>
+                    <button className='button right blue' onClick={submitDemographics}>
+                        Next &rarr;
+                    </button>
+                </Link>
+                <button onClick={handleSkip}>skip</button>
             </div>
             <Footer />
-        </div >
+        </div>
     );
 };
 

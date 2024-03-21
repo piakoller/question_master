@@ -61,6 +61,17 @@ h2 {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 5% 5%;
 }
+.grid-field {
+  display: flex;
+}
+.css-mhc70k-MuiGrid-root {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: center;
+}
 
 .left-component {
   /* padding: 5%; */
