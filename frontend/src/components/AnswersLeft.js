@@ -47,18 +47,11 @@ const AnswerLeft = () => {
     nextQuestion(llm.left);
   };
 
-  // Function to format answers using marked.parse()
-  const formatAnswer = (answerText) => {
-    console.log('formattedAnswer');
-    const formattedText = answerText
-      .replace(/'/g, '"') // Replace single quotes with double quotes
-      .replace(/,/g, ', ') // Replace commas with comma and space
-      .replace(/\n\n/g, '<br/>') // Replace newlines with line breaks
-      .replace(/^\s*\*([\s\S]*?)$/gm, '<ul><li>$1</li></ul>') // Replace asterisks with unordered list
-      .replace(/^\s*-(?!-)([\s\S]*?)$/gm, '<li>$1</li>'); // Replace hyphens with list items
-
-    return formattedText;
-  };
+  const answerText = () => {
+    const text = answers[questionIndex].answer;
+    // console.log(text);
+    return text;
+  }
 
   return (
     <div>
@@ -66,7 +59,7 @@ const AnswerLeft = () => {
         <div>
           <p>{llm.left}</p>
           {answers.length > 0 && questionIndex < answers.length ? (
-            <ReactMarkdown>{answers[questionIndex].answer}</ReactMarkdown>
+            <ReactMarkdown>{answerText()}</ReactMarkdown>
           ) : (
             <p>Loading...</p>
           )}

@@ -45,14 +45,21 @@ const AnswerRight = () => {
     nextQuestion(llm.right);
   };
 
+  const answerText = () => {
+    const text = answers[questionIndex].answer;
+    // console.log(text);
+    return text;
+  }
+
   return (
     <div>
       <button className='answer' onClick={() => { handleClick() }}>
         <div>
           <p>{llm.right}</p>
+          { }
           {answers.length > 0 && questionIndex < answers.length ? (
             // <p dangerouslySetInnerHTML={{ __html: answers[questionIndex].answer.replace(/\n/g, '<br />') }} />
-            <ReactMarkdown>{answers[questionIndex].answer}</ReactMarkdown>
+            <ReactMarkdown>{answerText()}</ReactMarkdown>
           ) : (
             <p>Loading...</p>
           )}
