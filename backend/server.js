@@ -284,6 +284,18 @@ app.get('/api/get-mistral-medium', async (req, res) => {
   await handleCSVRequest('../public/data/Mistral_medium_EvaluationQuestions.csv', res, true);
 });
 
+app.get('/api/get-mixtral', async (req, res) => {
+  await handleCSVRequest('../public/data/Mixtral_EvaluationQuestions.csv', res, true);
+});
+
+app.get('/api/get-llama2', async (req, res) => {
+  await handleCSVRequest('../public/data/Llama2_EvaluationQuestions.csv', res, true);
+});
+
+app.get('/api/get-qwen', async (req, res) => {
+  await handleCSVRequest('../public/data/Qwen_EvaluationQuestions.csv', res, true);
+});
+
 const kFactor = 32; // Adjust this value based on your desired volatility
 
 app.post('/api/save-answer', async (req, res) => {

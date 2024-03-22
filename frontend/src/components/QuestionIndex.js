@@ -7,6 +7,11 @@ const claude_3_sonnet_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-claud
 const claude_3_opus_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-claude-3-opus`;
 const mistral_large_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-mistral-large`;
 const mistral_medium_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-mistral-medium`;
+const mixtral_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-mixtral`;
+const llama2_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-llama2`;
+const qwen_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-qwen`;
+
+
 
 const DataContext = createContext();
 
@@ -41,7 +46,9 @@ export function QuestionIndex({ children }) {
     const [experience, setExperience] = useState('');
     const [theranosticExpertise, setTheranosticExpertise] = useState(5);
 
-    const llmName = ['gemini 1.0', 'GPT-3.5', 'GPT-4', 'Claude-3 sonnet', 'Claude-3 opus', 'Mistral Large', 'Mistral Medium'];
+    // const llmName = ['gemini 1.0', 'GPT-3.5', 'GPT-4', 'Claude-3 sonnet', 'Claude-3 opus', 'Mistral Large', 'Mistral Medium', 'Mixtral', 'Llama2', 'Qwen'];
+    const llmName = ['gemini 1.0', 'GPT-3.5', 'GPT-4', 'Claude-3 sonnet', 'Claude-3 opus', 'Mistral Large', 'Mistral Medium', 'Mixtral'];
+    
     // State variables for progress and study completion
     const [progress, setProgress] = useState(10);
     const [isStudyFinished, setIsStudyFinished] = useState(false);
@@ -155,6 +162,12 @@ export function QuestionIndex({ children }) {
                 return mistral_large_path;
             case 'Mistral Medium':
                 return mistral_medium_path;
+            case 'Mixtral':
+                return mixtral_path;
+            case 'Llama2':
+                return llama2_path;
+            case 'Qwen':
+                return qwen_path;
             default:
                 return undefined; // Handle unexpected LLM names
         }
