@@ -187,7 +187,6 @@ const Demographics = () => {
                                     ))}
                                     {/* Language options */}
                                 </Select>
-                                {console.log(language)}
                             </FormControl>
                         </Grid>
                     </Grid>

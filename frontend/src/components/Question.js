@@ -7,7 +7,7 @@ const Question = () => {
   const [questions, setQuestions] = useState([]);
   const [error, setError] = useState(null);
 
-  const { questionIndex, setNumQuestions, setQuestionId, language } = useData();
+  const { questionIndex, setNumQuestions, questionId, setQuestionId, language } = useData();
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -27,7 +27,8 @@ const Question = () => {
         // setNumQuestions(data.length - 1);
 
         setQuestions(filteredQuestions);
-        setNumQuestions(filteredQuestions.length-1);
+        setNumQuestions(filteredQuestions.length);
+        setQuestionId(questions[questionIndex].questionId);
 
         // console.log(data.language);
       } catch (error) {
@@ -38,11 +39,17 @@ const Question = () => {
     fetchQuestions();
   }, [setNumQuestions, language]);
 
-  useEffect(() => {
-    if (questions.length > 0 && questionIndex < questions.length) {
-      setQuestionId(questions[questionIndex].questionId);
-    }
-  }, [questionIndex, questions, setQuestionId]);
+
+  // useEffect(() => {
+  //   if (questions.length > 0 && questionIndex < questions.length) {
+  //     console.log('questionIndex Question: ' + questionIndex);
+  //     setQuestionId(questions[questionIndex].questionId);
+  //     console.log('questionId Question: '+ questionId);
+  //   }
+  // }, []);
+  if (questions.length > 0 && questionIndex < questions.length) {
+    setQuestionId(questions[questionIndex].questionId);
+  }
 
   return (
     <div>
