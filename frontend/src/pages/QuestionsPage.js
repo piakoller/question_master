@@ -35,7 +35,6 @@ const QuestionsPage = () => {
         };
 
         fetchAnswers();
-        // eslint-disable-next-line
     }, []);
 
     const handleClick = () => {

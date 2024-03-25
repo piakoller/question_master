@@ -128,11 +128,13 @@ export function QuestionIndex({ children }) {
         const rightPath = chooseLLMPath(llmRight);
 
         setLLMPath({ left: leftPath, right: rightPath });
+        console.log(questionId);
 
         console.log(
             `LLMs set to:
-            Left: ${llmLeft} (${leftPath}),
-            Right: ${llmRight} (${rightPath})`
+            Left: ${llmLeft} (${questionId}),
+            Right: ${llmRight} (${questionId})
+            QuestionIndex: ${questionIndex}`
         );
     };
 
