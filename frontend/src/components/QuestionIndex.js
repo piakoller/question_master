@@ -33,7 +33,7 @@ export function QuestionIndex({ children }) {
         return indices;
     }
 
-    const [userId, setUserId] = useState(null);
+    const [userId, setUserId] = useState();
     const [language, setLanguage] = useState('');
     const [numQuestions, setNumQuestions] = useState(0);
 

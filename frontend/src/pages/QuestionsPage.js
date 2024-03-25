@@ -1,12 +1,13 @@
 // Filename - pages/QuestionsPage.js
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './stylesheet.css'
 import { Link, useParams } from 'react-router-dom';
 
 import { useData } from '../components/QuestionIndex';
 import { useNavigate } from 'react-router-dom';
 
+import Feedback from '../components/Feedback'
 import Footer from '../components/Footer';
 
 import Question from '../components/Question'
@@ -18,6 +19,13 @@ const QuestionsPage = () => {
     const { fetchLLM, setUserId, setNeitherSelected, nextQuestion, isStudyFinished } = useData();
     const { userId } = useParams();
 
+    const notesLabel = 'Enter your Comments or Feedback';
+    const buttonText = 'Submit';
+    const snackbarMessage = 'Your feedback has been submitted!';
+    const category = 'feedback';
+
+    const [questions, setQuestions] = useState([]); // Array to store user-added questions
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -27,6 +35,7 @@ const QuestionsPage = () => {
         };
 
         fetchAnswers();
+        // eslint-disable-next-line
     }, []);
 
     const handleClick = () => {
@@ -62,7 +71,16 @@ const QuestionsPage = () => {
                     </div>
                 </div>
             </div>
-            {/* TODO: ADD NOTES FIELD */}
+            {/* The user is able to add Notes or Feedback */}
+            <p><strong>Do you have any comments or feedback about the user study, the questions or the answers? <br />Your input helps us improve the user study. Please feel free to add them here:</strong></p>
+            <Feedback 
+                questions={questions} 
+                setQuestions={setQuestions} 
+                notesLabel={notesLabel} 
+                buttonText={buttonText} 
+                snackbarMessage={snackbarMessage}
+                category={category}
+            />
             <Footer />
         </div>
     );

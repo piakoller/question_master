@@ -74,14 +74,10 @@ h2 {
 }
 
 .left-component {
-  /* padding: 5%; */
-  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
   border-radius: 5px;
 }
 
 .right-component {
-  /* padding: 5%; */
-  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
   border-radius: 5px;
 }
 
@@ -168,6 +164,10 @@ h2 {
   outline: none;
 }
 
+.notes{
+  padding: 3%;
+}
+
 .table .MuiTableCell-root {
   font-size: inherit;
   font: inherit;
@@ -178,7 +178,6 @@ h2 {
   text-align: center;
   background-color: #dadce0;
 }
-
 
 .footer {
   padding-top: 5%;

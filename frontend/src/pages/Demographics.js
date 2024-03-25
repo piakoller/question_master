@@ -1,5 +1,5 @@
-import { Link, useParams } from 'react-router-dom';
-import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import React from 'react';
 
 import { useData } from '../components/QuestionIndex';
 import Footer from '../components/Footer';
@@ -9,8 +9,6 @@ import { Grid, FormControl, Select, MenuItem, TextField, Slider, Box, InputLabel
 import './stylesheet.css';
 
 const Demographics = () => {
-    // const { userId } = useParams();
-
     const { userId, language, setLanguage, nextQuestion,
         age, setAge,
         gender, setGender,

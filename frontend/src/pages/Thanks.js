@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 
 import { useData } from '../components/QuestionIndex';
+import Feedback from '../components/Feedback'
 import Footer from '../components/Footer';
 
-import TextField from "@mui/material/TextField";
-import Grid from '@mui/material/Grid';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -14,40 +13,12 @@ import './stylesheet.css';
 
 const Thanks = () => {
     const { userId, resetStudyState } = useData();
-
+    const notesLabel = 'Enter your addtional question';
+    const buttonText = 'Add Question';
+    const snackbarMessage = 'Your question has been submitted!';
+    const category = 'question';
 
     const [questions, setQuestions] = useState([]); // Array to store user-added questions
-    const [newQuestion, setNewQuestion] = useState(""); // State for the new question text
-
-    const handleAddQuestion = () => {
-        if (newQuestion.trim()) { // Check if question has content
-            setQuestions([...questions, newQuestion]); // Add question to state array
-            setNewQuestion(""); // Clear input field
-        }
-        submitQuestion();
-    };
-    // Function to submit data to backend
-    const submitQuestion = async () => {
-        try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/new-question/${userId}`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    userId,
-                    newQuestion
-                }),
-            });
-
-            if (response.ok) {
-                console.log('Question submitted successfully');
-            } else {
-                console.error('Error submitting question:', await response.text());
-            }
-        } catch (error) {
-            console.error('Error submitting question:', error);
-        }
-    };
-
 
     return (
         <div className="page">
@@ -55,22 +26,16 @@ const Thanks = () => {
                 <h1>Thank you for participating in this User Study!</h1>
                 <p>Are there any additional questions you think Health Care People might ask about ITM, theranostic or nuclear medicine?</p>
             </div>
-            <Grid container spacing={2}>
-                <Grid item xs={8}>
-                    <TextField
-                        label="Enter your question"
-                        value={newQuestion}
-                        onChange={(e) => setNewQuestion(e.target.value)}
-                        fullWidth
-                    />
-                </Grid>
-                <Grid item xs={4}>
-                    <button className='button blue' onClick={handleAddQuestion}>Add Question</button>
-
-                </Grid>
-            </Grid>
-
-            <h2>Added Questions</h2>
+            {/* The user is able to add addtional Questions to the Evaluation Dataset */}
+            <Feedback
+                questions={questions}
+                setQuestions={setQuestions}
+                notesLabel={notesLabel}
+                buttonText={buttonText}
+                snackbarMessage={snackbarMessage}
+                category={category}
+            />
+            <p><strong>Added Questions</strong></p>
             {questions.length > 0 ? (
                 <List dense={false}>
                     {questions.map((question, index) => (
@@ -82,6 +47,7 @@ const Thanks = () => {
             ) : (
                 <p>No additional questions added yet.</p>
             )}
+            <h2>Want to see more questions? Click "Restart User Study" to answer another set of 10 questions related to ITM, theranostic, or nuclear medicine.</h2>
             <Link to={`/study/${userId}`}>
                 <button className='button blue' onClick={resetStudyState}>Restart User Study</button>
             </Link>
