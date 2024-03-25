@@ -20,7 +20,7 @@ const Demographics = () => {
 
     const languages = [
         { value: 'german', label: 'German' },
-        { value: 'englisch', label: 'English' },
+        { value: 'english', label: 'English' },
         { value: 'both', label: 'German and English' }
     ]
 
@@ -187,6 +187,7 @@ const Demographics = () => {
                                     ))}
                                     {/* Language options */}
                                 </Select>
+                                {console.log(language)}
                             </FormControl>
                         </Grid>
                     </Grid>
