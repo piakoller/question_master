@@ -8,7 +8,6 @@ import ReactMarkdown from 'react-markdown';
 const AnswerRight = () => {
   const [answers, setAnswers] = useState([]);
   // const [currentAnswerIndex, setCurrentAnswerIndex] = useState(0);
-  const [error, setError] = useState(null);
 
   const { questionIndex, nextQuestion, fetchLLM, llm, llmPath, isStudyFinished } = useData();
   const navigate = useNavigate();
@@ -30,12 +29,13 @@ const AnswerRight = () => {
 
         setAnswers(data);
       } catch (error) {
-        setError(error.message);
+        console.error('Error fetching LLM', error);
       }
     };
 
     fetchQuestions();
-  }, [llmPath]);
+    // eslint-disable-next-line
+  }, [llmPath, fetchLLM]);
 
   const handleClick = () => {
     if (isStudyFinished) {
@@ -55,7 +55,7 @@ const AnswerRight = () => {
     <div>
       <button className='answer' onClick={() => { handleClick() }}>
         <div>
-          <p>{llm.right}</p>
+          {/* <p>{llm.right}</p> */}
           { }
           {answers.length > 0 && questionIndex < answers.length ? (
             // <p dangerouslySetInnerHTML={{ __html: answers[questionIndex].answer.replace(/\n/g, '<br />') }} />

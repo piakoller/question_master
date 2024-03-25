@@ -276,7 +276,8 @@ const Demographics = () => {
                         Next &rarr;
                     </button>
                 </Link>
-                <button onClick={handleSkip}>skip</button>
+                {/* skipping input fields */}
+                {/* <button onClick={handleSkip}>skip</button> */}
             </div>
             <Footer />
         </div>

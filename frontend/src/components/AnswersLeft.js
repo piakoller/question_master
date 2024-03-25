@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { useData } from './QuestionIndex';
 import { useNavigate } from 'react-router-dom';
 
-import { marked } from 'marked'
 import ReactMarkdown from 'react-markdown';
 
 const AnswerLeft = () => {
@@ -11,7 +10,6 @@ const AnswerLeft = () => {
   const navigate = useNavigate();
 
   const [answers, setAnswers] = useState([]);
-  const [error, setError] = useState(null);
 
   // const [isAnswerSelected, setIsAnswerSelected] = useState(false);
 
@@ -32,11 +30,12 @@ const AnswerLeft = () => {
 
         setAnswers(data);
       } catch (error) {
-        setError(error.message);
+        console.error('Error fetching LLM', error);
       }
     };
 
     fetchQuestions();
+    // eslint-disable-next-line
   }, [llmPath, fetchLLM]);
 
   const handleClick = () => {
@@ -57,7 +56,7 @@ const AnswerLeft = () => {
     <div>
       <button className='answer' onClick={() => { handleClick() }}>
         <div>
-          <p>{llm.left}</p>
+          {/* <p>{llm.left}</p> */}
           {answers.length > 0 && questionIndex < answers.length ? (
             <ReactMarkdown>{answerText()}</ReactMarkdown>
           ) : (
