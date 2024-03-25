@@ -79,13 +79,13 @@ const saveDemographics = async (req, res) => {
   }
 };
 
-// Save additional Questions to the database
+// Save additional Questions and Feedback to the database
 const saveQuestion = async (req, res) => {
   try {
-    const { userId, newQuestion } = req.body;
+    const { userId, newQuestion, category } = req.body;
 
     // Create a new NewQuestion instance
-    const newQuestionDoc = new NewQuestion({ userId, newQuestion });
+    const newQuestionDoc = new NewQuestion({ userId, newQuestion, category });
     await newQuestionDoc.save();
 
     // Find the user by their userId
@@ -94,6 +94,7 @@ const saveQuestion = async (req, res) => {
     // Create a new log entry
     const newLog = {
       newQuestion: newQuestion,
+      category: category,
     };
     if (user) {
       // Update the user's newQuestion field in demographics

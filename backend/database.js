@@ -33,7 +33,8 @@ const userSchema = new mongoose.Schema({
   ],
   newQuestions: [
     {
-      newQuestion: String
+      newQuestion: String,
+      category: String,
     }
   ]
 });

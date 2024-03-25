@@ -36,23 +36,23 @@ const Home = () => {
 
     const handleCheckboxChange = (event) => {
         setIsChecked(event.target.checked);
-      };
+    };
 
     return (
         <div className='page'>
             <div className='headline'>
                 <h1 className='title'>QUESTION MASTER</h1>
-                <h1>Help Us Improve Educational Content in Theranostic and Nuclear Medicine!</h1>
-                <p>This user study aims to improve educational materials related to theranostic nuclear medicine.</p>
+                <h1>Help Us Improve Educational Content in Theranostic and Nuclear Medicine with Generative Artificial Intelligence!</h1>
+                <p>This user study aims to improve educational materials related to theranostic and nuclear medicine.  <br/><strong>**Please note:** Answers are generated artificially by a large language model and may not be entirely accurate. We recommend consulting with a medical professional for definitive information.</strong></p>
             </div>
             <div className='text'>
                 <h2>Why Your Input Matters:</h2>
-                <p>We are developing new resources to educate people about this exciting field.  Your participation will help us ensure the information is clear, accurate, and easy to understand.</p>
+                <p>We are developing educational resources to educate people about the exciting field of theranostic and nuclear medicine. Your participation will help us ensure the information is clear, accurate, and easy to understand.</p>
                 <h2>What to Expect:</h2>
                 <ul>
+                    <li><strong>The Task:</strong> You will be presented with 10 multiple-choice questions related to theranostic, nuclear medicine, and ITM. Each question will offer two answer options. Please select the answer you believe is more informative and helpful for someone learning about this field.</li>
                     <li><strong>Anonymity:</strong> Your participation is completely anonymous. We will not collect any personal information that can identify you.</li>
                     <li><strong>Data Usage:</strong> The information you provide will be used solely to improve educational materials in theranostics and nuclear medicine.</li>
-                    <li><strong>The Task:</strong> You will be presented with 10 multiple-choice questions related to theranostic nuclear medicine. Each question will offer two answer options. Please select the answer you believe is more informative and helpful for someone learning about this field.</li>
                 </ul>
                 <h2>No Right or Wrong Answers:</h2>
                 <p>There are no right or wrong answers in this study. We are simply interested in your perspective on which answer is clearer and easier to understand.</p>
