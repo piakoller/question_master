@@ -47,8 +47,9 @@ export function QuestionIndex({ children }) {
     const [theranosticExpertise, setTheranosticExpertise] = useState(5);
 
     // const llmName = ['gemini 1.0', 'GPT-3.5', 'GPT-4', 'Claude-3 sonnet', 'Claude-3 opus', 'Mistral Large', 'Mistral Medium', 'Mixtral', 'Llama2', 'Qwen'];
-    const llmName = ['gemini 1.0', 'GPT-3.5', 'GPT-4', 'Claude-3 sonnet', 'Claude-3 opus', 'Mistral Large', 'Mistral Medium', 'Mixtral'];
-    
+    // const llmName = ['gemini 1.0', 'GPT-3.5', 'GPT-4', 'Claude-3 sonnet', 'Claude-3 opus', 'Mistral Large', 'Mistral Medium', 'Mixtral'];
+    const llmName = ['gemini 1.0', 'GPT-4', 'Claude-3 opus', 'Mistral Large'];
+
     // State variables for progress and study completion
     const [progress, setProgress] = useState(10);
     const [isStudyFinished, setIsStudyFinished] = useState(false);
@@ -184,7 +185,7 @@ export function QuestionIndex({ children }) {
 
         fetchLLM(answer);
 
-        if (answer !== 'demographics'){
+        if (answer !== 'demographics') {
             handleAnswerSelection(answer);
             handleProgressUpdate();
         }
@@ -195,7 +196,7 @@ export function QuestionIndex({ children }) {
         const votes = [llm.left, llm.right];
 
         if (selectedAnswer === 'null') {
-            notSelectedAnswer= 'null';
+            notSelectedAnswer = 'null';
         } else {
             notSelectedAnswer = llm.left === selectedAnswer ? llm.right : llm.left;
         }
