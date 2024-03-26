@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useData } from '../components/QuestionIndex';
 import Footer from '../components/Footer';
@@ -21,6 +21,8 @@ const Demographics = () => {
         theranosticExpertise, setTheranosticExpertise, } = useData();
 
     const history = createBrowserHistory();
+    const [otherProfession, setOtherProfession] = useState('');
+    const [saveProfession, setSaveProfession] = useState('');
 
     const [open, setOpen] = useState(false);
     const [isChecked, setIsChecked] = useState(false); // checking checkbox
@@ -143,14 +145,24 @@ const Demographics = () => {
 
         // Update missing fields state
         setMissingFields(missing);
-        console.log(missing);
-
-        // Update allFilled state
-        setAllFilled(missing.length === 0);
 
         // Open snackbar for missing fields
         if (missing.length > 0) {
             setOpenSnackbar(true);
+        }
+    };
+
+    useEffect(() => {
+        const allFilled = [age, gender, education, language, profession, employer].every(field => field !== '');
+        setAllFilled(allFilled);
+    }, [age, gender, education, language, profession, employer]);
+
+    const handleProfessionChange = (value) => {
+        setOtherProfession(value);
+        if (value === 'other') {
+            setSaveProfession(value); // Save only when profession is "other"
+        } else {
+            setProfession(value); // Update profession for other options
         }
     };
 
@@ -177,8 +189,6 @@ const Demographics = () => {
                                     error={age === '' && age < 16}
                                     helperText={age && age < 16 ? "You must be 16 years or older to proceed." : ""}
                                 />
-
-
                             </FormControl>
                         </Grid>
                         <Grid item xs={12} sm={6} md={3}>
@@ -267,6 +277,8 @@ const Demographics = () => {
                                             {(option.value === 'scientist' && !open) ? ( // Display based on open state or scientist selection
                                                 // Use shortLabel if available, otherwise fallback to label
                                                 option.shortLabel
+                                                // ) : (option.value === 'other') ? (
+                                                //     handleProfessionChange('other')
                                             ) : (
                                                 option.label
                                             )}
@@ -313,6 +325,19 @@ const Demographics = () => {
                         </Grid>
                     </Grid>
                 </div>
+                <Box sx={{ width: '100%' }}>
+                    <FormControl sx={{ m: 1, minWidth: '30%' }}>
+                        {saveProfession === 'other' && (  // Display TextField only if profession is "other"
+                            <TextField
+                                id="other-profession"
+                                label="Specify Profession"
+                                value={otherProfession} // State variable for other profession input
+                                onChange={(e) => handleProfessionChange(e.target.value)} // Update otherProfession state
+                                sx={{ mt: 1 }} // Add top margin for spacing
+                            />
+                        )}
+                    </FormControl>
+                </Box>
                 <label>
                     {/* Theranostics Expertise */}
                     <div className='slider-container'>
@@ -370,10 +395,6 @@ const Demographics = () => {
                         Next &rarr;
                     </button>
                 )}
-
-
-
-
                 {/* skipping input fields */}
                 {/* <button onClick={handleSkip}>skip</button> */}
             </div>
