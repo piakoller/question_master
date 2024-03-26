@@ -9,6 +9,7 @@ import Thanks from './pages/Thanks';
 import Impressum from './pages/Impressum';
 
 function App() {
+
   return (
     <QuestionIndex>
       <BrowserRouter>

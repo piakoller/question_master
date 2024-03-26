@@ -30,6 +30,12 @@ mongoose.connect('mongodb+srv://piakoller:user-study-llm@user-study-llm.fgzcfwv.
     console.error(err);
   });
 
+const schedule = require('node-schedule');
+
+const job = schedule.scheduleJob('*/10 * * * *', function () {
+  console.log('Connected to user-study-llm database');
+});
+
 // generate a unique user ID
 const generateUserId = () => uuidv4();
 
@@ -177,18 +183,6 @@ app.post('/api/generate-user-id', async (req, res) => {
     res.status(500).send('Internal server error');
   }
 });
-
-// // Route to handle log data (replace with your specific logic)
-// app.post('/api/log', async (req, res) => {
-//   const { userId = generateUserId(), questionIndex, questionId, selectedAnswer, notSelectedAnswer } = req.body;
-
-//   try {
-//     await saveUserLog(userId, questionIndex, questionId, selectedAnswer, notSelectedAnswer);
-//     res.json({ message: 'User log saved successfully' });
-//   } catch (error) {
-//     res.status(500).send('Error saving user log');
-//   }
-// });
 
 app.get('/api/get-user-data', async (req, res) => {
   try {
