@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
-import React from 'react';
+import { createBrowserHistory } from 'history';
+
+import React, { useState } from 'react';
 
 import { useData } from '../components/QuestionIndex';
 import Footer from '../components/Footer';
 
-import { Grid, FormControl, Select, MenuItem, TextField, Slider, Box, InputLabel } from '@mui/material';
+import { Grid, FormControl, Select, MenuItem, TextField, Slider, Box, InputLabel, Checkbox, FormControlLabel, Snackbar, Alert } from '@mui/material';
 
 import './stylesheet.css';
 
@@ -17,6 +19,14 @@ const Demographics = () => {
         employer, setEmployer,
         experience, setExperience,
         theranosticExpertise, setTheranosticExpertise, } = useData();
+
+    const history = createBrowserHistory();
+
+    const [open, setOpen] = useState(false);
+    const [isChecked, setIsChecked] = useState(false); // checking checkbox
+    const [openSnackbar, setOpenSnackbar] = useState(false);
+    const [missingFields, setMissingFields] = useState([]);
+    const [allFilled, setAllFilled] = useState(false);
 
     const languages = [
         { value: 'german', label: 'German' },
@@ -44,7 +54,7 @@ const Demographics = () => {
         { value: 'nuclear', label: 'Nuclear Medicine Physician' },
         { value: 'cardio', label: 'Cardiologist' },
         { value: 'neuro', label: 'Neurologist' },
-        { value: 'scientist', label: 'Basic scientist (e.g. Biologist/Biochemist/Physiologist/Biomedical' },
+        { value: 'scientist', label: 'Basic scientist (e.g. Biologist/Biochemist/Physiologist/Biomedical Engineer)', shortLabel: 'Basic scientist' }, // Full label for scientist
         { value: 'pharma', label: 'Pharmacist' },
         { value: 'radio', label: 'Radio Protection Officer' },
         { value: 'radiopharma', label: 'Radiopharamcist/Radiochemist' },
@@ -90,6 +100,7 @@ const Demographics = () => {
             if (response.ok) {
                 console.log('Demographics submitted successfully');
                 nextQuestion('demographics'); // Update progress after successful submission
+                history.push(`/study/${userId}`);
             } else {
                 console.error('Error submitting demographics:', await response.text());
             }
@@ -109,6 +120,41 @@ const Demographics = () => {
         setTheranosticExpertise(0);
     };
 
+    const handleCheckboxChange = (event) => {
+        setIsChecked(event.target.checked);
+    };
+
+    const handleNextClick = () => {
+        const missing = []; // Array to store missing fields
+
+        if (age === '' || age < 16) {
+            missing.push('Age');
+        } if (gender === '') {
+            missing.push('Gender');
+        } if (education === '') {
+            missing.push('Education');
+        } if (language === '') {
+            missing.push('Language');
+        } if (profession === '') {
+            missing.push('Profession');
+        } if (employer === '') {
+            missing.push('Employer');
+        }
+
+        // Update missing fields state
+        setMissingFields(missing);
+        console.log(missing);
+
+        // Update allFilled state
+        setAllFilled(missing.length === 0);
+
+        // Open snackbar for missing fields
+        if (missing.length > 0) {
+            setOpenSnackbar(true);
+        }
+    };
+
+
     return (
         <div className='page'>
             <div className='headline'>
@@ -117,21 +163,27 @@ const Demographics = () => {
             <div className='text'>
                 <div className='info-container'>
                     {/* Age, Gender, Education, and Language */}
-                    <Grid container spacing={2}>
+                    <Grid container spacing={5}>
                         <Grid item xs={12} sm={6} md={3}>
                             {/* Age */}
-                            <FormControl required sx={{ m: 1, minWidth: '100%' }}>
+                            <FormControl sx={{ m: 1, minWidth: '100%' }}>
                                 <TextField
+                                    required
                                     label="Age"
                                     type="number"
                                     value={age}
                                     onChange={(event) => setAge(event.target.value)}
+                                    // Check if user is younger than 16
+                                    error={age === '' && age < 16}
+                                    helperText={age && age < 16 ? "You must be 16 years or older to proceed." : ""}
                                 />
+
+
                             </FormControl>
                         </Grid>
                         <Grid item xs={12} sm={6} md={3}>
                             {/* Gender */}
-                            <FormControl required sx={{ m: 1, minWidth: '100%' }}>
+                            <FormControl sx={{ m: 1, minWidth: '100%' }}>
                                 <InputLabel id="gender-label">Gender</InputLabel>
                                 <Select
                                     labelId="gender-label"
@@ -139,6 +191,7 @@ const Demographics = () => {
                                     label="Gender"
                                     value={gender}
                                     onChange={(e) => setGender(e.target.value)}
+                                    sx={{ minHeight: 50 }}
                                 >
                                     {genders.map((option) => (
                                         <MenuItem key={option.value} value={option.value}>
@@ -151,7 +204,7 @@ const Demographics = () => {
                         </Grid>
                         <Grid item xs={12} sm={6} md={3}>
                             {/* Education */}
-                            <FormControl required sx={{ m: 1, minWidth: '100%' }}>
+                            <FormControl sx={{ m: 1, minWidth: '100%' }}>
                                 <InputLabel id="education-label">Education</InputLabel>
                                 <Select
                                     labelId="education-label"
@@ -171,7 +224,7 @@ const Demographics = () => {
                         </Grid>
                         <Grid item xs={12} sm={6} md={3}>
                             {/* Language */}
-                            <FormControl required sx={{ m: 1, minWidth: '100%' }}>
+                            <FormControl sx={{ m: 1, minWidth: '100%' }}>
                                 <InputLabel id="language-label">Language of the Study</InputLabel>
                                 <Select
                                     labelId="language-label"
@@ -190,13 +243,14 @@ const Demographics = () => {
                             </FormControl>
                         </Grid>
                     </Grid>
+                    {/* </div> */}
                 </div>
                 <div className='grid-field'>
                     <Grid container spacing={2}>
                         {/* Profession */}
                         <Grid item xs={12} sm={6} md={4}>
                             <p id="profession-label" className='headline'>What is your <b>profession</b>?</p>
-                            <FormControl required sx={{ m: 1, minWidth: '100%' }}>
+                            <FormControl sx={{ m: 1, minWidth: '100%' }}>
                                 <InputLabel id="profession-label">Profession</InputLabel>
                                 <Select
                                     labelId="profession-label"
@@ -204,10 +258,18 @@ const Demographics = () => {
                                     label="Profession"
                                     value={profession}
                                     onChange={(e) => setProfession(e.target.value)}
+                                    open={open}
+                                    onOpen={() => setOpen(true)} // Update open on open event
+                                    onClose={() => setOpen(false)}
                                 >
                                     {professionLevels.map((option) => (
                                         <MenuItem key={option.value} value={option.value}>
-                                            {option.label}
+                                            {(option.value === 'scientist' && !open) ? ( // Display based on open state or scientist selection
+                                                // Use shortLabel if available, otherwise fallback to label
+                                                option.shortLabel
+                                            ) : (
+                                                option.label
+                                            )}
                                         </MenuItem>
                                     ))}
                                     {/* Profession options */}
@@ -217,8 +279,9 @@ const Demographics = () => {
                         {/* Years of Experience */}
                         <Grid item xs={12} sm={6} md={4}>
                             <p className='headline'>How many <b>years of experience</b> do you have in your profession?</p>
-                            <FormControl required sx={{ m: 1, minWidth: '100%' }}>
+                            <FormControl sx={{ m: 1, minWidth: '100%' }}>
                                 <TextField
+                                    required
                                     label="Years of Experience"
                                     type="number"
                                     value={experience}
@@ -229,9 +292,10 @@ const Demographics = () => {
                         {/* Employer */}
                         <Grid item xs={12} sm={6} md={4}>
                             <p className='headline'>What is your current <b>employer</b>?</p>
-                            <FormControl required sx={{ m: 1, minWidth: '100%' }}>
+                            <FormControl sx={{ m: 1, minWidth: '100%' }}>
                                 <InputLabel id="employer-label">Employer</InputLabel>
                                 <Select
+                                    required
                                     labelId="employer-label"
                                     id="employer"
                                     label="Employer"
@@ -271,11 +335,45 @@ const Demographics = () => {
                         </Box>
                     </div>
                 </label>
-                <Link to={`/study/${userId}`}>
-                    <button className='button right blue' onClick={submitDemographics}>
+                <div className="checkbox">
+                    <Checkbox
+                        id="understand"
+                        checked={isChecked}
+                        onChange={handleCheckboxChange}
+                        color="primary"
+                    />
+                    <label htmlFor="understand">I confirm that all the information is correct.</label>
+                </div>
+                <Snackbar
+                    open={openSnackbar}
+                    autoHideDuration={6000} // Close snackbar after 6 seconds
+                    onClose={() => setOpenSnackbar(false)}
+                >
+                    {!isChecked && missingFields.length > 0 ? (
+                        <Alert severity="warning">Please check the confirmation box before proceeding.</Alert>
+
+                    ) : (
+                        <Alert severity="warning">
+                            Please fill out the following missing fields: {missingFields.join(', ')}
+                        </Alert>
+                    )}
+                </Snackbar>
+                {/* Display Button with Link when Checkbox is checked and all Fields are filled */}
+                {isChecked && allFilled ? (
+                    <Link to={`/study/${userId}`} state={{ isChecked, allFilled }}>
+                        <button className='button right blue' onClick={submitDemographics}>
+                            Next &rarr;
+                        </button>
+                    </Link>
+                ) : (
+                    <button className='button right blue' onClick={handleNextClick}>
                         Next &rarr;
                     </button>
-                </Link>
+                )}
+
+
+
+
                 {/* skipping input fields */}
                 {/* <button onClick={handleSkip}>skip</button> */}
             </div>

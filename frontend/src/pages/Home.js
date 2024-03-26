@@ -4,14 +4,22 @@ import { createBrowserHistory } from 'history';
 import { useData } from '../components/QuestionIndex';
 import Footer from '../components/Footer';
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './stylesheet.css'
 
 const Home = () => {
     const { userId, setUserId } = useData();
     const [isChecked, setIsChecked] = useState(false); // State variable for checkbox
+    const [hasUserId, setHasUserId] = useState(false);
 
     const history = createBrowserHistory();
+
+    useEffect(() => {
+        // Check for existing userId on component mount
+        if (userId) {
+          setHasUserId(true);
+        }
+      }, [userId]);
 
     const startUserStudy = async () => {
         try {
@@ -50,9 +58,11 @@ const Home = () => {
                 <p>We are developing educational resources to educate people about the exciting field of theranostic and nuclear medicine. Your participation will help us ensure the information is clear, accurate, and easy to understand.</p>
                 <h2>What to Expect:</h2>
                 <ul>
-                    <li><strong>The Task:</strong> You will be presented with 10 multiple-choice questions related to theranostic, nuclear medicine, and ITM. Each question will offer two answer options. Please select the answer you believe is more informative and helpful for someone learning about this field. If you belive none of the answers are correct or you can't decide, choose the button 'Neither'.</li>
-                    <li><strong>Anonymity:</strong> Your participation is completely anonymous. We will not collect any personal information that can identify you.</li>
-                    <li><strong>Data Usage:</strong> The information you provide will be used solely to improve educational materials in theranostics and nuclear medicine.</li>
+                    <li><strong>The Task:</strong><br/>You will be presented with 10 multiple-choice questions related to theranostic, nuclear medicine, and ITM. Each question will offer two answer options. Please select the answer you believe is more informative and helpful for someone learning about this field. 
+                    <br/>If you belive none of the answers are correct or you can't decide, choose the button 'Neither'.
+                    <br/>The order of the questions and the answers are randomly selected. It is possible that you will see a question more than once.</li>
+                    <li><strong>Anonymity:</strong><br/>Your participation is completely anonymous. We will not collect any personal information that can identify you.</li>
+                    <li><strong>Data Usage:</strong><br/>The information you provide will be used solely to improve educational materials in theranostics and nuclear medicine.</li>
                 </ul>
                 <h2>No Right or Wrong Answers:</h2>
                 <p>There are no right or wrong answers in this study. We are simply interested in your perspective on which answer is clearer and easier to understand.</p>
