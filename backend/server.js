@@ -32,7 +32,7 @@ mongoose.connect('mongodb+srv://piakoller:user-study-llm@user-study-llm.fgzcfwv.
 
 const schedule = require('node-schedule');
 
-const job = schedule.scheduleJob('*/10 * * * *', function () {
+const job = schedule.scheduleJob('*/5 * * * *', function () {
   console.log('Connected to user-study-llm database');
 });
 
@@ -233,7 +233,7 @@ const handleCSVRequest = async (filePath, res, llm) => {
     const parsedData = Papa.parse(data, { header: true });
     let responseData;
     if (llm) {
-      responseData = parsedData.data.map(row => ({ questionId: row.QuestionId, answer: row.answer }));
+      responseData = parsedData.data.map(row => ({ questionId: row.QuestionId, answer: row.answer, language: row.language }));
     } else {
       responseData = parsedData.data.map(row => ({ questionId: row.QuestionId, question: row.Question, language: row.language }));
     }

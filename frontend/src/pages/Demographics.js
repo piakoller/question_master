@@ -171,6 +171,7 @@ const Demographics = () => {
         <div className='page'>
             <div className='headline'>
                 <h1>Personal Information</h1>
+                <p>By selecting a language in 'Language of the Study' you choose if the displayed questions are only in german, only in english or german and english.</p>
             </div>
             <div className='text'>
                 <div className='info-container'>
@@ -342,7 +343,7 @@ const Demographics = () => {
                     {/* Theranostics Expertise */}
                     <div className='slider-container'>
                         <Box sx={{ width: '100%' }}>
-                            <p>On a scale of 1-10 what is your <b>expertise about theranostics</b>?</p>
+                            <p>How familiar are you with <b>theranostics</b>? <br/>Slide the bar to indicate your level of expertise. 0 - Never heard of it  |  10 - Dealing with it daily</p>
                             <Box sx={{ width: '100%' }}>
                                 <Slider
                                     aria-label="Temperature"

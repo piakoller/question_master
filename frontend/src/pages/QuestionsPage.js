@@ -16,7 +16,7 @@ import AnswerRight from "../components/AnswersRight";
 import ProgressBar from '../components/ProgressBar';
 
 const QuestionsPage = () => {
-    const { fetchLLM, setUserId, setNeitherSelected, nextQuestion, isStudyFinished } = useData();
+    const { fetchLLM, setUserId, setNeitherSelected, nextQuestion, isStudyFinished, llm, questionId } = useData();
     const { userId } = useParams();
 
     const notesLabel = 'Enter your Comments or Feedback';
@@ -45,7 +45,6 @@ const QuestionsPage = () => {
         }
         nextQuestion("null");
     }
-
     return (
         <div className='page'>
             <ProgressBar></ProgressBar>
