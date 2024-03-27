@@ -3,11 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { useData } from './QuestionIndex';
 import { useNavigate } from 'react-router-dom';
 
-import { marked } from 'marked'
 import ReactMarkdown from 'react-markdown';
 
 const AnswerLeft = () => {
-  const { questionIndex, nextQuestion, fetchLLM, llm, llmPath, isStudyFinished } = useData();
+  const { questionIndex, nextQuestion, fetchLLM, llm, llmPath, isStudyFinished, language } = useData();
   const navigate = useNavigate();
 
   const [answers, setAnswers] = useState([]);
@@ -30,7 +29,11 @@ const AnswerLeft = () => {
           fetchLLM();
         }
 
-        setAnswers(data);
+        const filteredAnswers = language === 'both'
+        ? data
+        : data.filter(answer => answer.language === language);
+
+        setAnswers(filteredAnswers);
       } catch (error) {
         setError(error.message);
       }
@@ -49,7 +52,6 @@ const AnswerLeft = () => {
 
   const answerText = () => {
     const text = answers[questionIndex].answer;
-    // console.log(text);
     return text;
   }
 
@@ -57,7 +59,7 @@ const AnswerLeft = () => {
     <div>
       <button className='answer' onClick={() => { handleClick() }}>
         <div>
-          {/* <p>{llm.left}</p> */}
+          <p>{llm.left}</p>
           {answers.length > 0 && questionIndex < answers.length ? (
             <ReactMarkdown>{answerText()}</ReactMarkdown>
           ) : (

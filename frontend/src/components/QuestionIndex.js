@@ -11,8 +11,6 @@ const mixtral_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-mixtral`;
 const llama2_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-llama2`;
 const qwen_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-qwen`;
 
-
-
 const DataContext = createContext();
 
 export function useData() {
@@ -37,6 +35,7 @@ export function QuestionIndex({ children }) {
     const [language, setLanguage] = useState('');
     const [numQuestions, setNumQuestions] = useState(0);
 
+    // demographics data
     // demographics data
     const [age, setAge] = useState('');
     const [gender, setGender] = useState('');
@@ -129,23 +128,6 @@ export function QuestionIndex({ children }) {
         const rightPath = chooseLLMPath(llmRight);
 
         setLLMPath({ left: leftPath, right: rightPath });
-        console.log(questionId);
-
-        console.log(
-            `LLMs set to:
-            Left: ${llmLeft} (${questionId}),
-            Right: ${llmRight} (${questionId})
-            QuestionIndex: ${questionIndex}`
-        );
-    };
-
-    // set random questionIndex according to german, english or english and german question
-    const fetchQuestion = (callback) => {
-        const questionIndices = getRandomUniqueIndices(numQuestions, 1);
-        setQuestionIndex(questionIndices);
-        if (callback) {
-            callback(questionIndices); // Call the provided callback with the new index
-        }
     };
 
     // Function to choose API path based on LLM name
@@ -177,13 +159,14 @@ export function QuestionIndex({ children }) {
     }
 
     const nextQuestion = (answer) => {
-        // Increment the index to show the next question
-        // setQuestionIndex((prevIndex) => prevIndex + 1);
-        fetchQuestion((newQuestionIndex) => {
-            setQuestionIndex(newQuestionIndex);
-        });
+        setQuestionIndex(getRandomUniqueIndices(numQuestions, 1))
+        console.log(
+            `LLMs set to:
+            Left: ${llm.left} (${questionId}),
+            Right: ${llm.right} (${questionId})`
+          );
 
-        fetchLLM(answer);
+        fetchLLM();
 
         if (answer !== 'demographics') {
             handleAnswerSelection(answer);
@@ -194,7 +177,7 @@ export function QuestionIndex({ children }) {
     const handleAnswerSelection = async (selectedAnswer) => {
         let notSelectedAnswer;
         const votes = [llm.left, llm.right];
-
+        
         if (selectedAnswer === 'null') {
             notSelectedAnswer = 'null';
         } else {

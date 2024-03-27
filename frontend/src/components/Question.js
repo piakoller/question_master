@@ -7,7 +7,7 @@ const Question = () => {
   const [questions, setQuestions] = useState([]);
   const [error, setError] = useState(null);
 
-  const { questionIndex, setNumQuestions, questionId, setQuestionId, language } = useData();
+  const { questionIndex, setNumQuestions, questionId, setQuestionId, language, llm } = useData();
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -28,35 +28,39 @@ const Question = () => {
 
         setQuestions(filteredQuestions);
         setNumQuestions(filteredQuestions.length);
-        setQuestionId(questions[questionIndex].questionId);
 
-        // console.log(data.language);
+        // console.log(questionId);
       } catch (error) {
         setError(error.message);
       }
     };
 
     fetchQuestions();
+
   }, [setNumQuestions, language]);
 
+  useEffect(() => {
+    if (questions.length > 0 && questionIndex < questions.length) {
+      setQuestionId(questions[questionIndex].questionId);
+    }
+  }, [questions, questionIndex, setQuestionId]);
 
-  // useEffect(() => {
-  //   if (questions.length > 0 && questionIndex < questions.length) {
-  //     console.log('questionIndex Question: ' + questionIndex);
-  //     setQuestionId(questions[questionIndex].questionId);
-  //     console.log('questionId Question: '+ questionId);
-  //   }
-  // }, []);
-  if (questions.length > 0 && questionIndex < questions.length) {
-    setQuestionId(questions[questionIndex].questionId);
-  }
+  useEffect(() => {
+    if (questions.length > 0 && questionIndex < questions.length) {
+      console.log(
+        `LLMs set to:
+        Left: ${llm.left} (${questionId}),
+        Right: ${llm.right} (${questionId})`
+      );
+    }
+  }, [questions, questionIndex, questionId])
 
   return (
     <div>
       {questions.length > 0 && questionIndex < questions.length ? (
         <>
           <h1>{questions[questionIndex].question}</h1>
-          {/* {questions[questionIndex].questionId} */}
+          {questions[questionIndex].questionId}
         </>
       ) : (
         <p>Loading...</p>

@@ -10,7 +10,7 @@ const AnswerRight = () => {
   // const [currentAnswerIndex, setCurrentAnswerIndex] = useState(0);
   const [error, setError] = useState(null);
 
-  const { questionIndex, nextQuestion, fetchLLM, llm, llmPath, isStudyFinished } = useData();
+  const { questionIndex, nextQuestion, fetchLLM, llm, llmPath, isStudyFinished, language } = useData();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,8 +27,11 @@ const AnswerRight = () => {
           console.log('fetching new llm');
           fetchLLM();
         }
+        const filteredAnswers = language === 'both'
+        ? data
+        : data.filter(answer => answer.language === language);
 
-        setAnswers(data);
+        setAnswers(filteredAnswers);
       } catch (error) {
         setError(error.message);
       }
@@ -55,7 +58,7 @@ const AnswerRight = () => {
     <div>
       <button className='answer' onClick={() => { handleClick() }}>
         <div>
-          {/* <p>{llm.right}</p> */}
+          <p>{llm.right}</p>
           {answers.length > 0 && questionIndex < answers.length ? (
             // <p dangerouslySetInnerHTML={{ __html: answers[questionIndex].answer.replace(/\n/g, '<br />') }} />
             <ReactMarkdown>{answerText()}</ReactMarkdown>

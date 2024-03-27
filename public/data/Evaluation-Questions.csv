@@ -1,4 +1,4 @@
-"QuestionId","Question","language","Type","Categorie","LLM","answer","correctness","relevance","specificity"
+QuestionId,Question,language,Type,Categorie,LLM,answer,correctness,relevance,specificity
 "1G","Was ist der Stellenwert von PRRT innerhalb GEP-NET?","german","general","therapy","","","","",""
 "1E","What is the role of PRRT in GEP-NET?","english","general","therapy","","","","",""
 "2G","Für welche Indikationen ist PRRT zugelassen?","german","specific","therapy","","","","",""
