@@ -59,7 +59,7 @@ const AnswerLeft = () => {
     <div>
       <button className='answer' onClick={() => { handleClick() }}>
         <div>
-          <p>{llm.left}</p>
+          {/* <p>{llm.left}</p> */}
           {answers.length > 0 && questionIndex < answers.length ? (
             <ReactMarkdown>{answerText()}</ReactMarkdown>
           ) : (
