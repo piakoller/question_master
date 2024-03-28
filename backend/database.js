@@ -41,7 +41,8 @@ const userSchema = new mongoose.Schema({
 const UserLog = mongoose.model('user', userSchema);
 
 const questionSchema = new mongoose.Schema({
-  newQuestion: String
+  newQuestion: String,
+  category: String,
 })
 const NewQuestion = mongoose.model('newQuestion', questionSchema);
 
