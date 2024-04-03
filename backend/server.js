@@ -10,8 +10,8 @@ const cors = require('cors');
 const fs = require('fs').promises; // Use promises for asynchronous operations
 
 const app = express();
-const port = process.env.PORT || 3000;
-// const port = 3000;
+// const port = process.env.PORT || 3000;
+const port = 3000;
 
 // Enable CORS
 app.use(cors());

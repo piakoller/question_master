@@ -10,7 +10,7 @@ const AnswerRight = () => {
   // const [currentAnswerIndex, setCurrentAnswerIndex] = useState(0);
   const [error, setError] = useState(null);
 
-  const { questionIndex, nextQuestion, fetchLLM, llm, llmPath, isStudyFinished, language } = useData();
+  const { questionIndex, nextQuestion, fetchLLM, llm, llmPath, isStudyFinished, language, handleAnswerSelection } = useData();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -42,6 +42,7 @@ const AnswerRight = () => {
 
   const handleClick = () => {
     if (isStudyFinished) {
+      handleAnswerSelection(llm.right);
       navigate('/thank-you'); // Navigate to thank-you page if study is finished
       return;
     }

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
 const AnswerLeft = () => {
-  const { questionIndex, nextQuestion, fetchLLM, llm, llmPath, isStudyFinished, language } = useData();
+  const { questionIndex, nextQuestion, fetchLLM, llm, llmPath, isStudyFinished, language, handleAnswerSelection } = useData();
   const navigate = useNavigate();
 
   const [answers, setAnswers] = useState([]);
@@ -44,6 +44,7 @@ const AnswerLeft = () => {
 
   const handleClick = () => {
     if (isStudyFinished) {
+      handleAnswerSelection(llm.left);
       navigate('/thank-you'); // Navigate to thank-you page if study is finished
       return;
     }
