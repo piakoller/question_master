@@ -146,7 +146,7 @@ const saveUserLog = async (userId, questionId, selectedAnswer, notSelectedAnswer
     // Save the updated user document
     await user.save();
 
-    console.log(`Saved user log: ${JSON.stringify(newLog)}`);
+    console.log(`Saved ${JSON.stringify(userId)} user log: ${JSON.stringify(newLog)}`);
   } catch (error) {
     console.error('Error saving user log:', error);
   }
