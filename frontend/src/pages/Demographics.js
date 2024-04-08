@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { useData } from '../components/QuestionIndex';
 import Footer from '../components/Footer';
 
-import { Grid, FormControl, Select, MenuItem, TextField, Slider, Box, InputLabel, Checkbox, FormControlLabel, Snackbar, Alert } from '@mui/material';
+import { Grid, FormControl, Select, MenuItem, TextField, Slider, Box, InputLabel, Checkbox, Snackbar, Alert } from '@mui/material';
 
 import './stylesheet.css';
 
@@ -343,7 +343,7 @@ const Demographics = () => {
                     {/* Theranostics Expertise */}
                     <div className='slider-container'>
                         <Box sx={{ width: '100%' }}>
-                            <p>How familiar are you with <b>theranostics</b>? <br/>Slide the bar to indicate your level of expertise. 0 - Never heard of it  |  10 - Dealing with it daily</p>
+                            <p>How familiar are you with <b>theranostics</b>? <br/>Slide the bar to indicate your level of expertise. (0 - Never heard of it  |  10 - Dealing with it daily)</p>
                             <Box sx={{ width: '100%' }}>
                                 <Slider
                                     aria-label="Temperature"
