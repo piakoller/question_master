@@ -68,8 +68,13 @@ const Home = () => {
                 <p>There are no right or wrong answers in this study. We are simply interested in your perspective on which answer is clearer and easier to understand.</p>
                 <h2>Confidentiality</h2>
                 <p>Your participation in this study is entirely anonymous. Any personal information provided will be kept confidential and used only for research purposes. Your responses will be aggregated and analyzed collectively, ensuring your privacy and anonymity throughout the study.</p>
+                <p>Please make sure that you do not send us any personal data in the free text fields. Should you do so, we will collect this data on the basis of our legitimate interest in accordance with Art. 6 para. 1 lit. f GDPR and delete it immediately.</p>
+                <p>I have been informed that my participation in the survey is voluntary and that I have the right to cancel my participation in the survey at any time without giving reasons by closing the survey window.</p>
                 <h2>Thank you for your contribution!</h2>
                 <p>By participating, you're helping us create valuable resources that can benefit others.</p>
+                <p>I confirm that I have read and understood the information provided. I agree that my data will be collected anonymously and used exclusively for the purpose stated in the introduction. I am also aware that my answers will be forwarded to/processes in connection with an artificial intelligence for the evaluation of the survey and that this data will be used to train the artificial intelligence.</p>
+                <p>I also understand that the results of this survey may be published.</p>
+                <p>To exercise any rights or for further questions about the survey, you can contact us at any time at INSERT CONTACT</p>
             </div>
             {/* Checkbox and label */}
             <div className="checkbox">
