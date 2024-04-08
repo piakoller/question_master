@@ -33,11 +33,11 @@ const Impressum = () => {
             <div className='text'>
 
                 <h2>Provider</h2>
-                <p>ITM Isotope Technologies Munich SE</p>
+                <p>ITM Oncologics GmbH</p>
                 <h2>Contact</h2>
                 <p> Pia Koller<br />
-                    ITM Isotope Technologies Munich SE<br />
-                    Lichtenbergstr. 1<br />
+                    ITM Oncologics GmbH<br />
+                    Walther-von-Dyck-Strasse 4<br />
                     85748 Garching bei München<br />
                     Germany<br />
                     Tel.: +49 89 329 89 86 6000</p>
