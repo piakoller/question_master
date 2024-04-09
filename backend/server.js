@@ -32,9 +32,9 @@ mongoose.connect('mongodb+srv://piakoller:user-study-llm@user-study-llm.fgzcfwv.
 
 const schedule = require('node-schedule');
 
-const job = schedule.scheduleJob('*/5 * * * *', function () {
-  console.log('Connected to user-study-llm database');
-});
+// const job = schedule.scheduleJob('*/5 * * * *', function () {
+//   console.log('Connected to user-study-llm database');
+// });
 
 // generate a unique user ID
 const generateUserId = () => uuidv4();
@@ -119,7 +119,7 @@ const saveQuestion = async (req, res) => {
   }
 };
 
-const saveUserLog = async (userId, questionId, selectedAnswer, notSelectedAnswer, neither, votes) => {
+const saveUserLog = async (userId, questionId, selectedAnswer, notSelectedAnswer, neither, votes, isStudyFinished) => {
   try {
     // Find the user by their userId
     let user = await UserLog.findOne({ userId });
@@ -147,6 +147,9 @@ const saveUserLog = async (userId, questionId, selectedAnswer, notSelectedAnswer
     await user.save();
 
     console.log(`Saved ${JSON.stringify(userId)} user log: ${JSON.stringify(newLog)}`);
+    if (isStudyFinished){
+      console.log(`User ${JSON.stringify(userId)} finished study`);
+    }
   } catch (error) {
     console.error('Error saving user log:', error);
   }
@@ -296,13 +299,13 @@ const kFactor = 32; // Adjust this value based on your desired volatility
 app.post('/api/save-answer', async (req, res) => {
   try {
     // Destructure selected and not selected answers directly from the request body
-    const { userId, selectedAnswer, notSelectedAnswer, questionId, votes } = req.body;
+    const { userId, selectedAnswer, notSelectedAnswer, questionId, votes, isStudyFinished } = req.body;
     // Check if either answer is undefined
     if (!selectedAnswer || !notSelectedAnswer) {
       return res.status(400).send('Both selectedAnswer and notSelectedAnswer are required in the request body');
     }
     if (selectedAnswer === 'null') {
-      await saveUserLog(userId, questionId, null, null, true, votes);
+      await saveUserLog(userId, questionId, null, null, true, votes, isStudyFinished);
     } else {
       // Find the selected and not selected models from the database
       const [selectedModel, notSelectedModel] = await Promise.all([
@@ -334,7 +337,7 @@ app.post('/api/save-answer', async (req, res) => {
         ),
       ]);
       // console.log('WIN: "' + selectedModel.name + '"; LOSS: "' + notSelectedModel.name + '";');
-      await saveUserLog(userId, questionId, selectedAnswer, notSelectedAnswer, false, votes);
+      await saveUserLog(userId, questionId, selectedAnswer, notSelectedAnswer, false, votes, isStudyFinished);
     }
 
     // Save the user log to the users collection

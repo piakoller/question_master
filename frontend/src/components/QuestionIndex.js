@@ -194,6 +194,7 @@ export function QuestionIndex({ children }) {
                     questionId,
                     // neitherSelected,
                     votes,
+                    isStudyFinished
                 }),
             });
 
