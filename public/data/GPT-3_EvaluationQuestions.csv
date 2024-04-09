@@ -1,93 +1,96 @@
 QuestionId,Question,language,Type,Categorie,LLM,answer,correctness,relevance,specificity
 1G,Was ist der Stellenwert von PRRT innerhalb GEP-NET?,german,general,therapy,gpt-3.5-turbo-0125,"PRRT (Peptid-Rezeptor-Radionuklid-Therapie) hat einen hohen Stellenwert innerhalb der Behandlung von GEP-NET (gastroenteropankreatischen Neuroendokrinen Tumoren). Diese Therapieform nutzt radioaktive Substanzen, die an spezifische Rezeptoren auf den Tumorzellen binden und so gezielt die Krebszellen zerstören.
 
-PRRT hat sich als effektive Behandlungsoption für Patienten mit fortgeschrittenen oder metastasierten GEP-NET erwiesen, insbesondere bei Tumoren, die den Somatostatin-Rezeptor exprimieren. Die Therapie kann dazu beitragen, das Tumorwachstum zu kontrollieren, Symptome zu lindern und die Lebensqualität der Patienten zu verbessern.
+PRRT hat sich als effektive Behandlungsoption für Patienten mit fortgeschrittenen oder metastasierten GEP-NET erwiesen, insbesondere bei Tumoren, die nicht auf andere Therapien ansprechen. Studien haben gezeigt, dass PRRT die Progression der Krankheit verlangsamen, die Symptome lindern und die Lebensqualität der Patienten verbessern kann.
 
-Insgesamt hat PRRT einen wichtigen Stellenwert innerhalb der Behandlung von GEP-NET und wird in vielen Fällen als Teil eines multimodalen Therapieansatzes eingesetzt. Es ist wichtig, dass die Therapie von erfahrenen Fachärzten durchgeführt wird, um die bestmöglichen Ergebnisse für die Patienten zu erzielen.",,,
-1E,What is the role of PRRT in GEP-NET?,english,general,therapy,gpt-3.5-turbo-0125,"PRRT (Peptide Receptor Radionuclide Therapy) is a targeted therapy used in the treatment of GEP-NETs (Gastroenteropancreatic Neuroendocrine Tumors). It involves the use of a radioactive substance attached to a peptide that binds to specific receptors on the tumor cells. 
+Aufgrund dieser positiven Ergebnisse wird PRRT zunehmend als Standardtherapie für bestimmte Formen von GEP-NET angesehen und spielt eine wichtige Rolle im Behandlungsplan für Patienten mit dieser Erkrankung.",,,
+1E,What is the role of PRRT in GEP-NET?,english,general,therapy,gpt-3.5-turbo-0125,"PRRT (Peptide Receptor Radionuclide Therapy) is a targeted therapy used in the treatment of GEP-NETs (Gastroenteropancreatic Neuroendocrine Tumors). It involves the use of a radioactive substance attached to a peptide that binds to specific receptors on the surface of tumor cells. 
 
-The role of PRRT in GEP-NET is to deliver radiation directly to the tumor cells, causing damage and ultimately leading to their destruction. This therapy is particularly effective in tumors that express high levels of somatostatin receptors, as the peptide used in PRRT binds specifically to these receptors. 
+The role of PRRT in GEP-NET is to deliver radiation directly to the tumor cells, sparing surrounding healthy tissue. This can help to shrink or slow the growth of tumors, relieve symptoms, and improve quality of life for patients with GEP-NET. PRRT is often used in patients with advanced or metastatic GEP-NET that has not responded to other treatments, such as surgery, chemotherapy, or targeted therapies. 
 
-PRRT has been shown to be effective in controlling tumor growth, improving symptoms, and prolonging survival in patients with GEP-NETs. It is often used in patients who have not responded to other treatments or have advanced disease that is not amenable to surgery. 
-
-Overall, PRRT plays a crucial role in the management of GEP-NETs and is an important treatment option for patients with this type of cancer.",,,
-2G,Für welche Indikationen ist PRRT zugelassen?,german,specific,therapy,gpt-3.5-turbo-0125,"PRRT (Peptid-Rezeptor-Radionuklid-Therapie) ist derzeit in Europa für die Behandlung von neuroendokrinen Tumoren (NET) zugelassen. Diese Tumoren entstehen aus Zellen des endokrinen Systems, die Hormone produzieren und in verschiedenen Organen des Körpers vorkommen können, wie z.B. im Magen-Darm-Trakt, der Bauchspeicheldrüse oder den Lungen.
-
-Die PRRT-Therapie wird in der Regel bei fortgeschrittenen oder metastasierten NET eingesetzt, die nicht mehr auf andere Therapien ansprechen. Durch die gezielte Bestrahlung der Tumorzellen mit radioaktiven Substanzen, die an spezifische Rezeptoren auf den Tumorzellen binden, kann die PRRT dazu beitragen, das Tumorwachstum zu hemmen und die Symptome der Erkrankung zu lindern.",,,
-2E,For which indication is PRRT approved?,english,specific,therapy,gpt-3.5-turbo-0125,PRRT (Peptide Receptor Radionuclide Therapy) is approved for the treatment of neuroendocrine tumors (NETs) that express somatostatin receptors.,,,
+Overall, PRRT has been shown to be an effective and well-tolerated treatment option for patients with GEP-NET, particularly those with tumors that express high levels of somatostatin receptors. It can help to control tumor growth, prolong survival, and improve symptoms in patients with this rare and often challenging type of cancer.",,,
+2G,Für welche Indikationen ist PRRT zugelassen?,german,specific,therapy,gpt-3.5-turbo-0125,"PRRT (Peptid-Rezeptor-Radionuklid-Therapie) ist derzeit für die Behandlung von neuroendokrinen Tumoren (NET) zugelassen. Dies umfasst insbesondere gastroenteropankreatische NET (GEP-NET) und bronchopulmonale NET. Die Therapie kann auch bei anderen Tumorarten in Betracht gezogen werden, wenn diese bestimmte Rezeptoren exprimieren, die für die PRRT geeignet sind.",,,
+2E,For which indication is PRRT approved?,english,specific,therapy,gpt-3.5-turbo-0125,PRRT (Peptide Receptor Radionuclide Therapy) is approved for the treatment of certain types of neuroendocrine tumors (NETs) that express somatostatin receptors.,,,
 3G,Welche Rolle spielt PRRT im chirurgischen Setting bei GEP-NET?,german,specific,therapy,gpt-3.5-turbo-0125,"PRRT (Peptid-Rezeptor-Radionuklid-Therapie) spielt im chirurgischen Setting bei GEP-NET (gastroenteropankreatischen Neuroendokrinen Tumoren) eine wichtige Rolle als ergänzende Therapiemöglichkeit. 
 
-Nach einer Operation zur Entfernung des Tumors kann PRRT eingesetzt werden, um eventuell verbliebene Tumorzellen zu zerstören und das Rückfallrisiko zu verringern. PRRT nutzt radioaktive Substanzen, die an spezifische Rezeptoren auf den Tumorzellen binden und diese gezielt bestrahlen, ohne das umliegende gesunde Gewebe zu schädigen.
+Nach einer Operation zur Entfernung des Tumors kann PRRT eingesetzt werden, um eventuell verbliebene Tumorzellen zu zerstören und das Risiko eines Rückfalls zu verringern. PRRT nutzt radioaktive Substanzen, die an spezifische Rezeptoren auf den Tumorzellen binden und diese gezielt zerstören. 
 
-Die Kombination von chirurgischer Entfernung des Tumors und PRRT kann die Behandlungsergebnisse verbessern und die Überlebensrate bei Patienten mit GEP-NET erhöhen. Daher wird PRRT oft als Teil eines multimodalen Behandlungsansatzes bei GEP-NET eingesetzt.",,,
-3E,What is the place of using PRRT in the surgical setting in GEP-NET?,english,specific,therapy,gpt-3.5-turbo-0125,"Peptide receptor radionuclide therapy (PRRT) is a treatment option for patients with gastroenteropancreatic neuroendocrine tumors (GEP-NETs) that have spread to other parts of the body and cannot be removed with surgery. PRRT involves the use of a radioactive substance that targets and binds to specific receptors on the tumor cells, delivering a high dose of radiation directly to the cancer cells.
+Die Kombination von chirurgischer Entfernung des Tumors und PRRT kann die Behandlungsergebnisse verbessern und die Überlebensrate der Patienten erhöhen. Daher wird PRRT oft als Teil eines multimodalen Behandlungsansatzes bei GEP-NET eingesetzt.",,,
+3E,What is the place of using PRRT in the surgical setting in GEP-NET?,english,specific,therapy,gpt-3.5-turbo-0125,"Peptide receptor radionuclide therapy (PRRT) is a treatment option for patients with gastroenteropancreatic neuroendocrine tumors (GEP-NET) that have spread to other parts of the body and cannot be removed by surgery. In the surgical setting, PRRT may be used as a neoadjuvant therapy to shrink the tumor before surgery, as an adjuvant therapy to reduce the risk of recurrence after surgery, or as a palliative treatment to relieve symptoms and improve quality of life in patients with advanced disease.
 
-In the surgical setting, PRRT can be used as a neoadjuvant therapy before surgery to shrink the tumor and make it easier to remove, or as an adjuvant therapy after surgery to target any remaining cancer cells. PRRT can also be used in patients with advanced or metastatic GEP-NETs who are not candidates for surgery, to help control the growth of the tumor and improve symptoms.
+PRRT works by targeting the tumor cells with a radioactive substance attached to a peptide that binds to specific receptors on the surface of the tumor cells. This allows for targeted delivery of radiation to the tumor cells while minimizing damage to surrounding healthy tissues. PRRT has been shown to be effective in controlling tumor growth, reducing symptoms, and improving quality of life in patients with GEP-NET.
 
-Overall, PRRT can be a valuable treatment option in the surgical setting for patients with GEP-NETs, either as a standalone therapy or in combination with surgery. It is important for patients to discuss their treatment options with their healthcare team to determine the best approach for their individual situation.",,,
-4G,Was ist Peptidrezeptor-Radionuklid-Therapie (PRRT)?,german,general,definition,gpt-3.5-turbo-0125,"Die Peptidrezeptor-Radionuklid-Therapie (PRRT) ist eine Form der nuklearmedizinischen Therapie, die zur Behandlung von bestimmten Krebserkrankungen eingesetzt wird. Bei der PRRT werden radioaktive Substanzen, die an spezifische Rezeptoren auf den Krebszellen binden, in den Körper des Patienten injiziert. Diese radioaktiven Substanzen zerstören dann gezielt die Krebszellen, während gesundes Gewebe weitgehend verschont bleibt.
+In the surgical setting, PRRT may be used in combination with surgery to improve outcomes for patients with GEP-NET. However, the specific role of PRRT in the surgical setting will depend on the individual patient's tumor characteristics, overall health, and treatment goals. It is important for patients to discuss their treatment options with their healthcare team to determine the best approach for their specific situation.",,,
+4G,Was ist Peptidrezeptor-Radionuklid-Therapie (PRRT)?,german,general,definition,gpt-3.5-turbo-0125,"Die Peptidrezeptor-Radionuklid-Therapie (PRRT) ist eine Form der nuklearmedizinischen Therapie, die zur Behandlung von bestimmten Krebserkrankungen eingesetzt wird. Bei der PRRT werden radioaktive Substanzen, die an spezifische Rezeptoren auf den Krebszellen binden, in den Körper des Patienten injiziert. Die radioaktiven Substanzen zerstören dann gezielt die Krebszellen, während gesundes Gewebe weitgehend verschont bleibt.
 
-Die PRRT wird vor allem bei neuroendokrinen Tumoren eingesetzt, die bestimmte Rezeptoren auf ihrer Oberfläche tragen. Durch die gezielte Bindung der radioaktiven Substanzen an diese Rezeptoren können die Krebszellen effektiv bekämpft werden. Die PRRT kann dazu beitragen, das Tumorwachstum zu verlangsamen, Symptome zu lindern und die Lebensqualität von Patienten mit fortgeschrittenen neuroendokrinen Tumoren zu verbessern.",,,
-4E,What is Peptide Receptor Radionuclide Therapy (PRRT)?,english,general,definition,gpt-3.5-turbo-0125,"Peptide Receptor Radionuclide Therapy (PRRT) is a targeted cancer treatment that uses a radioactive substance attached to a peptide (a small protein) to deliver radiation directly to cancer cells. The peptide binds to specific receptors on the surface of cancer cells, allowing the radioactive substance to deliver radiation directly to the cancer cells while sparing healthy tissues. PRRT is commonly used to treat neuroendocrine tumors, which have high levels of specific receptors that can be targeted by the peptide. This therapy can help to shrink tumors, relieve symptoms, and improve quality of life for patients with certain types of cancer.",,,
-5G,Wie viele PRRT-Behandlungen kann man bekommen?,german,specific,therapy,gpt-3.5-turbo-0125,"Die Anzahl der PRRT-Behandlungen, die ein Patient erhalten kann, hängt von verschiedenen Faktoren ab, einschließlich des individuellen Gesundheitszustands, des Ansprechens auf die Behandlung und der Verträglichkeit der Therapie. In der Regel werden PRRT-Behandlungen in Intervallen von mehreren Monaten bis zu einem Jahr durchgeführt, bis entweder keine weiteren Verbesserungen oder keine Verträglichkeit mehr erreicht werden. Es gibt keine festgelegte Anzahl von Behandlungen, die ein Patient erhalten kann, da dies von Fall zu Fall unterschiedlich ist. Es ist wichtig, mit dem behandelnden Arzt zu sprechen, um eine individuelle Behandlungsplanung zu erstellen.",,,
-5E,How many PRRT treatments can you have,english,specific,therapy,gpt-3.5-turbo-0125,"The number of PRRT (Peptide Receptor Radionuclide Therapy) treatments a person can have depends on various factors such as the type and stage of cancer, overall health condition, and response to previous treatments. Typically, patients may receive multiple PRRT treatments over a period of time, with the exact number determined by their healthcare provider. It is not uncommon for patients to undergo several cycles of PRRT treatment, usually spaced out over several months.",,,
-6G,Wie viel kostet eine Behandlung mit PRRT?,german,specific,cost,gpt-3.5-turbo-0125,"Die Kosten für eine Behandlung mit PRRT können je nach Land, Klinik und individuellem Fall variieren. In Deutschland liegen die Kosten für eine PRRT-Behandlung in der Regel zwischen 10.000 und 20.000 Euro pro Behandlungszyklus. Es können mehrere Behandlungszyklen erforderlich sein, um den gewünschten Effekt zu erzielen. Es ist wichtig, sich vor Beginn der Behandlung über die genauen Kosten und mögliche Finanzierungsmöglichkeiten zu informieren.",,,
-6E,How much does a PRRT treatment cost?,english,specific,cost,gpt-3.5-turbo-0125,"The cost of PRRT treatment can vary depending on factors such as the location of the treatment center, the specific type of PRRT being used, and the individual patient's insurance coverage. In general, the cost of a single PRRT treatment session can range from $10,000 to $20,000 or more. Patients may require multiple treatment sessions over the course of several months, which can significantly increase the overall cost of PRRT treatment. It is important for patients to discuss the cost of treatment with their healthcare provider and insurance company to understand their financial responsibilities and explore potential financial assistance options.",,,
-7G,Welche Isotope werden für die Therapie und welche für die Diagnistik der PRRT eingesetzt?,german,specific,therapy,gpt-3.5-turbo-0125,"Für die Therapie der Peptid-Rezeptor-Radionuklid-Therapie (PRRT) werden meist die Isotope Lutetium-177 oder Yttrium-90 eingesetzt. Diese radioaktiven Isotope werden an Peptide gebunden, die spezifisch an Tumorzellen binden und so gezielt die Strahlung an den Tumor abgeben.
+Die PRRT wird vor allem bei neuroendokrinen Tumoren eingesetzt, die bestimmte Rezeptoren auf ihrer Oberfläche tragen. Durch die gezielte Bindung der radioaktiven Substanzen an diese Rezeptoren können die Tumorzellen effektiv bekämpft werden.
 
-Für die Diagnostik der PRRT wird häufig das Isotop Gallium-68 verwendet. Dieses wird ebenfalls an Peptide gebunden, die an die Rezeptoren auf den Tumorzellen binden. Durch die Positronenemissionstomographie (PET) kann so die Verteilung der radioaktiven Substanz im Körper und damit die Lage und Größe des Tumors genau bestimmt werden.",,,
-7E,Which isotopes are used for therapy and diagnostics in PRRT?,english,specific,therapy,gpt-3.5-turbo-0125,"The isotopes used for therapy and diagnostics in Peptide Receptor Radionuclide Therapy (PRRT) are:
+Die PRRT ist eine vielversprechende Therapieoption für Patienten mit fortgeschrittenen neuroendokrinen Tumoren, die nicht mehr auf konventionelle Therapien ansprechen. Die Behandlung kann dazu beitragen, das Tumorwachstum zu verlangsamen, Symptome zu lindern und die Lebensqualität der Patienten zu verbessern.",,,
+4E,What is Peptide Receptor Radionuclide Therapy (PRRT)?,english,general,definition,gpt-3.5-turbo-0125,"Peptide Receptor Radionuclide Therapy (PRRT) is a targeted cancer treatment that uses a radioactive substance attached to a peptide (a small protein) to deliver radiation directly to cancer cells. The peptide binds to specific receptors on the surface of cancer cells, allowing the radioactive substance to selectively kill the cancer cells while minimizing damage to surrounding healthy tissue. PRRT is commonly used to treat neuroendocrine tumors, which have high levels of specific receptors that can be targeted by the therapy.",,,
+5G,Wie viele PRRT-Behandlungen kann man bekommen?,german,specific,therapy,gpt-3.5-turbo-0125,"Die Anzahl der PRRT-Behandlungen, die ein Patient erhalten kann, hängt von verschiedenen Faktoren ab, einschließlich des individuellen Gesundheitszustands, des Ansprechens auf die Behandlung und der Verträglichkeit der Therapie. In der Regel werden PRRT-Behandlungen in Intervallen von mehreren Monaten bis zu einem Jahr durchgeführt, bis entweder keine weiteren Verbesserungen oder keine Verträglichkeit mehr erreicht werden. Es gibt keine festgelegte Anzahl von Behandlungen, die ein Patient erhalten kann, da dies von Fall zu Fall unterschiedlich ist. Es ist wichtig, mit dem behandelnden Arzt zu sprechen, um die beste Behandlungsstrategie für den individuellen Fall zu entwickeln.",,,
+5E,How many PRRT treatments can you have?,english,specific,therapy,gpt-3.5-turbo-0125,"The number of PRRT (Peptide Receptor Radionuclide Therapy) treatments a person can have depends on various factors such as the type and stage of cancer, overall health, response to previous treatments, and individual circumstances. In general, patients may receive multiple PRRT treatments over a period of time, typically ranging from 2 to 4 treatments. However, the exact number of treatments will be determined by the healthcare provider based on the specific needs of the patient.",,,
+6G,Wie viel kostet eine Behandlung mit PRRT?,german,specific,cost,gpt-3.5-turbo-0125,"Die Kosten für eine Behandlung mit PRRT können je nach Land, Klinik und individuellem Fall variieren. In der Regel liegen die Kosten für eine PRRT-Behandlung zwischen 10.000 und 20.000 Euro pro Behandlungszyklus. Da PRRT eine relativ neue und spezialisierte Behandlungsmethode ist, kann es sein, dass die Kosten von den Krankenkassen nicht vollständig übernommen werden. Es ist daher ratsam, sich im Vorfeld über die Kosten und eventuelle Finanzierungsmöglichkeiten zu informieren.",,,
+6E,How much does a PRRT treatment cost?,english,specific,cost,gpt-3.5-turbo-0125,"The cost of PRRT treatment can vary depending on factors such as the location of the treatment center, the specific type of PRRT being used, and the individual patient's insurance coverage. In general, the cost of a single PRRT treatment session can range from $6,000 to $12,000. Patients typically require multiple treatment sessions over the course of several months, so the total cost of PRRT treatment can be quite high. It is important for patients to discuss the cost of treatment with their healthcare provider and insurance company to understand their financial responsibilities and explore potential financial assistance options.",,,
+7G,Welche Isotope werden für die Therapie und welche für die Diagnistik der PRRT eingesetzt?,german,specific,therapy,gpt-3.5-turbo-0125,"Für die Therapie der Peptid-Rezeptor-Radionuklid-Therapie (PRRT) werden meist die Isotope Lutetium-177 (Lu-177) oder Yttrium-90 (Y-90) eingesetzt. Diese Isotope werden an Peptide gebunden, die spezifisch an Tumorzellen binden und so eine gezielte Strahlentherapie ermöglichen.
 
-1. Lutetium-177 (Lu-177): This isotope is used for therapy in PRRT as it emits beta radiation that can target and destroy cancer cells. It is commonly used in combination with somatostatin analogs to treat neuroendocrine tumors.
+Für die Diagnostik der PRRT werden häufig die Isotope Indium-111 (In-111) oder Gallium-68 (Ga-68) verwendet. Diese Isotope werden ebenfalls an Peptide gebunden, die an Tumorzellen binden und so eine bildgebende Darstellung der Tumoren ermöglichen.",,,
+7E,Which isotopes are used for therapy and diagnostics in PRRT?,english,specific,therapy,gpt-3.5-turbo-0125,"The isotopes used for therapy and diagnostics in Peptide Receptor Radionuclide Therapy (PRRT) are typically lutetium-177 (^177Lu) and gallium-68 (^68Ga). ^177Lu is used for therapy as it emits beta particles that can target and destroy cancer cells, while ^68Ga is used for diagnostics as it emits positrons that can be detected by PET imaging to locate and assess the extent of the cancer.",,,
+8G,Ist der Einsatz von PRRT für den Patienten schädlich?,german,specific,side effects,gpt-3.5-turbo-0125,"Die PRRT (Peptid-Rezeptor-Radionuklid-Therapie) ist eine Form der nuklearmedizinischen Therapie, bei der radioaktive Substanzen gezielt an Tumorzellen binden und diese zerstören. Wie bei jeder medizinischen Behandlung gibt es auch bei der PRRT potenzielle Risiken und Nebenwirkungen. 
 
-2. Indium-111 (In-111): This isotope is used for diagnostics in PRRT as it emits gamma radiation that can be detected using imaging techniques such as SPECT (Single Photon Emission Computed Tomography). It is commonly used to visualize the expression of somatostatin receptors in tumors before initiating PRRT treatment.",,,
-8G,Ist der Einsatz von PRRT für den Patienten schädlich?,german,specific,side effects,gpt-3.5-turbo-0125,"Der Einsatz von PRRT (Peptid-Rezeptor-Radionuklid-Therapie) kann für den Patienten schädlich sein, da es sich um eine Form der Strahlentherapie handelt. Die Strahlung kann gesundes Gewebe schädigen und Nebenwirkungen wie Übelkeit, Erbrechen, Müdigkeit und Blutbildveränderungen verursachen. Es ist wichtig, dass der behandelnde Arzt die Risiken und Vorteile der PRRT-Therapie mit dem Patienten ausführlich bespricht und individuell abwägt, ob die Behandlung für den jeweiligen Patienten geeignet ist.",,,
-8E,Is PRRT harmful for the patient?,english,specific,side effects,gpt-3.5-turbo-0125,"PRRT (Peptide Receptor Radionuclide Therapy) is generally considered to be a safe and effective treatment for certain types of neuroendocrine tumors. However, like any medical procedure, there are potential risks and side effects associated with PRRT. These can include nausea, vomiting, fatigue, and temporary changes in blood cell counts. In rare cases, more serious side effects such as kidney damage or bone marrow suppression may occur.
+Zu den möglichen Nebenwirkungen der PRRT gehören unter anderem Übelkeit, Erbrechen, Durchfall, Müdigkeit, Haarausfall und vorübergehende Blutbildveränderungen. In seltenen Fällen können auch schwerwiegendere Nebenwirkungen auftreten, wie z.B. Nierenschäden oder Knochenmarkdepression.
 
-It is important for patients to discuss the potential risks and benefits of PRRT with their healthcare provider before undergoing treatment. Overall, the decision to undergo PRRT should be based on a thorough evaluation of the individual patient's medical history and condition.",,,
-9G,Ist die PRRT die Zukunft für metastasierende Krebspatienten?,german,general,therapy,gpt-3.5-turbo-0125,"Die PRRT (Peptid-Rezeptor-Radionuklid-Therapie) ist eine vielversprechende Behandlungsoption für Patienten mit metastasierendem Krebs, insbesondere für solche mit neuroendokrinen Tumoren. Diese Therapie nutzt radioaktive Substanzen, die an spezifische Rezeptoren auf den Krebszellen binden und so gezielt die Tumorzellen zerstören.
+Es ist wichtig zu beachten, dass die PRRT in der Regel nur bei Patienten mit fortgeschrittenen neuroendokrinen Tumoren eingesetzt wird, bei denen andere Therapien nicht mehr wirksam sind. In diesen Fällen überwiegen in der Regel die potenziellen Vorteile der PRRT die Risiken von Nebenwirkungen.
 
-Ob die PRRT die Zukunft für metastasierende Krebspatienten ist, hängt von verschiedenen Faktoren ab, darunter die Art des Tumors, das Stadium der Erkrankung und die individuelle Reaktion des Patienten auf die Behandlung. In einigen Fällen kann die PRRT zu einer signifikanten Verlängerung der Lebenserwartung und einer Verbesserung der Lebensqualität führen.
+Es ist daher wichtig, dass der behandelnde Arzt die Risiken und Nutzen der PRRT mit dem Patienten ausführlich bespricht und gemeinsam mit ihm eine individuelle Entscheidung über die Behandlung trifft. Insgesamt kann man sagen, dass der Einsatz von PRRT für den Patienten in der Regel nicht schädlich ist, sondern im Gegenteil dazu beitragen kann, das Tumorwachstum zu kontrollieren und die Lebensqualität zu verbessern.",,,
+8E,Is PRRT harmful for the patient?,english,specific,side effects,gpt-3.5-turbo-0125,"PRRT (Peptide Receptor Radionuclide Therapy) is generally considered to be a safe and effective treatment for certain types of neuroendocrine tumors. However, like any medical procedure, there are potential risks and side effects associated with PRRT. These can include temporary nausea, vomiting, fatigue, and kidney damage. In rare cases, more serious side effects such as bone marrow suppression or radiation toxicity may occur.
 
-Es ist jedoch wichtig zu beachten, dass die PRRT nicht für alle Patienten geeignet ist und dass weitere klinische Studien erforderlich sind, um die langfristige Wirksamkeit und Sicherheit dieser Therapie zu bestätigen. Es ist daher ratsam, mit einem Onkologen über die besten Behandlungsoptionen für jeden einzelnen Patienten zu sprechen.",,,
+It is important for patients to discuss the potential risks and benefits of PRRT with their healthcare provider before undergoing treatment. The decision to proceed with PRRT should be based on a thorough evaluation of the individual patient's medical history and condition.",,,
+9G,Ist die PRRT die Zukunft für metastasierende Krebspatienten?,german,general,therapy,gpt-3.5-turbo-0125,"Die PRRT (Peptid-Rezeptor-Radionuklid-Therapie) hat sich als vielversprechende Behandlungsoption für metastasierende Krebspatienten erwiesen, insbesondere für Patienten mit neuroendokrinen Tumoren. Die PRRT zielt darauf ab, Tumorzellen gezielt mit radioaktiven Substanzen zu zerstören, während gesundes Gewebe geschont wird.
+
+Ob die PRRT die Zukunft für metastasierende Krebspatienten ist, hängt von verschiedenen Faktoren ab, darunter die Art des Tumors, das Stadium der Erkrankung und die individuelle Reaktion des Patienten auf die Behandlung. Es ist wichtig, dass die PRRT in Kombination mit anderen Therapien und unter der Aufsicht eines erfahrenen medizinischen Teams angewendet wird.
+
+Insgesamt zeigt die PRRT vielversprechende Ergebnisse und könnte in Zukunft eine wichtige Rolle in der Behandlung von metastasierendem Krebs spielen. Es ist jedoch wichtig, weitere Forschung und klinische Studien durchzuführen, um die langfristige Wirksamkeit und Sicherheit dieser Therapie zu bestätigen.",,,
 9E,Is PRRT the future for metastatic cancer patients?,english,general,therapy,gpt-3.5-turbo-0125,"PRRT (Peptide Receptor Radionuclide Therapy) is a promising treatment option for metastatic cancer patients, particularly those with neuroendocrine tumors. It involves targeting cancer cells with radiation attached to a peptide that binds to specific receptors on the cancer cells.
 
 While PRRT has shown promising results in clinical trials and has been approved for certain types of neuroendocrine tumors, it may not be suitable for all metastatic cancer patients. The effectiveness of PRRT can vary depending on the type and stage of cancer, as well as individual patient factors.
 
 Overall, PRRT is a valuable addition to the treatment options available for metastatic cancer patients, but it may not be the sole future for all patients. It is important for patients to discuss their treatment options with their healthcare providers to determine the best course of action for their specific situation.",,,
-10G,"Was muss eine Klinik an Equipment haben, um eine PRRT durchführen zu können?",german,specific,therapy,gpt-3.5-turbo-0125,"Eine Klinik, die eine PRRT (Peptid-Rezeptor-Radionuklid-Therapie) durchführen möchte, benötigt spezielles Equipment, darunter:
+10G,"Was muss eine Klinik an Equipment haben, um eine PRRT durchführen zu können?",german,specific,therapy,gpt-3.5-turbo-0125,"Um eine PRRT (Peptid-Rezeptor-Radionuklid-Therapie) durchführen zu können, benötigt eine Klinik folgendes Equipment:
 
-1. Ein Zyklotron oder einen anderen Teilchenbeschleuniger zur Herstellung der radioaktiven Substanzen.
-2. Ein spezielles Radiopharmazeutikum, wie z.B. Lutetium-177-DOTATATE, das für die PRRT verwendet wird.
-3. Ein PET/CT-Scanner zur Bildgebung und Lokalisierung der Tumoren.
-4. Ein spezielles Strahlenschutzsystem, um Patienten und medizinisches Personal vor Strahlung zu schützen.
-5. Erfahrene Nuklearmediziner und Radiologen, die die PRRT durchführen und interpretieren können.
-6. Ein Team von Pflegekräften und Technikern, die bei der Durchführung der Therapie unterstützen.
-7. Ein gut ausgestattetes Labor zur Herstellung und Qualitätskontrolle der radioaktiven Substanzen.
-8. Ein Notfallplan für den Umgang mit möglichen Komplikationen während der Therapie.
+1. Radiopharmazeutika: Die Klinik muss über die notwendigen radioaktiven Substanzen verfügen, die für die PRRT verwendet werden, wie z.B. Lutetium-177-DOTATATE oder Yttrium-90-DOTATOC.
 
-Es ist wichtig, dass die Klinik über alle erforderlichen Ressourcen und Fachkenntnisse verfügt, um die PRRT sicher und effektiv durchführen zu können.",,,
-10E,What equipment does a clinic need to perform PRRT?,english,specific,therapy,gpt-3.5-turbo-0125,"1. Radioisotope production facility: A clinic performing PRRT needs to have a facility capable of producing the necessary radioisotopes, such as Lutetium-177 or Yttrium-90.
+2. Radiopharmazeutische Produktionseinrichtungen: Die Klinik benötigt spezielle Einrichtungen zur Herstellung der radiopharmazeutischen Substanzen in einer sicheren und kontrollierten Umgebung.
 
-2. Radiopharmaceutical preparation area: A dedicated area for preparing the radiopharmaceuticals used in PRRT, ensuring proper handling and safety protocols are followed.
+3. Strahlenschutz: Die Klinik muss über entsprechende Strahlenschutzmaßnahmen verfügen, um Patienten, Personal und Umgebung vor Strahlenexposition zu schützen.
 
-3. Injection equipment: Syringes, needles, and other equipment for administering the radiopharmaceuticals to patients.
+4. Bildgebungseinrichtungen: Zur Planung und Überwachung der PRRT ist eine hochwertige Bildgebung notwendig, wie z.B. PET/CT oder SPECT/CT.
 
-4. Imaging equipment: Scintillation cameras or other imaging devices to monitor the distribution of the radiopharmaceutical within the patient's body.
+5. Therapieeinrichtungen: Die Klinik benötigt spezielle Therapieeinrichtungen, um die radiopharmazeutischen Substanzen sicher und effektiv zu verabreichen.
 
-5. Radiation shielding: Lead-lined rooms and protective gear to minimize radiation exposure to healthcare providers and patients.
+6. Erfahrenes medizinisches Personal: Für die Durchführung der PRRT ist ein erfahrenes Team aus Nuklearmedizinern, Radiologen, Radioonkologen, Physikern und Pflegekräften erforderlich.
 
-6. Patient monitoring equipment: Vital sign monitors, ECG machines, and other equipment to monitor patients during and after PRRT treatment.
+7. Monitoring und Nachsorge: Die Klinik muss über die notwendigen Einrichtungen zur Überwachung der Patienten während und nach der PRRT verfügen, um mögliche Nebenwirkungen frühzeitig zu erkennen und zu behandeln.",,,
+10E,What equipment does a clinic need to perform PRRT?,english,specific,therapy,gpt-3.5-turbo-0125,"1. Radiopharmaceuticals: The most commonly used radiopharmaceutical for PRRT is Lutetium-177-DOTATATE (Lu-177-DOTATATE), which is a radioactive substance that targets and destroys neuroendocrine tumor cells.
 
-7. Waste disposal equipment: Proper disposal containers and procedures for handling radioactive waste generated during PRRT procedures.
+2. Radioactive shielding: Due to the radioactive nature of the radiopharmaceuticals used in PRRT, clinics need to have appropriate shielding in place to protect staff and patients from radiation exposure.
 
-8. Staff training and certification: Healthcare providers performing PRRT should receive specialized training and certification in nuclear medicine and radiation safety.",,,
-11G,Welche Ärzte führen PRRT durch? Muss man dafür ein Nuklearmediziner sein?,german,specific,therapy,gpt-3.5-turbo-0125,"PRRT (Peptid-Rezeptor-Radionuklid-Therapie) wird in der Regel von Nuklearmedizinern durchgeführt, da sie über das notwendige Fachwissen und die Erfahrung im Umgang mit radioaktiven Substanzen verfügen. In einigen Fällen können auch Onkologen oder Radiologen an der Durchführung von PRRT beteiligt sein, insbesondere wenn sie über spezielle Schulungen und Zertifizierungen im Bereich der nuklearmedizinischen Therapie verfügen. Es ist wichtig, dass die Ärzte, die PRRT durchführen, über die erforderliche Fachkompetenz und Erfahrung verfügen, um die Therapie sicher und effektiv durchzuführen.",,,
-11E,Which doctors perform PRRT? Do you have to be a nuclear medicine physician?,english,specific,therapy,gpt-3.5-turbo-0125,"PRRT (Peptide Receptor Radionuclide Therapy) is typically performed by nuclear medicine physicians who have specialized training in this specific type of therapy. However, other specialists such as oncologists, radiologists, and endocrinologists may also be involved in the treatment process.
+3. Injection equipment: Clinics performing PRRT will need specialized injection equipment to administer the radiopharmaceuticals to patients.
+
+4. Imaging equipment: Imaging equipment such as SPECT/CT or PET/CT scanners are used to monitor the distribution of the radiopharmaceuticals in the body and assess treatment response.
+
+5. Radiation safety equipment: Clinics performing PRRT need to have radiation safety equipment such as lead aprons, gloves, and goggles to protect staff from radiation exposure.
+
+6. Patient monitoring equipment: Vital signs monitoring equipment such as blood pressure monitors, pulse oximeters, and ECG machines are needed to monitor patients during and after PRRT treatment.
+
+7. Treatment rooms: Clinics need dedicated treatment rooms equipped with lead-lined walls and doors to perform PRRT safely and effectively.
+
+8. Trained staff: Clinics performing PRRT need to have trained nuclear medicine physicians, radiologic technologists, and nurses who are experienced in administering radiopharmaceuticals and managing potential side effects.",,,
+11G,Welche Ärzte führen PRRT durch? Muss man dafür ein Nuklearmediziner sein?,german,specific,therapy,gpt-3.5-turbo-0125,"Die PRRT (Peptid-Rezeptor-Radionuklid-Therapie) wird in der Regel von Nuklearmedizinern durchgeführt, da sie über das notwendige Fachwissen und die Erfahrung im Umgang mit radioaktiven Substanzen verfügen. In einigen Fällen können auch Onkologen oder Radiologen mit entsprechender Zusatzausbildung die PRRT durchführen. Es ist wichtig, dass der behandelnde Arzt über die erforderlichen Kenntnisse und Fähigkeiten verfügt, um die Therapie sicher und effektiv durchzuführen.",,,
+11E,Which doctors perform PRRT? Do you have to be a nuclear medicine physician?,english,specific,therapy,gpt-3.5-turbo-0125,"PRRT (Peptide Receptor Radionuclide Therapy) is typically performed by nuclear medicine physicians who have specialized training in this specific type of therapy. However, other specialists such as oncologists, radiologists, and interventional radiologists may also be involved in the treatment process.
 
 Patients do not necessarily have to be treated by a nuclear medicine physician, but it is recommended to seek out a healthcare provider who has experience and expertise in PRRT to ensure the best possible outcomes.",,,
-12G,Was sind die häufigsten Nebenwirkungen der PRRT?,german,general,side effects,gpt-3.5-turbo-0125,"Die häufigsten Nebenwirkungen der PRRT (Peptid-Rezeptor-Radionuklid-Therapie) sind Übelkeit, Erbrechen, Durchfall, Müdigkeit, Appetitlosigkeit, Haarausfall und vorübergehende Blutbildveränderungen. In seltenen Fällen können auch langfristige Nebenwirkungen wie Nierenschäden auftreten. Es ist wichtig, dass Patienten vor Beginn der PRRT über mögliche Nebenwirkungen informiert werden und eng mit ihrem behandelnden Arzt zusammenarbeiten, um diese zu managen und zu minimieren.",,,
-12E,What are the most common side effects of PRRT?,english,general,side effects,gpt-3.5-turbo-0125,"The most common side effects of peptide receptor radionuclide therapy (PRRT) include:
+12G,Was sind die häufigsten Nebenwirkungen der PRRT?,german,general,side effects,gpt-3.5-turbo-0125,"Die häufigsten Nebenwirkungen der PRRT (Peptid-Rezeptor-Radionuklid-Therapie) sind Übelkeit, Erbrechen, Durchfall, Müdigkeit, Appetitlosigkeit und vorübergehende Blutbildveränderungen. Weitere mögliche Nebenwirkungen sind Haarausfall, Schilddrüsenunterfunktion, Nierenprobleme und Infektionen. Es ist wichtig, dass Patienten, die eine PRRT erhalten, eng mit ihrem Arzt zusammenarbeiten, um Nebenwirkungen zu überwachen und zu behandeln.",,,
+12E,What are the most common side effects of PRRT?,english,general,side effects,gpt-3.5-turbo-0125,"The most common side effects of Peptide Receptor Radionuclide Therapy (PRRT) include:
 
 1. Nausea and vomiting
 2. Fatigue
@@ -97,8 +100,8 @@ Patients do not necessarily have to be treated by a nuclear medicine physician, 
 6. Hair loss
 7. Kidney damage
 8. Liver damage
-9. Thyroid dysfunction
-10. Skin reactions at the injection site
+9. Hypothyroidism
+10. Allergic reactions
 
 It is important to discuss potential side effects with your healthcare provider before undergoing PRRT treatment.",,,
 13G,Was sind die Vorteile einer PRRT?,german,general,advantages of therapy,gpt-3.5-turbo-0125,"Die Vorteile einer PRRT (Peptid-Rezeptor-Radionuklid-Therapie) sind:
@@ -107,92 +110,88 @@ It is important to discuss potential side effects with your healthcare provider 
 
 2. Langfristige Wirksamkeit: PRRT kann dazu beitragen, das Tumorwachstum zu verlangsamen oder sogar zu stoppen, was zu einer langfristigen Kontrolle der Erkrankung führen kann.
 
-3. Weniger Nebenwirkungen: Im Vergleich zu herkömmlichen Therapien wie Chemotherapie können die Nebenwirkungen von PRRT geringer sein, da gesundes Gewebe weniger betroffen ist.
+3. Weniger Nebenwirkungen: Im Vergleich zu herkömmlichen Therapien wie Chemotherapie können die Nebenwirkungen von PRRT geringer sein, da die Strahlung gezielt auf die Tumorzellen abzielt.
 
 4. Verbesserte Lebensqualität: Durch die Kontrolle des Tumorwachstums und die Reduzierung von Symptomen wie Schmerzen oder Müdigkeit kann PRRT die Lebensqualität von Patienten verbessern.
 
-5. Option für Patienten mit fortgeschrittenem Krebs: PRRT kann eine Behandlungsoption für Patienten mit fortgeschrittenem neuroendokrinen Tumor sein, die auf andere Therapien nicht mehr ansprechen.
-
-6. Personalisierte Therapie: PRRT kann an die individuellen Bedürfnisse und den Krankheitsverlauf des Patienten angepasst werden, um die bestmöglichen Ergebnisse zu erzielen.",,,
-13E,What are the benefits of PRRT?,english,general,advantages of therapy,gpt-3.5-turbo-0125,"1. Effective treatment: PRRT has been shown to be an effective treatment for certain types of neuroendocrine tumors, particularly those that have spread to other parts of the body.
+5. Option für Patienten mit fortgeschrittenem Krebs: PRRT kann eine Behandlungsoption für Patienten mit fortgeschrittenem Krebs sein, bei denen andere Therapien nicht mehr wirksam sind.",,,
+13E,What are the benefits of PRRT?,english,general,advantages of therapy,gpt-3.5-turbo-0125,"1. Effective treatment: PRRT has been shown to be an effective treatment option for patients with neuroendocrine tumors that have spread to other parts of the body.
 
 2. Targeted therapy: PRRT specifically targets the cancer cells, delivering radiation directly to the tumor cells while minimizing damage to surrounding healthy tissue.
 
-3. Long-lasting effects: PRRT can provide long-lasting control of tumor growth and symptoms, allowing patients to experience improved quality of life.
+3. Prolonged survival: Studies have shown that PRRT can help prolong survival in patients with neuroendocrine tumors, particularly those with advanced disease.
 
-4. Minimal side effects: Compared to traditional chemotherapy, PRRT typically has fewer and milder side effects, making it a more tolerable treatment option for many patients.
+4. Improved quality of life: PRRT can help alleviate symptoms associated with neuroendocrine tumors, such as pain, diarrhea, and flushing, leading to an improved quality of life for patients.
 
-5. Outpatient procedure: PRRT is typically administered as an outpatient procedure, allowing patients to return home the same day and resume their normal activities.
+5. Minimal side effects: PRRT is generally well-tolerated, with most patients experiencing only mild side effects such as nausea, fatigue, and dry mouth.
 
-6. Potential for combination therapy: PRRT can be used in combination with other treatments, such as surgery or chemotherapy, to provide a more comprehensive approach to cancer treatment.",,,
-14G,Was sind Herausforderungen der PRRT?,german,general,challenges of therapy,gpt-3.5-turbo-0125,"Einige Herausforderungen der PRRT (Peptid-Rezeptor-Radionuklid-Therapie) sind:
+6. Outpatient procedure: PRRT is typically performed on an outpatient basis, allowing patients to return home the same day and resume their normal activities.
 
-1. Begrenzte Verfügbarkeit von Radiopharmaka: Die Herstellung und Bereitstellung von Radiopharmaka für die PRRT kann aufgrund von regulatorischen Anforderungen und begrenzten Produktionskapazitäten eine Herausforderung darstellen.
+7. Potential for repeat treatments: In some cases, patients may benefit from multiple rounds of PRRT, further extending the benefits of this therapy.",,,
+14G,Was sind Herausforderungen der PRRT?,german,general,challenges of therapy,gpt-3.5-turbo-0125,"1. Identifizierung geeigneter Patienten: Nicht alle Patienten mit neuroendokrinen Tumoren sind für die PRRT geeignet. Es ist wichtig, die Patienten sorgfältig zu selektieren, um sicherzustellen, dass sie von der Therapie profitieren können.
 
-2. Strahlendosis und Nebenwirkungen: Die PRRT ist eine Form der Strahlentherapie, die mit potenziellen Nebenwirkungen wie Übelkeit, Erbrechen, Müdigkeit und Knochenmarkssuppression verbunden sein kann. Die genaue Dosierung und Überwachung der Strahlendosis sind daher entscheidend, um das Risiko von Nebenwirkungen zu minimieren.
+2. Strahlenschutz: Da die PRRT radioaktive Substanzen verwendet, ist es wichtig, die Strahlendosis für den Patienten und das medizinische Personal zu minimieren. Dies erfordert eine sorgfältige Planung und Durchführung der Therapie.
 
-3. Auswahl geeigneter Patienten: Nicht alle Patienten mit neuroendokrinen Tumoren sind für die PRRT geeignet. Eine genaue Diagnose und Bewertung des Krankheitsstadiums sind erforderlich, um sicherzustellen, dass die PRRT für den jeweiligen Patienten geeignet ist.
+3. Nebenwirkungen: Die PRRT kann Nebenwirkungen wie Übelkeit, Erbrechen, Müdigkeit und Blutbildveränderungen verursachen. Es ist wichtig, diese Nebenwirkungen zu erkennen und zu behandeln, um den Patientenkomfort zu gewährleisten.
 
-4. Langfristige Wirksamkeit und Überwachung: Die langfristige Wirksamkeit der PRRT und die Notwendigkeit einer regelmäßigen Überwachung der Patienten sind wichtige Herausforderungen. Es ist wichtig, den Verlauf der Erkrankung zu überwachen und gegebenenfalls Anpassungen an der Behandlung vorzunehmen.
+4. Langzeitwirkungen: Da die PRRT eine relativ neue Therapieform ist, sind die Langzeitwirkungen noch nicht vollständig bekannt. Es ist wichtig, die Patienten langfristig zu überwachen und mögliche Langzeitfolgen der Therapie zu erforschen.
 
-5. Kostenerstattung und Zugang: Die PRRT ist eine relativ neue und teure Behandlungsmethode, die möglicherweise nicht von allen Krankenversicherungen abgedeckt wird. Der Zugang zur PRRT kann daher für einige Patienten eine Herausforderung darstellen, insbesondere in Ländern mit eingeschränkten Gesundheitssystemen.",,,
-14E,What are the challenges of PRRT?,english,general,challenges of therapy,gpt-3.5-turbo-0125,"1. Limited availability: PRRT is not widely available in all countries and regions, making it difficult for some patients to access this treatment option.
+5. Kosteneffektivität: Die PRRT ist eine teure Therapieoption, die möglicherweise nicht für alle Patienten erschwinglich ist. Es ist wichtig, die Kosten-Nutzen-Verhältnis der Therapie zu berücksichtigen und sicherzustellen, dass sie für die Patienten einen Mehrwert bietet.",,,
+14E,What are the challenges of PRRT?,english,general,challenges of therapy,gpt-3.5-turbo-0125,"1. Limited availability: PRRT is not widely available in all countries and may only be offered at specialized medical centers, making it difficult for some patients to access this treatment.
 
 2. High cost: PRRT can be expensive, and insurance coverage may vary, leading to financial challenges for some patients.
 
-3. Side effects: While generally well-tolerated, PRRT can cause side effects such as nausea, vomiting, and kidney toxicity, which can be challenging for some patients to manage.
+3. Side effects: PRRT can cause side effects such as nausea, vomiting, fatigue, and kidney damage, which can be challenging for patients to manage.
 
-4. Treatment duration: PRRT typically requires multiple treatment sessions over several months, which can be time-consuming and disruptive to a patient's daily life.
+4. Treatment resistance: Some patients may not respond well to PRRT or may develop resistance to the treatment over time, leading to challenges in finding alternative treatment options.
 
-5. Patient selection: Not all patients with neuroendocrine tumors are suitable candidates for PRRT, and determining eligibility can be a complex process.
+5. Long treatment duration: PRRT typically requires multiple treatment sessions over a period of several months, which can be physically and emotionally taxing for patients.
 
-6. Long-term efficacy: The long-term effectiveness of PRRT is still being studied, and some patients may experience disease progression or recurrence after treatment.
-
-7. Radiation exposure: PRRT involves the use of radioactive substances, which can pose risks of radiation exposure to patients and healthcare providers.",,,
+6. Limited research: As a relatively new treatment option, there is still ongoing research to fully understand the long-term effectiveness and potential risks of PRRT, leading to uncertainty for both patients and healthcare providers.",,,
 15G,Was sind die wichtigsten inclusion/exclusion criteria der COMPETE Studie?,german,specific,study,gpt-3.5-turbo-0125,"Die wichtigsten Inklusionskriterien der COMPETE-Studie sind:
 
 1. Alter zwischen 18 und 65 Jahren
 2. Diagnose einer schweren depressiven Episode nach DSM-5-Kriterien
-3. Keine gleichzeitige Behandlung mit Antidepressiva oder anderen psychotropen Medikamenten
+3. Keine gleichzeitige Behandlung mit anderen Antidepressiva
 4. Bereitschaft, an der Studie teilzunehmen und die erforderlichen Untersuchungen durchzuführen
 
 Die wichtigsten Ausschlusskriterien der COMPETE-Studie sind:
 
 1. Schwere körperliche Erkrankungen, die die Teilnahme an der Studie beeinträchtigen könnten
 2. Schwangerschaft oder Stillzeit
-3. Akute Suizidalität oder Selbstverletzungsverhalten
-4. Vorherige Teilnahme an einer klinischen Studie zur Behandlung von Depressionen in den letzten 3 Monaten",,,
-15E,What are the most important inclusion/exclusion criteria of the COMPETE trial?,english,specific,study,gpt-3.5-turbo-0125,"The most important inclusion/exclusion criteria of the COMPETE trial are:
+3. Akute Suizidalität oder frühere Suizidversuche in den letzten sechs Monaten
+4. Einnahme von Medikamenten, die die Wirkung der Studienmedikation beeinflussen könnten",,,
+15E,What are the most important inclusion/exclusion criteria of the COMPETE trial?,english,specific,study,gpt-3.5-turbo-0125,"The COMPETE trial is a clinical trial evaluating the efficacy and safety of a new medication for treating a specific medical condition. The most important inclusion/exclusion criteria of the COMPETE trial may include:
 
 Inclusion criteria:
-1. Patients aged 18 years or older
-2. Patients with a confirmed diagnosis of a specific medical condition or disease being studied
-3. Patients who are willing and able to provide informed consent
-4. Patients who are willing and able to comply with the study protocol and follow-up visits
-5. Patients who have not participated in any other clinical trial within a specified time period
+1. Patients diagnosed with the specific medical condition being studied.
+2. Patients who are willing and able to provide informed consent.
+3. Patients who meet certain age requirements.
+4. Patients who are willing and able to comply with the study protocol and follow-up visits.
+5. Patients who are not currently taking any medications that may interact with the study drug.
 
 Exclusion criteria:
-1. Patients with a history of severe allergies or adverse reactions to the study drug or related medications
-2. Patients with a history of significant medical conditions that may interfere with the study outcomes
-3. Patients who are pregnant or breastfeeding
-4. Patients who are unable to adhere to the study protocol or follow-up visits
-5. Patients who are unable to provide informed consent.",,,
+1. Patients with any significant medical conditions that may interfere with the study results.
+2. Patients who are pregnant or breastfeeding.
+3. Patients with a history of drug or alcohol abuse.
+4. Patients with a history of allergic reactions to the study drug or similar medications.
+5. Patients who are currently participating in another clinical trial.
+
+These criteria are important to ensure that the study results are valid and that the safety and well-being of the participants are protected.",,,
 16G,Was sind die wichtigsten inclusion/exclusion criteria der COMPOSE Studie?,german,specific,study,gpt-3.5-turbo-0125,"Die wichtigsten Inklusionskriterien der COMPOSE-Studie sind:
 
 1. Alter zwischen 18 und 65 Jahren
-2. Diagnose einer schweren depressiven Störung
-3. Keine gleichzeitige Teilnahme an einer anderen klinischen Studie
-4. Stabile Dosis von Antidepressiva für mindestens 4 Wochen vor Studienbeginn
-5. Bereitschaft, an den geplanten Studienbesuchen teilzunehmen
+2. Diagnose einer schweren depressiven Episode
+3. Keine gleichzeitige Behandlung mit anderen Antidepressiva
+4. Bereitschaft, an der Studie teilzunehmen und die erforderlichen Untersuchungen durchzuführen
 
 Die wichtigsten Ausschlusskriterien der COMPOSE-Studie sind:
 
 1. Schwere körperliche Erkrankungen, die die Teilnahme an der Studie beeinträchtigen könnten
 2. Schwangerschaft oder Stillzeit
-3. Akute Suizidalität oder Selbstverletzungsverhalten
-4. Missbrauch von Alkohol oder Drogen in den letzten 6 Monaten
-5. Unzureichende Deutschkenntnisse, um die Fragebögen zu verstehen und auszufüllen.",,,
-16E,What are the most important inclusion/exclusion criteria of the COMPOSE trial?,english,specific,study,gpt-3.5-turbo-0125,"The most important inclusion/exclusion criteria of the COMPOSE trial are as follows:
+3. Einnahme von anderen Medikamenten, die die Wirkung des untersuchten Antidepressivums beeinflussen könnten
+4. Unfähigkeit, informierte Einwilligung zu geben oder die Studienprotokolle zu befolgen.",,,
+16E,What are the most important inclusion/exclusion criteria of the COMPOSE trial?,english,specific,study,gpt-3.5-turbo-0125,"The most important inclusion/exclusion criteria of the COMPOSE trial are:
 
 Inclusion criteria:
 1. Patients aged 18 years or older
@@ -202,173 +201,136 @@ Inclusion criteria:
 5. Patients who have not participated in any other clinical trial within a specified time period
 
 Exclusion criteria:
-1. Patients with a history of allergic reactions or intolerance to the study drug or related compounds
-2. Patients with a history of significant medical conditions that may interfere with the study outcomes
+1. Patients with a history of severe allergic reactions to the study drug or related compounds
+2. Patients with a history of significant medical conditions that may interfere with the study results
 3. Patients who are pregnant or breastfeeding
 4. Patients with a history of substance abuse or dependence
 5. Patients who are unable to adhere to the study protocol or follow-up visits.",,,
 17G,Welche radiopharmazeitische Medikamente sind von der FDA zugelassen?,german,specific,medication,gpt-3.5-turbo-0125,"Einige der radiopharmazeutischen Medikamente, die von der FDA zugelassen sind, sind:
 
-- Technetium Tc 99m Sestamibi (Cardiolite)
-- Technetium Tc 99m MAA (Albumin aggregated)
-- Technetium Tc 99m Tetrofosmin (Myoview)
-- Technetium Tc 99m Pyrophosphate (Pyrophos)
-- Technetium Tc 99m Tilmanocept (Lymphoseek)
-- Gallium Ga 68 Dotatate (Netspot)
-- Iodine I 131 Iobenguane (Azedra)
-- Iodine I 131 Sodium Iodide (Iodotope)
-- Fluorine F 18 Fludeoxyglucose (FDG)
-- Yttrium Y 90 Ibritumomab Tiuxetan (Zevalin)",,,
+- Technetium Tc 99m Sestamibi (Markenname: Cardiolite)
+- Technetium Tc 99m MAA (Markenname: TechneScan)
+- Technetium Tc 99m Tetrofosmin (Markenname: Myoview)
+- Iodine I 131 (Markenname: Iodotope)
+- Gallium Ga 68 Dotatate (Markenname: Netspot)
+- Fluorine F 18 Fludeoxyglucose (Markenname: FDG)
+- Yttrium Y 90 ibritumomab tiuxetan (Markenname: Zevalin)
+- Iodine I 131 tositumomab (Markenname: Bexxar)",,,
 17E,Which radiopharmaceutical drugs are approved by the FDA?,english,specific,medication,gpt-3.5-turbo-0125,"Some of the radiopharmaceutical drugs approved by the FDA include:
 
 1. Technetium Tc 99m Sestamibi (Cardiolite)
-2. Iodine I 131 (Iodotope)
-3. Gallium Ga 68 (Netspot)
-4. Fluorine F 18 (Fludeoxyglucose)
-5. Lutetium Lu 177 (Lutathera)
-6. Yttrium Y 90 (TheraSphere)
-7. Indium In 111 (Octreoscan)
-8. Radium Ra 223 (Xofigo)",,,
-18G,In welcher Indikationen werden zur Zeit PSMA-targeting Radiopharmazeutika entwickelt?,german,specific,medication,gpt-3.5-turbo-0125,"Zur Zeit werden PSMA-targeting Radiopharmazeutika vor allem in der Indikation Prostatakrebs entwickelt. Diese Radiopharmazeutika sollen dazu dienen, Tumorzellen, die das Prostata-spezifische Membranantigen (PSMA) exprimieren, gezielt zu zerstören. Es gibt auch Forschungsbemühungen, PSMA-targeting Radiopharmazeutika für andere Krebsarten wie Bauchspeicheldrüsenkrebs und Brustkrebs zu entwickeln.",,,
+2. Iodine I 131 Sodium Iodide (I-131)
+3. Gallium Ga 68 Dotatate (Netspot)
+4. Fludeoxyglucose F 18 (FDG)
+5. Lutetium Lu 177 Dotatate (Lutathera)
+6. Iodine I 131 Tositumomab (Bexxar)
+7. Iodine I 131 Iobenguane (Azedra)
+8. Radium Ra 223 Dichloride (Xofigo)
+9. Technetium Tc 99m Tilmanocept (Lymphoseek)
+10. Technetium Tc 99m Medronate (MDP)",,,
+18G,In welcher Indikationen werden zur Zeit PSMA-targeting Radiopharmazeutika entwickelt?,german,specific,medication,gpt-3.5-turbo-0125,"Zur Zeit werden PSMA-targeting Radiopharmazeutika vor allem in der Behandlung von Prostatakrebs entwickelt. Diese Radiopharmazeutika können dazu beitragen, Tumorzellen gezielt zu zerstören und so die Wirksamkeit der Therapie zu verbessern. Darüber hinaus werden PSMA-targeting Radiopharmazeutika auch in der Diagnostik von Prostatakrebs eingesetzt, um Tumore frühzeitig zu erkennen und den Verlauf der Erkrankung zu überwachen.",,,
 18E,In which indications are PSMA-targeting radiopharmaceuticals currently being developed?,english,specific,medication,gpt-3.5-turbo-0125,"PSMA-targeting radiopharmaceuticals are currently being developed for the following indications:
 
-1. Prostate cancer: PSMA-targeting radiopharmaceuticals are being developed for the imaging and treatment of prostate cancer, including both primary and metastatic disease.
+1. Prostate cancer: PSMA-targeting radiopharmaceuticals are being developed for imaging and treatment of prostate cancer, including both primary and metastatic disease.
 
-2. Other solid tumors: PSMA-targeting radiopharmaceuticals are also being investigated for their potential use in other solid tumors that express PSMA, such as breast cancer, lung cancer, and renal cell carcinoma.
+2. Other solid tumors: PSMA expression has been found in other solid tumors such as breast, lung, and colorectal cancer. PSMA-targeting radiopharmaceuticals are being investigated for imaging and treatment of these tumors.
 
-3. Neuroendocrine tumors: PSMA-targeting radiopharmaceuticals are being studied for their ability to target and treat neuroendocrine tumors, which often express high levels of PSMA.
+3. Neuroendocrine tumors: PSMA-targeting radiopharmaceuticals are also being studied for imaging and treatment of neuroendocrine tumors, which often express high levels of PSMA.
 
-4. Lymphoma: PSMA-targeting radiopharmaceuticals are being explored for their potential use in the imaging and treatment of lymphoma, particularly in cases where conventional imaging techniques may be limited.
+4. Lymphoma: PSMA expression has been reported in certain types of lymphoma, and PSMA-targeting radiopharmaceuticals are being developed for imaging and treatment of these malignancies.
 
-5. Bone metastases: PSMA-targeting radiopharmaceuticals are being investigated for their ability to target and treat bone metastases, which are a common complication of many types of cancer.",,,
-19G,Welche wichtigen Studien wurden in den letzten Jahren im Bereich der neuroendokrinen Tumore gestartet bzw. durchgeführt?,german,specific,study,gpt-3.5-turbo-0125,"Einige wichtige Studien, die in den letzten Jahren im Bereich der neuroendokrinen Tumore gestartet oder durchgeführt wurden, sind:
+Overall, PSMA-targeting radiopharmaceuticals have shown promise in a variety of cancer types and are being actively researched for their potential clinical applications.",,,
+19G,Welche wichtigen Studien wurden in den letzten Jahren im Bereich der neuroendokrinen Tumore gestartet bzw. durchgeführt?,german,specific,study,gpt-3.5-turbo-0125,"In den letzten Jahren wurden mehrere wichtige Studien im Bereich der neuroendokrinen Tumore durchgeführt, darunter:
 
-1. NETTER-1-Studie: Diese Studie untersuchte die Wirksamkeit von Lutetium-177-Dotatate bei Patienten mit fortgeschrittenen neuroendokrinen Tumoren des Magen-Darm-Trakts oder des Pankreas.
+1. Die NETTER-1-Studie, die die Wirksamkeit von Lutetium-177-Dotatate bei der Behandlung von fortgeschrittenen neuroendokrinen Tumoren des Magen-Darm-Trakts untersuchte.
 
-2. RADIANT-Studien: Diese Studien untersuchten die Wirksamkeit von Everolimus und Sunitinib bei der Behandlung von fortgeschrittenen neuroendokrinen Tumoren des Pankreas und des Magen-Darm-Trakts.
+2. Die RADIANT-Studien, die die Wirksamkeit von Everolimus und Sunitinib bei der Behandlung von fortgeschrittenen neuroendokrinen Tumoren des Pankreas und des Magen-Darm-Trakts untersuchten.
 
-3. CLARINET-Studie: Diese Studie untersuchte die Wirksamkeit von Lanreotid bei der Behandlung von nicht-funktionellen neuroendokrinen Tumoren des Magen-Darm-Trakts.
+3. Die CLARINET-Studie, die die Wirksamkeit von Lanreotid bei der Behandlung von nicht-funktionellen neuroendokrinen Tumoren des Magen-Darm-Trakts untersuchte.
 
-4. PROMID-Studie: Diese Studie untersuchte die Wirksamkeit von Octreotid bei der Behandlung von neuroendokrinen Tumoren des Dünndarms und des Kolons.
-
-5. COMPETE-Studie: Diese Studie untersucht die Wirksamkeit von Peptide-Rezeptor-Radionuklidtherapie (PRRT) bei der Behandlung von fortgeschrittenen neuroendokrinen Tumoren.
+4. Die PROMID-Studie, die die Wirksamkeit von Octreotid bei der Behandlung von gut differenzierten neuroendokrinen Tumoren des Dünndarms und des Kolons untersuchte.
 
 Diese Studien haben dazu beigetragen, das Verständnis der Krankheit zu verbessern und neue Behandlungsmöglichkeiten für Patienten mit neuroendokrinen Tumoren zu entwickeln.",,,
-19E,What are the major studies that have been initiated or conducted in the field of neuroendocrine tumors in recent years?,english,specific,study,gpt-3.5-turbo-0125,"1. The NETTER-1 trial: This study investigated the efficacy and safety of the radiolabeled somatostatin analog, lutetium-177-DOTATATE, in patients with advanced midgut neuroendocrine tumors.
+19E,What are the major studies that have been initiated or conducted in the field of neuroendocrine tumors in recent years?,english,specific,study,gpt-3.5-turbo-0125,"1. The NETTER-1 trial: This study investigated the efficacy and safety of the radiolabeled somatostatin analog, lutetium-177-DOTATATE, in patients with advanced midgut neuroendocrine tumors. The results showed a significant improvement in progression-free survival compared to standard therapy.
 
-2. The RADIANT trials: These trials evaluated the efficacy of the mTOR inhibitor everolimus in patients with advanced neuroendocrine tumors of various origins.
+2. The RADIANT trials: These studies evaluated the efficacy of the mTOR inhibitor everolimus in patients with advanced neuroendocrine tumors of various origins. The results demonstrated a significant improvement in progression-free survival in patients treated with everolimus compared to placebo.
 
-3. The CLARINET trial: This study assessed the efficacy of the somatostatin analog lanreotide in patients with non-functioning gastroenteropancreatic neuroendocrine tumors.
+3. The CLARINET trial: This study assessed the efficacy of the somatostatin analog lanreotide in patients with non-functioning gastroenteropancreatic neuroendocrine tumors. The results showed a significant improvement in progression-free survival in patients treated with lanreotide compared to placebo.
 
-4. The COMPETE trial: This ongoing study is comparing the efficacy of peptide receptor radionuclide therapy (PRRT) with lutetium-177-DOTATATE to high-dose octreotide in patients with advanced midgut neuroendocrine tumors.
+4. The NET-02 trial: This study investigated the efficacy of peptide receptor radionuclide therapy (PRRT) in patients with advanced neuroendocrine tumors. The results demonstrated a significant improvement in progression-free survival and overall survival in patients treated with PRRT compared to standard therapy.
 
-5. The NET-02 trial: This study is investigating the use of peptide receptor radionuclide therapy (PRRT) with lutetium-177-DOTATATE in patients with advanced neuroendocrine tumors of various origins.
-
-6. The NETTER-2 trial: This ongoing study is evaluating the efficacy and safety of the radiolabeled somatostatin analog, lutetium-177-DOTATOC, in patients with advanced somatostatin receptor-positive neuroendocrine tumors.
-
-These studies aim to improve the understanding of neuroendocrine tumors and develop more effective treatment options for patients with this rare and complex disease.",,,
-20G,Was ist der Vergleichsarm in der Netter-1 Studie,german,specific,study,gpt-3.5-turbo-0125,"In der Netter-1 Studie handelt es sich um eine randomisierte, kontrollierte Studie, bei der Patienten mit neuroendokrinen Tumoren des Magen-Darm-Trakts behandelt wurden. Der Vergleichsarm in dieser Studie war die Behandlung mit Octreotid-LAR, einem langwirksamen Somatostatin-Analogon, im Vergleich zur Behandlung mit Placebo.",,,
-20E,What is the control arm in the Netter-1 trial?,english,specific,study,gpt-3.5-turbo-0125,"In the Netter-1 trial, the control arm was the group of patients who received a placebo or standard treatment instead of the experimental treatment being tested. This group is used for comparison to evaluate the effectiveness and safety of the new treatment being studied.",,,
-21G,Was ist der Vergleichsarm in der Netter-2 Studie,german,specific,study,gpt-3.5-turbo-0125,"Der Vergleichsarm in der Netter-2 Studie war eine Gruppe von Patienten, die eine Standardbehandlung erhielten, die als Vergleichsmaßstab für die Wirksamkeit einer neuen Behandlungsmethode diente. In der Netter-2 Studie wurde beispielsweise die Wirksamkeit eines neuen Medikaments zur Behandlung von Diabetes im Vergleich zur Standardbehandlung untersucht. Die Patienten im Vergleichsarm erhielten also die Standardbehandlung, während die Patienten im Interventionsarm das neue Medikament erhielten. Durch den Vergleich der Ergebnisse zwischen den beiden Gruppen konnten die Forscher feststellen, ob das neue Medikament effektiver oder sicherer war als die Standardbehandlung.",,,
-21E,What is the control arm in the Netter-2 trial?,english,specific,study,gpt-3.5-turbo-0125,"In the Netter-2 trial, the control arm is the group of participants who receive standard of care treatment or placebo, while the experimental arm receives the investigational treatment being studied. The control arm is used to compare the effectiveness and safety of the investigational treatment against the standard of care or placebo.",,,
+5. The COMPETE trial: This ongoing study is evaluating the efficacy of combination therapy with the somatostatin analog pasireotide and the mTOR inhibitor everolimus in patients with advanced neuroendocrine tumors. The results of this trial are expected to provide valuable insights into the optimal treatment approach for these patients.",,,
+20G,Was ist der Vergleichsarm in der Netter-1 Studie,german,specific,study,gpt-3.5-turbo-0125,"In der Netter-1 Studie handelt es sich bei dem Vergleichsarm um eine Gruppe von Patienten, die eine Standardbehandlung erhalten, die mit dem neuen Medikament oder der neuen Therapieform verglichen wird. Der Vergleichsarm dient dazu, die Wirksamkeit und Sicherheit des neuen Medikaments oder der neuen Therapieform im Vergleich zur Standardbehandlung zu bewerten.",,,
+20E,What is the control arm in the Netter-1 trial?,english,specific,study,gpt-3.5-turbo-0125,"In the Netter-1 trial, the control arm was the group of patients who received a placebo in addition to standard therapy, while the experimental arm received the investigational drug in addition to standard therapy. The purpose of the control arm is to provide a comparison group to evaluate the effectiveness of the investigational drug.",,,
+21G,Was ist der Vergleichsarm in der Netter-2 Studie,german,specific,study,gpt-3.5-turbo-0125,"Der Vergleichsarm in der Netter-2 Studie war eine Gruppe von Patienten, die eine Standardbehandlung erhielten, die bereits als wirksam angesehen wurde. Diese Gruppe wurde mit einer anderen Gruppe von Patienten verglichen, die eine neue Behandlung erhielten, um die Wirksamkeit und Sicherheit der neuen Behandlung zu bewerten. Der Vergleichsarm diente dazu, die Ergebnisse der neuen Behandlung mit der Standardbehandlung zu vergleichen und festzustellen, ob die neue Behandlung überlegen war.",,,
+21E,What is the control arm in the Netter-2 trial?,english,specific,study,gpt-3.5-turbo-0125,"In the Netter-2 trial, the control arm is the group of participants who receive standard of care treatment or placebo, against which the experimental treatment is compared. This group helps researchers determine the effectiveness and safety of the new treatment being studied.",,,
 22G,Was ist der Vergleichsarm in der COMPETE Studie,german,specific,study,gpt-3.5-turbo-0125,"Der Vergleichsarm in der COMPETE Studie ist die Gruppe von Teilnehmern, die entweder keine Behandlung erhalten oder eine Standardbehandlung erhalten, die mit der experimentellen Behandlung verglichen wird. In klinischen Studien dient der Vergleichsarm dazu, die Wirksamkeit und Sicherheit der neuen Behandlung im Vergleich zur Standardbehandlung oder Placebo zu bewerten.",,,
-22E,What is the control arm in the COMPETE trial?,english,specific,study,gpt-3.5-turbo-0125,"In the COMPETE trial, the control arm is the group of participants who receive the standard treatment or placebo, against which the experimental treatment is compared. The control arm helps researchers to determine the effectiveness of the new treatment by providing a baseline for comparison.",,,
-23G,Was ist der Vergleichsarm in der COMPOSE Studie,german,specific,study,gpt-3.5-turbo-0125,"Der Vergleichsarm in der COMPOSE Studie ist die Gruppe von Teilnehmern, die entweder eine Standardbehandlung oder ein Placebo erhalten, um die Wirksamkeit und Sicherheit eines neuen Medikaments oder einer neuen Therapie zu testen. In der COMPOSE Studie wird der Vergleichsarm verwendet, um die Ergebnisse der Behandlungsgruppe mit denen der Kontrollgruppe zu vergleichen und festzustellen, ob die neue Behandlung tatsächlich wirksamer ist als die Standardbehandlung oder das Placebo.",,,
-23E,What is the control arm in the COMPOSE trial?,english,specific,study,gpt-3.5-turbo-0125,"In the COMPOSE trial, the control arm is the group of participants who receive the standard of care treatment or placebo, against which the experimental treatment is compared. This group helps researchers determine the effectiveness of the new treatment being studied in the trial.",,,
-24G,"Ist es möglich die verschiedenen Guidelines zu Management von neuroendokrinen Tumoren vergleichend darzustellen (ENETS, NANETS)? Wo sind hier die Unterschiede in der Therapie dieser Erkrankung? ",german,specific,guidelines,gpt-3.5-turbo-0125,"Ja, es ist möglich die verschiedenen Guidelines zu Management von neuroendokrinen Tumoren (NETs) vergleichend darzustellen. Die European Neuroendocrine Tumor Society (ENETS) und die North American Neuroendocrine Tumor Society (NANETS) haben jeweils ihre eigenen Richtlinien zur Diagnose und Behandlung von NETs entwickelt.
+22E,What is the control arm in the COMPETE trial?,english,specific,study,gpt-3.5-turbo-0125,"In the COMPETE trial, the control arm is the group of participants who receive the standard treatment or placebo, against which the experimental treatment is compared. This group serves as a reference point to evaluate the effectiveness and safety of the new treatment being tested in the trial.",,,
+23G,Was ist der Vergleichsarm in der COMPOSE Studie,german,specific,study,gpt-3.5-turbo-0125,"Der Vergleichsarm in der COMPOSE Studie ist die Gruppe von Patienten, die eine Standardbehandlung erhalten, die als Kontrollgruppe dient, um die Wirksamkeit und Sicherheit der neuen Behandlungsmethode zu bewerten. In der COMPOSE Studie handelt es sich um eine randomisierte kontrollierte Studie, bei der die Patienten entweder die neue Behandlung oder die Standardbehandlung erhalten, um die Ergebnisse beider Gruppen miteinander zu vergleichen.",,,
+23E,What is the control arm in the COMPOSE trial?,english,specific,study,gpt-3.5-turbo-0125,"In the COMPOSE trial, the control arm is the group of participants who receive the standard of care treatment or placebo, against which the experimental treatment is compared. This group helps researchers determine the effectiveness of the new treatment being studied.",,,
+24G,"Ist es möglich die verschiedenen Guidelines zu Management von neuroendokrinen Tumoren vergleichend darzustellen (ENETS, NANETS)? Wo sind hier die Unterschiede in der Therapie dieser Erkrankung? ",german,specific,guidelines,gpt-3.5-turbo-0125,"Ja, es ist möglich die verschiedenen Guidelines zur Management von neuroendokrinen Tumoren (NET) vergleichend darzustellen. Die European Neuroendocrine Tumor Society (ENETS) und die North American Neuroendocrine Tumor Society (NANETS) haben jeweils ihre eigenen Richtlinien zur Diagnose und Behandlung von NET.
 
-Einige der Unterschiede in der Therapie dieser Erkrankung zwischen den ENETS und NANETS Guidelines sind:
+Einige Unterschiede in der Therapie dieser Erkrankung zwischen ENETS und NANETS sind:
 
-1. Diagnose: ENETS empfiehlt die Verwendung von spezifischen Biomarkern wie Chromogranin A und 5-HIAA zur Diagnose von NETs, während NANETS auch die Verwendung von Bildgebungsverfahren wie CT, MRI und PET-Scan empfiehlt.
+1. Diagnose: ENETS empfiehlt die Verwendung von Biomarkern wie Chromogranin A und 5-HIAA zur Diagnose von NET, während NANETS die Bedeutung von Bildgebungsverfahren wie CT, MRI und PET-Scans betont.
 
-2. Chirurgie: ENETS empfiehlt eine aggressive chirurgische Entfernung des Tumors, auch bei fortgeschrittenen Stadien, während NANETS eine individualisierte chirurgische Behandlung basierend auf dem Tumorgrad und der Lokalisation empfiehlt.
+2. Chirurgie: ENETS legt großen Wert auf die chirurgische Entfernung des Tumors, insbesondere bei lokal begrenzten NET, während NANETS auch alternative Behandlungsmethoden wie Radiofrequenzablation und Embolisation in Betracht zieht.
 
-3. Medikamentöse Therapie: ENETS empfiehlt die Verwendung von Somatostatin-Analoga als Erstlinientherapie bei NETs, während NANETS auch die Verwendung von Chemotherapie und zielgerichteten Therapien wie Everolimus und Sunitinib empfiehlt.
+3. Medikamentöse Therapie: ENETS empfiehlt die Verwendung von Somatostatin-Analoga zur Kontrolle von Symptomen und Tumorwachstum, während NANETS auch andere Medikamente wie Interferon und Chemotherapie in Betracht zieht.
 
-4. Follow-up: ENETS empfiehlt regelmäßige Nachsorgeuntersuchungen mit Bildgebung und Biomarker-Tests, während NANETS auch die Einbeziehung von multidisziplinären Teams und psychosozialer Unterstützung empfiehlt.
+4. Follow-up: ENETS empfiehlt regelmäßige Nachsorgeuntersuchungen mit Bildgebung und Biomarker-Tests, um das Ansprechen auf die Behandlung zu überwachen, während NANETS auch psychosoziale Unterstützung und Ernährungsberatung für Patienten empfiehlt.
 
-Es ist wichtig zu beachten, dass die Behandlung von NETs individuell angepasst werden sollte und dass die Guidelines der ENETS und NANETS als Leitfaden dienen, aber nicht als starre Regeln. Es ist ratsam, mit einem erfahrenen Arzt zusammenzuarbeiten, um die beste Behandlungsoption für jeden einzelnen Patienten zu finden.",,,
-24E,"Is it possible to compare the different guidelines for the management of neuroendocrine tumors (ENETS, NANETS)? Where are the differences in the therapy of this disease?",english,specific,guidelines,gpt-3.5-turbo-0125,"Yes, it is possible to compare the guidelines for the management of neuroendocrine tumors (NETs) from different organizations such as the European Neuroendocrine Tumor Society (ENETS) and the North American Neuroendocrine Tumor Society (NANETS). While both organizations provide recommendations for the diagnosis and treatment of NETs, there are some differences in their guidelines.
+Insgesamt gibt es also einige Unterschiede in der Herangehensweise an die Diagnose und Behandlung von NET zwischen ENETS und NANETS, aber beide Organisationen haben das gemeinsame Ziel, die bestmögliche Versorgung für Patienten mit dieser Erkrankung sicherzustellen. Es ist wichtig, dass Ärzte die jeweiligen Richtlinien berücksichtigen und individuelle Behandlungspläne für jeden Patienten erstellen.",,,
+24E,"Is it possible to compare the different guidelines for the management of neuroendocrine tumors (ENETS, NANETS)? Where are the differences in the therapy of this disease?",english,specific,guidelines,gpt-3.5-turbo-0125,"Yes, it is possible to compare the guidelines for the management of neuroendocrine tumors (NETs) provided by the European Neuroendocrine Tumor Society (ENETS) and the North American Neuroendocrine Tumor Society (NANETS). While both organizations provide comprehensive guidelines for the diagnosis and treatment of NETs, there are some differences in their recommendations.
 
-One key difference between the ENETS and NANETS guidelines is the classification of NETs. ENETS uses the TNM staging system for NETs, which takes into account the size of the tumor, the extent of spread to nearby lymph nodes, and the presence of metastases. On the other hand, NANETS uses the World Health Organization (WHO) classification system, which categorizes NETs based on their histological features and grade.
+One key difference between the ENETS and NANETS guidelines is in the staging and classification of NETs. ENETS uses the TNM staging system, which takes into account the size of the primary tumor, the extent of spread to nearby lymph nodes, and the presence of distant metastases. On the other hand, NANETS uses the World Health Organization (WHO) classification system, which categorizes NETs based on their histological features and grade of differentiation.
 
-In terms of therapy, there are also some differences between the ENETS and NANETS guidelines. For example, ENETS recommends surgery as the primary treatment for localized NETs, while NANETS suggests a multidisciplinary approach that may include surgery, chemotherapy, and targeted therapies. Additionally, ENETS guidelines place a strong emphasis on the use of somatostatin analogs for symptom control and tumor growth inhibition, while NANETS guidelines also recommend the use of peptide receptor radionuclide therapy (PRRT) for certain patients with advanced NETs.
+In terms of treatment, both ENETS and NANETS guidelines recommend a multidisciplinary approach involving surgery, medical therapy, and interventional radiology for the management of NETs. However, there are some differences in the specific treatment recommendations. For example, ENETS guidelines place a greater emphasis on the use of somatostatin analogs for symptom control and tumor stabilization in patients with well-differentiated NETs, while NANETS guidelines recommend the use of targeted therapies such as everolimus and sunitinib in certain cases.
 
-Overall, while there may be some differences in the specific recommendations provided by ENETS and NANETS, both organizations aim to provide evidence-based guidelines for the management of NETs to improve patient outcomes. It is important for healthcare providers to consider the recommendations from both organizations when developing a treatment plan for patients with NETs.",,,
+Overall, while there may be some differences in the specific recommendations provided by ENETS and NANETS guidelines, both organizations aim to provide evidence-based guidance for the management of NETs to improve patient outcomes. It is important for healthcare providers to be familiar with both sets of guidelines and tailor treatment plans to individual patient needs.",,,
 25G,In welchem Bereich werden PRRT Therapien in den ESMO Guidelines dargestellt?,german,specific,guidelines,gpt-3.5-turbo-0125,Die PRRT Therapien werden im Bereich der Neuroendokrinen Tumoren in den ESMO Guidelines dargestellt.,,,
 25E,In which section are PRRT therapies presented in the ESMO Guidelines?,english,specific,guidelines,gpt-3.5-turbo-0125,PRRT therapies are presented in the section on Neuroendocrine and Adrenal Tumours in the ESMO Guidelines.,,,
 26G,Welche Arten von neuroendokrinen Tumoren werden in der COMPETE Studie untersucht?,german,specific,study,gpt-3.5-turbo-0125,"In der COMPETE Studie werden neuroendokrine Tumoren des Gastrointestinaltrakts (Magen-Darm-Trakt) untersucht, einschließlich des Pankreas, des Magens, des Dünndarms und des Kolons.",,,
-26E,What types of neuroendocrine tumors are investigated in the COMPETE trial?,english,specific,study,gpt-3.5-turbo-0125,"The COMPETE trial investigates well-differentiated neuroendocrine tumors (NETs) of the gastrointestinal tract and pancreas. These include tumors such as carcinoid tumors, pancreatic NETs, and gastrointestinal NETs.",,,
-27G,Was war das mediane PFS in der Netter-2 Studie?,german,specific,study,gpt-3.5-turbo-0125,"Das mediane PFS (progressionsfreies Überleben) in der Netter-2 Studie betrug 11,1 Monate.",,,
-27E,What was the median PFS in the Netter-2 trial?,english,specific,study,gpt-3.5-turbo-0125,The median progression-free survival (PFS) in the Netter-2 trial was 11.3 months.,,,
-28G,In welchen Indikationen erforscht ITM Radiopharmazeutika?,german,specific,research,gpt-3.5-turbo-0125,"ITM Radiopharmazeutika erforscht Radiopharmazeutika für die Behandlung von verschiedenen Krebserkrankungen, wie z.B. Prostatakrebs, Hirntumoren, Leberkrebs und Bauchspeicheldrüsenkrebs. Darüber hinaus werden auch Radiopharmazeutika für die Diagnose und Therapie von neuroendokrinen Tumoren und anderen Erkrankungen erforscht.",,,
-28E,In which indications does ITM research radiopharmaceuticals?,english,specific,research,gpt-3.5-turbo-0125,"ITM research radiopharmaceuticals are primarily used in the treatment of neuroendocrine tumors, bone metastases, and other types of cancer. They are also being researched for potential applications in other medical conditions such as cardiovascular diseases and inflammatory disorders.",,,
-29G,Welche Isotope werden in den Studien von ITM verwendet?,german,general,research,gpt-3.5-turbo-0125,"ITM verwendet verschiedene Isotope für ihre Studien, darunter Lutetium-177, Yttrium-90, Indium-111 und Gallium-68.",,,
-29E,Which isotopes are used in ITM's studies?,english,general,research,gpt-3.5-turbo-0125,"Some of the isotopes used in ITM's studies include:
+26E,What types of neuroendocrine tumors are investigated in the COMPETE trial?,english,specific,study,gpt-3.5-turbo-0125,"The COMPETE trial investigates well-differentiated neuroendocrine tumors (NETs) of the gastrointestinal tract and pancreas. These include carcinoid tumors, pancreatic NETs, and other types of NETs that arise from the neuroendocrine cells in the digestive system.",,,
+27G,Was war das mediane PFS in der Netter-2 Studie?,german,specific,study,gpt-3.5-turbo-0125,"Das mediane PFS (progressionsfreies Überleben) in der Netter-2 Studie betrug 11,4 Monate.",,,
+27E,What was the median PFS in the Netter-2 trial?,english,specific,study,gpt-3.5-turbo-0125,The median progression-free survival (PFS) in the Netter-2 trial was 11.3 months for patients receiving the combination of nivolumab and ipilimumab.,,,
+28G,In welchen Indikationen erforscht ITM Radiopharma Radiopharmazeutika?,german,specific,research,gpt-3.5-turbo-0125,"ITM Radiopharma erforscht Radiopharmazeutika in den Indikationen Prostatakrebs, neuroendokrine Tumore, Hirntumore, Leberkrebs, Brustkrebs und Lymphome.",,,
+28E,In which indications does ITM Radiopharma research radiopharmaceuticals?,english,specific,research,gpt-3.5-turbo-0125,"ITM Radiopharma researches radiopharmaceuticals for the treatment of various types of cancer, including neuroendocrine tumors, bone metastases, and liver cancer. They also focus on developing radiopharmaceuticals for targeted radionuclide therapy and precision oncology.",,,
+29G,Welche Isotope werden in den Studien von ITM Radiopharma verwendet?,german,general,research,gpt-3.5-turbo-0125,"In den Studien von ITM Radiopharma werden vor allem die Isotope Lutetium-177, Yttrium-90 und Actinium-225 verwendet.",,,
+29E,Which isotopes are used in ITM Radiopharma's studies?,english,general,research,gpt-3.5-turbo-0125,"ITM Radiopharma uses isotopes such as lutetium-177, yttrium-90, and scandium-44 in their studies.",,,
+30G,Wann wurde ITM Radiopharma gegründet?,german,general,company,gpt-3.5-turbo-0125,ITM Radiopharma wurde im Jahr 2004 gegründet.,,,
+30E,When was ITM Radiopharma founded?	,english,general,company,gpt-3.5-turbo-0125,ITM Radiopharma was founded in 2004.,,,
+31G,Welche Produkte hat ITM Radiopharma bereits auf dem Markt?,german,general,company,gpt-3.5-turbo-0125,ITM Radiopharma hat bereits das Produkt Galli Ad-ExGallium-68 auf dem Markt.,,,
+31E,Which products does ITM Radiopharma already have on the market?,english,general,company,gpt-3.5-turbo-0125,"ITM Radiopharma currently has GalliAd, a Gallium-68 generator for the production of radiopharmaceuticals, on the market.",,,
+32G,An welchen Kongressen nimmt ITM Radiopharma teil?,german,general,company,gpt-3.5-turbo-0125,"ITM Radiopharma nimmt an verschiedenen internationalen Kongressen teil, darunter:
 
-- Carbon-11 (11C)
-- Fluorine-18 (18F)
-- Gallium-68 (68Ga)
-- Copper-64 (64Cu)
-- Technetium-99m (99mTc)
-- Iodine-123 (123I)
-- Yttrium-90 (90Y)
-- Lutetium-177 (177Lu)",,,
-30G,Wann wurde ITM gegründet?,german,general,company,gpt-3.5-turbo-0125,ITM wurde im Jahr 1992 gegründet.,,,
-30E,When was ITM founded?	,english,general,company,gpt-3.5-turbo-0125,"ITM (Instituto Tecnológico de Monterrey) was founded on September 6, 1943.",,,
-31G,Welche Produkte hat ITM bereits auf dem Markt?,german,general,company,gpt-3.5-turbo-0125,"ITM hat bereits folgende Produkte auf dem Markt:
+- European Association of Nuclear Medicine (EANM) Annual Congress
+- Society of Nuclear Medicine and Molecular Imaging (SNMMI) Annual Meeting
+- World Molecular Imaging Congress (WMIC)
+- European Society for Radiotherapy and Oncology (ESTRO) Annual Meeting
+- Radiological Society of North America (RSNA) Annual Meeting
 
-1. ITM Power Electrolyzer - Wasserstoff-Elektrolyseure zur Erzeugung von grünem Wasserstoff
-2. ITM Power Fuel Cells - Brennstoffzellen zur Umwandlung von Wasserstoff in elektrische Energie
-3. ITM Power Refueling Stations - Wasserstoff-Tankstellen zur Betankung von Brennstoffzellenfahrzeugen
-4. ITM Power Storage Solutions - Energiespeicherlösungen zur Speicherung von grünem Wasserstoff
-5. ITM Power Power-to-Gas Systems - Systeme zur Umwandlung von überschüssigem Strom in grünen Wasserstoff",,,
-31E,Which products does ITM already have on the market?,english,general,company,gpt-3.5-turbo-0125,"ITM currently has several products on the market, including:
+Diese sind nur einige Beispiele, an welchen Kongressen ITM Radiopharma teilnehmen kann. Die Teilnahme an Kongressen ermöglicht es dem Unternehmen, sich mit anderen Experten aus der Branche auszutauschen, neueste Entwicklungen und Forschungsergebnisse zu präsentieren und potenzielle Kunden und Partner zu treffen.",,,
+32E,Which congresses does ITM Radiopharma participate in?,english,general,company,gpt-3.5-turbo-0125,"ITM Radiopharma participates in various congresses related to nuclear medicine, radiopharmaceuticals, and oncology. Some of the congresses they have participated in include:
 
-1. Lutetium-177 (Lu-177) based radiopharmaceuticals for targeted cancer therapy
-2. Actinium-225 (Ac-225) based radiopharmaceuticals for targeted alpha therapy
-3. Yttrium-90 (Y-90) based radiopharmaceuticals for targeted cancer therapy
-4. Gallium-68 (Ga-68) based radiopharmaceuticals for PET imaging
-5. Iodine-131 (I-131) based radiopharmaceuticals for thyroid cancer therapy
+1. European Association of Nuclear Medicine (EANM) Congress
+2. Society of Nuclear Medicine and Molecular Imaging (SNMMI) Annual Meeting
+3. World Molecular Imaging Congress (WMIC)
+4. European Society for Medical Oncology (ESMO) Congress
+5. Radiological Society of North America (RSNA) Annual Meeting
 
-These products are used in the diagnosis and treatment of various types of cancer and other medical conditions.",,,
-32G,An welchen Kongressen nimmt ITM teil?,german,general,company,gpt-3.5-turbo-0125,"ITM nimmt an verschiedenen Kongressen teil, darunter:
+These are just a few examples of the congresses where ITM Radiopharma may participate to showcase their products and technologies in the field of nuclear medicine.",,,
+33G,Wie funktioniert PRRT/Wie ist das Medikament zusammengesetzt?,german,general,mechanism of action,gpt-3.5-turbo-0125,"PRRT steht für Peptid-Rezeptor-Radionuklid-Therapie und ist eine Form der nuklearmedizinischen Therapie, die zur Behandlung von neuroendokrinen Tumoren eingesetzt wird. Bei der PRRT wird ein radioaktives Radionuklid an ein Peptid gebunden, das spezifisch an Rezeptoren auf den Tumorzellen bindet. Dadurch werden die Tumorzellen gezielt mit Strahlung behandelt, während gesundes Gewebe geschont wird.
 
-1. Mobile World Congress (MWC)
-2. Consumer Electronics Show (CES)
-3. RSA Conference
-4. Cloud Expo
-5. Gartner IT Symposium/Xpo
-6. Black Hat
-7. DEF CON
-8. Microsoft Ignite
-9. Google Cloud Next
-10. Amazon re:Invent
+Das Medikament, das für die PRRT verwendet wird, besteht aus einem Peptid, das an das Radionuklid Lutetium-177 oder Yttrium-90 gebunden ist. Das Peptid bindet an die Somatostatin-Rezeptoren auf den Tumorzellen, die häufig bei neuroendokrinen Tumoren überexprimiert sind. Durch die Bindung des Peptids an die Rezeptoren gelangt das radioaktive Radionuklid in die Tumorzellen und zerstört sie durch die abgegebene Strahlung.
 
-Diese Liste ist nicht abschließend und ITM kann auch an anderen Kongressen teilnehmen, die für das Unternehmen relevant sind.",,,
-32E,Which congresses does ITM participate in?,english,general,company,gpt-3.5-turbo-0125,"ITM (Institute of Tropical Medicine) participates in various congresses related to tropical medicine, global health, infectious diseases, and public health. Some of the congresses that ITM has participated in include:
+Die PRRT wird in der Regel in mehreren Behandlungszyklen durchgeführt, um die Tumorzellen effektiv zu bekämpfen. Die Therapie wird in spezialisierten nuklearmedizinischen Zentren durchgeführt und erfordert eine sorgfältige Überwachung der Patienten während und nach der Behandlung.",,,
+33E,How does PRRT work/what is the drug made up of?,english,general,mechanism of action,gpt-3.5-turbo-0125,"PRRT, or peptide receptor radionuclide therapy, is a type of targeted cancer treatment that uses a combination of a peptide (a small protein) and a radioactive substance to specifically target and kill cancer cells. The drug used in PRRT is typically made up of a peptide that binds to specific receptors on the surface of cancer cells, delivering a high dose of radiation directly to the tumor cells while sparing healthy tissues.
 
-1. European Congress on Tropical Medicine and International Health (ECTMIH)
-2. American Society of Tropical Medicine and Hygiene (ASTMH) Annual Meeting
-3. International Congress on Infectious Diseases (ICID)
-4. International Conference on Emerging Infectious Diseases (ICEID)
-5. International Conference on Global Health
-6. International Conference on Public Health and Tropical Medicine
+The most commonly used peptide in PRRT is called octreotide, which binds to somatostatin receptors that are overexpressed on the surface of certain types of neuroendocrine tumors. The radioactive substance attached to the peptide is usually a beta-emitting radionuclide, such as lutetium-177 or yttrium-90, which emits radiation that can penetrate the tumor cells and kill them.
 
-These are just a few examples of the congresses that ITM may participate in, as the institute is actively involved in the global health community and regularly attends and presents at various conferences and congresses around the world.",,,
-33G,Wie funktioniert PRRT/Wie ist das Medikament zusammengesetzt?,german,general,mechanism of action,gpt-3.5-turbo-0125,"PRRT steht für Peptid-Rezeptor-Radionuklid-Therapie und ist eine Form der nuklearmedizinischen Therapie, die zur Behandlung von bestimmten Krebserkrankungen eingesetzt wird. Bei dieser Therapie werden radioaktive Substanzen, die an spezifische Rezeptoren auf den Krebszellen binden, in den Körper eingebracht. Die radioaktiven Substanzen zerstören dann gezielt die Krebszellen.
-
-Das Medikament für die PRRT besteht aus einem Peptid, das an die Rezeptoren auf den Krebszellen bindet, und einem radioaktiven Radionuklid, das die Krebszellen gezielt bestrahlt. Das Peptid dient als Trägersubstanz, um das Radionuklid zu den Krebszellen zu transportieren. Die radioaktive Strahlung des Radionuklids führt dann zur Zerstörung der Krebszellen.
-
-Die genaue Zusammensetzung des Medikaments kann je nach Art des Krebses und den individuellen Bedürfnissen des Patienten variieren. Die PRRT wird in der Regel in mehreren Sitzungen durchgeführt, um eine optimale Wirksamkeit zu erzielen.",,,
-33E,How does PRRT work/what is the drug made up of?,english,general,mechanism of action,gpt-3.5-turbo-0125,"PRRT, or Peptide Receptor Radionuclide Therapy, is a type of targeted radiation therapy used to treat neuroendocrine tumors. It works by delivering radiation directly to cancer cells using a radioactive substance attached to a peptide that binds to specific receptors on the surface of the tumor cells.
-
-The drug used in PRRT is made up of a radioactive isotope, such as Lutetium-177 or Yttrium-90, attached to a peptide molecule that targets somatostatin receptors on the tumor cells. The peptide acts as a carrier to deliver the radiation directly to the cancer cells, minimizing damage to surrounding healthy tissue.
-
-Once the drug is injected into the patient's bloodstream, the peptide binds to the somatostatin receptors on the tumor cells, allowing the radioactive isotope to deliver radiation to the cancer cells. This targeted approach helps to destroy the tumor cells while minimizing side effects on normal tissues.
-
-Overall, PRRT is an effective treatment option for patients with neuroendocrine tumors that express somatostatin receptors, offering a targeted and personalized approach to cancer therapy.",,,
-34G,Was ist die wichtigste Voraussetzung für die Behandlung mit PRRT?,german,general,requirements,gpt-3.5-turbo-0125,"Die wichtigste Voraussetzung für die Behandlung mit PRRT (Peptid-Rezeptor-Radionuklid-Therapie) ist das Vorhandensein von spezifischen Rezeptoren auf den Tumorzellen, die das radioaktive Radionuklid binden können. Diese Rezeptoren müssen durch eine nuklearmedizinische Diagnostik, wie beispielsweise eine Somatostatin-Rezeptor-Szintigrafie, nachgewiesen werden, um sicherzustellen, dass die PRRT für den Patienten geeignet ist und eine erfolgreiche Behandlung ermöglicht.",,,
-34E,What is the major requirement for a patient to be treated with PRRT?,english,general,requirements,gpt-3.5-turbo-0125,"The major requirement for a patient to be treated with PRRT (Peptide Receptor Radionuclide Therapy) is the presence of specific receptors on the surface of tumor cells that can be targeted by the radioactive peptides used in the treatment. This is typically determined through imaging tests such as a somatostatin receptor scintigraphy (SRS) or a positron emission tomography (PET) scan. Additionally, the patient must have a confirmed diagnosis of a neuroendocrine tumor that is not responding to other treatments.",,,
-35G,Was ist Theranostik?	,german,general,definition,gpt-3.5-turbo-0125,"Theranostik ist ein medizinisches Konzept, das die Kombination von Diagnostik und Therapie in einem einzigen Verfahren oder Produkt beinhaltet. Durch die Verwendung von theranostischen Ansätzen können Ärzte die Wirksamkeit einer bestimmten Behandlung bei einem Patienten vorhersagen und personalisierte Therapien entwickeln. Dies kann dazu beitragen, die Behandlungsergebnisse zu verbessern und die Nebenwirkungen zu minimieren. Theranostik wird häufig in der Krebsbehandlung eingesetzt, um die richtige Therapie für jeden einzelnen Patienten zu identifizieren.",,,
-35E,What is theranostics?,english,general,definition,gpt-3.5-turbo-0125,"Theranostics is a field of medicine that combines diagnostics and therapeutics to provide personalized treatment for patients. It involves the use of diagnostic tests to identify specific biomarkers or molecular targets in a patient's body, which can then be used to tailor a targeted therapy or treatment plan. Theranostics aims to improve the effectiveness of treatments, reduce side effects, and ultimately improve patient outcomes.",,,
+When the PRRT drug is injected into the patient's bloodstream, the peptide binds to the cancer cells, delivering the radiation directly to the tumor. The radiation damages the DNA of the cancer cells, leading to cell death. PRRT is a targeted therapy, meaning it specifically targets cancer cells while minimizing damage to healthy tissues, which can reduce side effects compared to traditional chemotherapy.",,,
+34G,Was ist die wichtigste Voraussetzung für die Behandlung mit PRRT?,german,general,requirements,gpt-3.5-turbo-0125,"Die wichtigste Voraussetzung für die Behandlung mit PRRT (Peptid-Rezeptor-Radionuklid-Therapie) ist das Vorhandensein von Tumoren, die bestimmte Rezeptoren auf ihrer Oberfläche exprimieren, die für die Therapie mit radioaktiven Substanzen geeignet sind. Dies wird in der Regel durch eine nuklearmedizinische Diagnostik wie eine Somatostatin-Rezeptor-Szintigrafie oder ein Gallium-68-DOTATATE-PET-CT festgestellt. Nur wenn die Tumoren diese Rezeptoren aufweisen, kann eine PRRT-Behandlung durchgeführt werden.",,,
+34E,What is the major requirement for a patient to be treated with PRRT?,english,general,requirements,gpt-3.5-turbo-0125,"The major requirement for a patient to be treated with PRRT (Peptide Receptor Radionuclide Therapy) is the presence of somatostatin receptors on the tumor cells. This is because PRRT involves targeting these receptors with a radioactive substance attached to a peptide molecule, which then delivers radiation directly to the tumor cells. Therefore, patients must undergo imaging tests to confirm the presence of somatostatin receptors before being considered for PRRT treatment.",,,
+35G,Was ist Theranostik?	,german,general,definition,gpt-3.5-turbo-0125,"Theranostik ist ein medizinisches Konzept, das die Kombination von Diagnostik und Therapie in einem einzigen Verfahren oder Produkt beinhaltet. Durch die Verwendung von theranostischen Ansätzen können Ärzte die richtige Behandlung für den individuellen Patienten basierend auf diagnostischen Informationen auswählen. Dies kann dazu beitragen, die Wirksamkeit der Behandlung zu verbessern und Nebenwirkungen zu minimieren. Theranostik wird vor allem in der personalisierten Medizin eingesetzt, um maßgeschneiderte Therapien für Patienten zu entwickeln.",,,
+35E,What is theranostics?,english,general,definition,gpt-3.5-turbo-0125,"Theranostics is a field of medicine that combines diagnostics and therapeutics to provide personalized treatment for patients. It involves the use of diagnostic tests to identify specific biomarkers or genetic mutations in a patient's disease, which can then be used to tailor a targeted therapy for that individual. Theranostics aims to improve treatment outcomes, reduce side effects, and optimize the effectiveness of therapies by selecting the most appropriate treatment based on the patient's unique characteristics.",,,
