@@ -16,7 +16,7 @@ import AnswerRight from "../components/AnswersRight";
 import ProgressBar from '../components/ProgressBar';
 
 const QuestionsPage = () => {
-    const { fetchLLM, setUserId, setNeitherSelected, nextQuestion, isStudyFinished, llm, questionId } = useData();
+    const { fetchLLM, setUserId, setNeitherSelected, nextQuestion, isStudyFinished, llm, questionId, handleAnswerSelection } = useData();
     const { userId } = useParams();
 
     const notesLabel = 'Enter your Comments or Feedback';
@@ -40,6 +40,8 @@ const QuestionsPage = () => {
     const handleClick = () => {
         setNeitherSelected(true);
         if (isStudyFinished) {
+            console.log('finished study');
+            handleAnswerSelection('null');
             navigate('/thank-you'); // Navigate to thank-you page if study is finished
             return;
         }

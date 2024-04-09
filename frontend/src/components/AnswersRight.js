@@ -42,6 +42,7 @@ const AnswerRight = () => {
 
   const handleClick = () => {
     if (isStudyFinished) {
+      console.log('finished study');
       handleAnswerSelection(llm.right);
       navigate('/thank-you'); // Navigate to thank-you page if study is finished
       return;
