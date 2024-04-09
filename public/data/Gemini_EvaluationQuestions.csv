@@ -1,7 +1,7 @@
 QuestionId,Question,language,Type,Categorie,LLM,answer,correctness,relevance,specificity
 1G,Was ist der Stellenwert von PRRT innerhalb GEP-NET?,german,general,therapy,gemini-1.0-pro-001,"PRRT, (Peptid-Rezeptor-Radionuklid-Therapie) ist eine zielgerichtete Therapie, die bei der Behandlung, von fortgeschrittenem GEP-NET (Gastroenteropankreatischen Neuroendokrinen Tumoren) eingesetzt wird.
 
-** Stellenwert von PRRT innerhalb GEP-NET:**
+**Stellenwert von PRRT innerhalb GEP-NET:**
 
 * **Erstlinientherapie:** PRRT kann als Erstlinientherapie bei Patienten mit fortgeschrittenem GEP-NET eingesetzt werden, die für eine Operation oder andere lokale Therapien nicht geeignet sind.
 * **Zweitlinientherapie, :** PRRT kann auch als Zweitlinientherapie bei Patienten eingesetzt werden, die auf andere Therapien nicht angesprochen haben oder bei denen ein Rezidiv aufgetreten ist.
@@ -333,7 +333,7 @@ PRRT has the potential to be a significant advancement in the treatment of metas
 * **Endokrinologen:** Sie sind auf die Behandlung von hormonellen Störungen spezialisiert und können PRRT bei bestimmten Arten von neuroendokrin, en Tumoren einsetzen.
 
 Es ist nicht zwingend erforderlich, ein Nuklearmediziner zu sein, um PRRT durchzuführen. Allerdings verfügen Nuklearmediziner über eine umfassende Ausbildung in der Verwendung radioaktiver Substanzen und sind daher am besten für, die sichere und wirksame Durchführung von PRRT qualifiziert.",,,
-11E,Which doctors perform PRRT? Do you have to be a nuclear medicine physician?,english,specific,therapy,gemini-1.0-pro-001,"Yes,, to perform PRRT, you must be a nuclear medicine physician. This is because PRRT involves the administration of radioactive isotopes, , which requires specialized training and expertise in nuclear medicine. Nuclear medicine physicians are trained in the safe handling and administration of radioactive isotopes,, as well as in the interpretation of nuclear medicine images. They are also familiar with the potential risks and benefits of PRRT, and can provide appropriate counseling to patients.",,,
+11E,Which doctors perform PRRT? Do you have to be a nuclear medicine physician?,english,specific,therapy,gemini-1.0-pro-001,"Yes, to perform PRRT, you must be a nuclear medicine physician. This is because PRRT involves the administration of radioactive isotopes, , which requires specialized training and expertise in nuclear medicine. Nuclear medicine physicians are trained in the safe handling and administration of radioactive isotopes,, as well as in the interpretation of nuclear medicine images. They are also familiar with the potential risks and benefits of PRRT, and can provide appropriate counseling to patients.",,,
 12G,Was sind die häufigsten Nebenwirkungen der PRRT?,german,general,side effects,gemini-1.0-pro-001,"**Häufige Nebenwirkungen der, PRRT (Peptid-Rezeptor-Radionuklid-Therapie)**
 
 **Hämatologische Nebenwirkungen:**
