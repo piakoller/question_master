@@ -10,6 +10,7 @@ const mistral_medium_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-mistra
 const mixtral_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-mixtral`;
 const llama2_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-llama2`;
 const qwen_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-qwen`;
+const command_r_plus_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-command-r-plus`;
 
 const DataContext = createContext();
 
@@ -47,7 +48,7 @@ export function QuestionIndex({ children }) {
 
     // const llmName = ['gemini 1.0', 'GPT-3.5', 'GPT-4', 'Claude-3 sonnet', 'Claude-3 opus', 'Mistral Large', 'Mistral Medium', 'Mixtral', 'Llama2', 'Qwen'];
     // const llmName = ['gemini 1.0', 'GPT-3.5', 'GPT-4', 'Claude-3 sonnet', 'Claude-3 opus', 'Mistral Large', 'Mistral Medium', 'Mixtral'];
-    const llmName = ['gemini 1.0', 'GPT-4', 'Claude-3 opus', 'Mistral Large'];
+    const llmName = ['gemini 1.0', 'GPT-4', 'Claude-3 opus', 'Mistral Large', 'Command r plus'];
 
     // State variables for progress and study completion
     const [progress, setProgress] = useState(10);
@@ -153,6 +154,8 @@ export function QuestionIndex({ children }) {
                 return llama2_path;
             case 'Qwen':
                 return qwen_path;
+            case 'Command r plus':
+                return command_r_plus_path;
             default:
                 return undefined; // Handle unexpected LLM names
         }

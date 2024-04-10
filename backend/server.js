@@ -294,6 +294,10 @@ app.get('/api/get-qwen', async (req, res) => {
   await handleCSVRequest('../public/data/Qwen_EvaluationQuestions.csv', res, true);
 });
 
+app.get('/api/get-command-r-plus', async (req, res) => {
+  await handleCSVRequest('../public/data/Command_r_plus_EvaluationQuestions.csv', res, true);
+});
+
 const kFactor = 32; // Adjust this value based on your desired volatility
 
 app.post('/api/save-answer', async (req, res) => {
