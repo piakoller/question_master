@@ -21,6 +21,10 @@ h2 {
 }
 .checkbox {
   padding-bottom: 2%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1%;
+  align-items: baseline;
 }
 
 .slider-container {
