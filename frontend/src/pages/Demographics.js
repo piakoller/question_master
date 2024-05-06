@@ -68,7 +68,7 @@ const Demographics = () => {
         { value: 'engineer', label: 'Physicist/Engineer' },
         { value: 'nurse', label: 'Nurse/Technologist/Radiographer' },
         { value: 'student', label: 'Student' },
-        { value: 'other', label: 'Others (please specify)' },
+        { value: 'other', label: 'Others' },
         { value: 'na', label: 'Prefer not to answer' },
     ]
 

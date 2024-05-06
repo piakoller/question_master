@@ -1,16 +1,21 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 
-const gemini_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-gemini`;
-const gpt_3_5_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-gpt-3-5`;
 const gpt_4_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-gpt-4`;
-const claude_3_sonnet_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-claude-3-sonnet`;
-const claude_3_opus_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-claude-3-opus`;
-const mistral_large_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-mistral-large`;
-const mistral_medium_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-mistral-medium`;
-const mixtral_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-mixtral`;
-const llama2_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-llama2`;
-const qwen_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-qwen`;
-const command_r_plus_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-command-r-plus`;
+const gpt_4_naive_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-gpt-4-naive`;
+const gpt_4_advanced_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-gpt-4-advanced`;
+
+const claude_3_opus_naive_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-claude-3-opus-naive`;
+
+const gemini_advanced_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-gemini`;
+const command_r_plus_advanced_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-command-r-plus-advanced`;
+
+// const gpt_3_5_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-gpt-3-5`;
+// const claude_3_sonnet_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-claude-3-sonnet`;
+// const mistral_large_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-mistral-large`;
+// const mistral_medium_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-mistral-medium`;
+// const mixtral_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-mixtral`;
+// const llama2_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-llama2`;
+// const qwen_path = `${process.env.REACT_APP_BACKEND_URL}/api/get-qwen`;
 
 const DataContext = createContext();
 
@@ -48,7 +53,8 @@ export function QuestionIndex({ children }) {
 
     // const llmName = ['gemini 1.0', 'GPT-3.5', 'GPT-4', 'Claude-3 sonnet', 'Claude-3 opus', 'Mistral Large', 'Mistral Medium', 'Mixtral', 'Llama2', 'Qwen'];
     // const llmName = ['gemini 1.0', 'GPT-3.5', 'GPT-4', 'Claude-3 sonnet', 'Claude-3 opus', 'Mistral Large', 'Mistral Medium', 'Mixtral'];
-    const llmName = ['gemini 1.0', 'GPT-4', 'Claude-3 opus', 'Mistral Large', 'Command r plus'];
+    // const llmName = ['gemini 1.0', 'GPT-4', 'Claude-3 opus', 'Mistral Large', 'Command r plus'];
+    const llmName = ['GPT-4', 'GPT-4 Naive RAG', 'GPT-4 Advanced RAG', 'Claude 3 Opus Naive RAG', 'Gemini 1.5 Advanced RAG', 'Command R+ Advanced RAG'];
 
     // State variables for progress and study completion
     const [progress, setProgress] = useState(10);
@@ -134,28 +140,18 @@ export function QuestionIndex({ children }) {
     // Function to choose API path based on LLM name
     function chooseLLMPath(llm) {
         switch (llm) {
-            case 'gemini 1.0':
-                return gemini_path;
-            case 'GPT-3.5':
-                return gpt_3_5_path;
             case 'GPT-4':
                 return gpt_4_path;
-            case 'Claude-3 sonnet':
-                return claude_3_sonnet_path;
-            case 'Claude-3 opus':
-                return claude_3_opus_path;
-            case 'Mistral Large':
-                return mistral_large_path;
-            case 'Mistral Medium':
-                return mistral_medium_path;
-            case 'Mixtral':
-                return mixtral_path;
-            case 'Llama2':
-                return llama2_path;
-            case 'Qwen':
-                return qwen_path;
-            case 'Command r plus':
-                return command_r_plus_path;
+            case 'GPT-4 Naive RAG':
+                return gpt_4_naive_path;
+            case 'GPT-4 Advanced RAG':
+                return gpt_4_advanced_path;
+            case 'Claude 3 Opus Naive RAG':
+                return claude_3_opus_naive_path;
+            case 'Gemini 1.5 Advanced RAG':
+                return gemini_advanced_path;
+            case 'Command R+ Advanced RAG':
+                return command_r_plus_advanced_path;
             default:
                 return undefined; // Handle unexpected LLM names
         }
