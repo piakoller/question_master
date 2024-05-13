@@ -56,17 +56,19 @@ const Demographics = () => {
         { value: 'nuclear', label: 'Nuclear Medicine Physician' },
         { value: 'cardio', label: 'Cardiologist' },
         { value: 'neuro', label: 'Neurologist' },
-        { value: 'scientist', label: 'Basic scientist (e.g. Biologist/Biochemist/Physiologist/Biomedical Engineer)', shortLabel: 'Basic scientist' }, // Full label for scientist
+        { value: 'onco', label: 'Oncologist' },
+        { value: 'surgeon', label: 'Surgeon'},
+        { value: 'scientist', label: 'Basic scientist (e.g. Biologist/Biochemist/Physiologist/Biomedical Engineer)', shortLabel: 'Basic scientist' },
         { value: 'pharma', label: 'Pharmacist' },
         { value: 'radio', label: 'Radio Protection Officer' },
-        { value: 'radiopharma', label: 'Radiopharamcist/Radiochemist' },
-        { value: 'radiotherapie', label: 'Radiotherapist (Radioation Onologist)' },
+        { value: 'radiopharma', label: 'Radiopharmacist/Radiochemist' },
+        { value: 'radiotherapie', label: 'Radiotherapist (Radiation Onologist)' },
         { value: 'radiologist', label: 'Radiologist' },
         { value: 'compscience', label: 'Computer Scientist' },
         { value: 'engineer', label: 'Physicist/Engineer' },
         { value: 'nurse', label: 'Nurse/Technologist/Radiographer' },
         { value: 'student', label: 'Student' },
-        { value: 'other', label: 'Others (please specify)' },
+        { value: 'other', label: 'Others' },
         { value: 'na', label: 'Prefer not to answer' },
     ]
 
@@ -343,7 +345,7 @@ const Demographics = () => {
                     {/* Theranostics Expertise */}
                     <div className='slider-container'>
                         <Box sx={{ width: '100%' }}>
-                            <p>How familiar are you with <b>theranostics</b>? <br/>Slide the bar to indicate your level of expertise. (0 - Never heard of it  |  10 - Dealing with it daily)</p>
+                            <p>How familiar are you with <b>theranostics</b>? <br />Slide the bar to indicate your level of expertise. (0 - Never heard of it  |  10 - Dealing with it daily)</p>
                             <Box sx={{ width: '100%' }}>
                                 <Slider
                                     aria-label="Temperature"

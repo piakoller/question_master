@@ -254,49 +254,60 @@ app.get('/api/get-question', async (req, res) => {
 });
 
 // Define routes for different LLMs
-app.get('/api/get-gpt-3-5', async (req, res) => {
-  await handleCSVRequest('../public/data/GPT-3_EvaluationQuestions.csv', res, true);
-});
 
+// gpt-4 answers
 app.get('/api/get-gpt-4', async (req, res) => {
   await handleCSVRequest('../public/data/GPT-4_EvaluationQuestions.csv', res, true);
 });
+app.get('/api/get-gpt-4-naive', async (req, res) => {
+  await handleCSVRequest('../public/data/GPT_4_context_naiveRAG_EvaluationQuestions.csv', res, true);
+});
+app.get('/api/get-gpt-4-advanced', async (req, res) => {
+  await handleCSVRequest('../public/data/GPT_4_context_advancedRAG_EvaluationQuestions.csv', res, true);
+});
 
+
+// Claude 3 Opus Naive RAG Answers
+app.get('/api/get-claude-3-opus-naive', async (req, res) => {
+  await handleCSVRequest('../public/data/Claude-3-opus_context_naiveRAG_EvaluationQuestions.csv', res, true);
+});
+
+// gemini 1.5 Advanced RAG Answers
 app.get('/api/get-gemini', async (req, res) => {
-  await handleCSVRequest('../public/data/Gemini_EvaluationQuestions.csv', res, true);
+  await handleCSVRequest('../public/data/Gemini-1-5_context_advancedRAG_EvaluationQuestions.csv', res, true);
+});
+// Command R+ Advanced Answers
+app.get('/api/get-command-r-plus-advanced', async (req, res) => {
+  await handleCSVRequest('../public/data/Command_r_plus_context_advancedRAG_EvaluationQuestions.csv', res, true);
 });
 
-app.get('/api/get-claude-3-sonnet', async (req, res) => {
-  await handleCSVRequest('../public/data/Claude-3-sonnet_EvaluationQuestions.csv', res, true);
-});
+// app.get('/api/get-gpt-3-5', async (req, res) => {
+//   await handleCSVRequest('../public/data/GPT-3_EvaluationQuestions.csv', res, true);
+// });
 
-app.get('/api/get-claude-3-opus', async (req, res) => {
-  await handleCSVRequest('../public/data/Claude-3-opus_EvaluationQuestions.csv', res, true);
-});
+// app.get('/api/get-claude-3-sonnet', async (req, res) => {
+//   await handleCSVRequest('../public/data/Claude-3-sonnet_EvaluationQuestions.csv', res, true);
+// });
 
-app.get('/api/get-mistral-large', async (req, res) => {
-  await handleCSVRequest('../public/data/Mistral_large_EvaluationQuestions.csv', res, true);
-});
+// app.get('/api/get-mistral-large', async (req, res) => {
+//   await handleCSVRequest('../public/data/Mistral_large_EvaluationQuestions.csv', res, true);
+// });
 
-app.get('/api/get-mistral-medium', async (req, res) => {
-  await handleCSVRequest('../public/data/Mistral_medium_EvaluationQuestions.csv', res, true);
-});
+// app.get('/api/get-mistral-medium', async (req, res) => {
+//   await handleCSVRequest('../public/data/Mistral_medium_EvaluationQuestions.csv', res, true);
+// });
 
-app.get('/api/get-mixtral', async (req, res) => {
-  await handleCSVRequest('../public/data/Mixtral_EvaluationQuestions.csv', res, true);
-});
+// app.get('/api/get-mixtral', async (req, res) => {
+//   await handleCSVRequest('../public/data/Mixtral_EvaluationQuestions.csv', res, true);
+// });
 
-app.get('/api/get-llama2', async (req, res) => {
-  await handleCSVRequest('../public/data/Llama2_EvaluationQuestions.csv', res, true);
-});
+// app.get('/api/get-llama2', async (req, res) => {
+//   await handleCSVRequest('../public/data/Llama2_EvaluationQuestions.csv', res, true);
+// });
 
-app.get('/api/get-qwen', async (req, res) => {
-  await handleCSVRequest('../public/data/Qwen_EvaluationQuestions.csv', res, true);
-});
-
-app.get('/api/get-command-r-plus', async (req, res) => {
-  await handleCSVRequest('../public/data/Command_r_plus_EvaluationQuestions.csv', res, true);
-});
+// app.get('/api/get-qwen', async (req, res) => {
+//   await handleCSVRequest('../public/data/Qwen_EvaluationQuestions.csv', res, true);
+// });
 
 const kFactor = 32; // Adjust this value based on your desired volatility
 
