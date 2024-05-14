@@ -159,11 +159,11 @@ export function QuestionIndex({ children }) {
 
     const nextQuestion = (answer) => {
         setQuestionIndex(getRandomUniqueIndices(numQuestions, 1))
-        console.log(
-            `LLMs set to:
-            Left: ${llm.left} (${questionId}),
-            Right: ${llm.right} (${questionId})`
-          );
+        // console.log(
+        //     `LLMs set to:
+        //     Left: ${llm.left} (${questionId}),
+        //     Right: ${llm.right} (${questionId})`
+        //   );
 
         fetchLLM();
 
