@@ -53,7 +53,7 @@ const Question = () => {
         Right: ${llm.right} (${questionId})`
       );
     }
-  }, [questions, questionIndex, questionId])
+  }, [questions, questionIndex, questionId, llm.left, llm.right])
 
   return (
     <div>
