@@ -267,16 +267,24 @@ app.get('/api/get-gpt-4-advanced', async (req, res) => {
 });
 
 
-// Claude 3 Opus Naive RAG Answers
-app.get('/api/get-claude-3-opus-naive', async (req, res) => {
-  await handleCSVRequest('../public/data/Claude-3-opus_context_naiveRAG_EvaluationQuestions.csv', res, true);
+// Claude 3 Opus Answers
+app.get('/api/get-claude-3-opus', async (req, res) => {
+  await handleCSVRequest('../public/data/Claude-3-opus_EvaluationQuestions.csv', res, true);
 });
 
-// gemini 1.5 Advanced RAG Answers
+// gemini 1.5 Answers
 app.get('/api/get-gemini', async (req, res) => {
-  await handleCSVRequest('../public/data/Gemini-1-5_context_advancedRAG_EvaluationQuestions.csv', res, true);
+  await handleCSVRequest('../public/data/Gemini-1-5_EvaluationQuestions.csv', res, true);
 });
-// Command R+ Advanced Answers
+app.get('/api/get-gemini-naive', async (req, res) => {
+  await handleCSVRequest('../public/data/Gemini-1-5_context_naiveRAG_EvaluationQuestions.csv', res, true);
+});
+
+
+// Command R+ Answers
+app.get('/api/get-command-r-plus', async (req, res) => {
+  await handleCSVRequest('../public/data/Command_r_plus_EvaluationQuestions.csv', res, true);
+});
 app.get('/api/get-command-r-plus-advanced', async (req, res) => {
   await handleCSVRequest('../public/data/Command_r_plus_context_advancedRAG_EvaluationQuestions.csv', res, true);
 });
