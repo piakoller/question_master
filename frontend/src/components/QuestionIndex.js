@@ -142,8 +142,6 @@ export function QuestionIndex({ children }) {
         setLLMPath({ left: leftPath, right: rightPath });
     };
     
-    //['GPT-4', 'Claude 3 Opus', 'Gemini 1.5', 'Command R+', 'GPT-4 Naive RAG', 'Gemini 1.5 Naive RAG', 'GPT-4 Advanced RAG', 'Command R+ Advanced RAG']
-
     // Function to choose API path based on LLM name
     function chooseLLMPath(llm) {
         switch (llm) {
@@ -170,11 +168,6 @@ export function QuestionIndex({ children }) {
 
     const nextQuestion = (answer) => {
         setQuestionIndex(getRandomUniqueIndices(numQuestions, 1))
-        // console.log(
-        //     `LLMs set to:
-        //     Left: ${llm.left} (${questionId}),
-        //     Right: ${llm.right} (${questionId})`
-        //   );
 
         fetchLLM();
 
