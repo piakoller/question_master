@@ -76,7 +76,7 @@ const Demographics = () => {
         { value: 'academic', label: 'Academic' },
         { value: 'publicHospital', label: 'Public hospital/instiution' },
         { value: 'privateHospital', label: 'Private hospital/entity' },
-        { value: 'commercial', label: 'Commercial ogranisation' },
+        { value: 'commercial', label: 'Commercial organisation' },
         { value: 'nonProfit', label: 'Other non-for-profit organisation' },
         { value: 'others', label: 'Other (please specify)' },
         { value: 'notApplicable', label: 'Not Applicable' },
