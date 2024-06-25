@@ -399,7 +399,7 @@ const Demographics = () => {
                     </button>
                 )}
                 {/* skipping input fields */}
-                {/* <button onClick={handleSkip}>skip</button> */}
+                <button onClick={handleSkip}>skip</button>
             </div>
             <Footer />
         </div>
